@@ -1,0 +1,7 @@
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelUno\ConCursoAcelUno\bin\Debug\ConCursoAcelUno.exe.config
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelUno\ConCursoAcelUno\bin\Debug\ConCursoAcelUno.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelUno\ConCursoAcelUno\bin\Debug\ConCursoAcelUno.pdb
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelUno\ConCursoAcelUno\obj\Debug\ConCursoAcelUno.csproj.AssemblyReference.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelUno\ConCursoAcelUno\obj\Debug\ConCursoAcelUno.csproj.CoreCompileInputs.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelUno\ConCursoAcelUno\obj\Debug\ConCursoAcelUno.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelUno\ConCursoAcelUno\obj\Debug\ConCursoAcelUno.pdb

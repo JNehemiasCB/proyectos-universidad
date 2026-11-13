@@ -1,0 +1,14 @@
+C:\Users\nemir\source\repos\ejercicios en clase\bin\Debug\ejercicios en clase.exe.config
+C:\Users\nemir\source\repos\ejercicios en clase\bin\Debug\ejercicios en clase.exe
+C:\Users\nemir\source\repos\ejercicios en clase\bin\Debug\ejercicios en clase.pdb
+C:\Users\nemir\source\repos\ejercicios en clase\obj\Debug\ejercicios en clase.csproj.AssemblyReference.cache
+C:\Users\nemir\source\repos\ejercicios en clase\obj\Debug\ejercicios en clase.csproj.CoreCompileInputs.cache
+C:\Users\nemir\source\repos\ejercicios en clase\obj\Debug\ejercicios en clase.exe
+C:\Users\nemir\source\repos\ejercicios en clase\obj\Debug\ejercicios en clase.pdb
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicios en clase\bin\Debug\ejercicios en clase.exe.config
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicios en clase\bin\Debug\ejercicios en clase.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicios en clase\bin\Debug\ejercicios en clase.pdb
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicios en clase\obj\Debug\ejercicios en clase.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicios en clase\obj\Debug\ejercicios en clase.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicios en clase\obj\Debug\ejercicios en clase.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicios en clase\obj\Debug\ejercicios en clase.pdb

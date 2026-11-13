@@ -1,0 +1,73 @@
+
+Folio del acta
+Nombre de la Asignatura
+Nombre del profesor
+semestre
+Matricula del alumno
+Nombre del alumno
+Calif del alumno en la asignatura
+Lugar de expedición del acta
+Fecha del acta
+====================================
+Identificación de tablas (conjunto de entidades)
+
+Acta ==> folio
+Acta ==> Fecha
+Acta ==> Lugar de expedición
+Acta ==> Periodo
+		
+
+Asignatura ==> Nombre
+
+Profesor ==> Nombre
+
+Alumno ==> Matricula
+Alumno ==> Nombre 
+acta -alumno -calificacion
+
+=====================================
+Una posible ampliación de datos
+
+Acta ==> folio
+Acta ==> Fecha
+Acta ==> Lugar de expedición
+Acta ==> Periodo
+         Escuela
+		 Universidad
+		Tipo Ordinaria o Extraordinaria
+		
+Asignatura ==> Nombre
+				licenciatura
+				plan de estudios
+				escolarizada
+				Número de créditos
+				Horas semanales
+				Obligatoria/optativa
+
+
+Profesor ==> Nombre
+				numero de empleado
+				rfc
+				curp
+				calle y numero
+				colonia
+				localidad
+				muicipio
+				estado
+				pais
+				cp
+				categoría laboral
+
+Alumno ==> Matricula
+			Nombre 
+			rfc
+			curp
+			calle y no
+			colonia
+			Ciudad
+			Municipio
+			
+			
+Acta-alumno-calificación
+			
+

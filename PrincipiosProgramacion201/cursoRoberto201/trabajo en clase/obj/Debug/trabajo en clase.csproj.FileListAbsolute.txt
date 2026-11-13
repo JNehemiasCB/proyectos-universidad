@@ -1,0 +1,7 @@
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\trabajo en clase\bin\Debug\trabajo en clase.exe.config
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\trabajo en clase\bin\Debug\trabajo en clase.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\trabajo en clase\bin\Debug\trabajo en clase.pdb
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\trabajo en clase\obj\Debug\trabajo en clase.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\trabajo en clase\obj\Debug\trabajo en clase.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\trabajo en clase\obj\Debug\trabajo en clase.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\trabajo en clase\obj\Debug\trabajo en clase.pdb

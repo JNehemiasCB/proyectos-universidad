@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nemir\\OneDrive\\Documentos\\cursoRoberto\\ConCursoAcelSiete\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C6A98578-E9A1-4886-B43F-D3FD472A5D0A}|ConCursoAcelSiete\\ConCursoAcelSiete.csproj|c:\\users\\nemir\\onedrive\\documentos\\cursoroberto\\concursoacelsiete\\concursoacelsiete\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6A98578-E9A1-4886-B43F-D3FD472A5D0A}|ConCursoAcelSiete\\ConCursoAcelSiete.csproj|solutionrelative:concursoacelsiete\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nemir\\OneDrive\\Documentos\\cursoRoberto\\ConCursoAcelSiete\\ConCursoAcelSiete\\Program.cs",
+              "RelativeDocumentMoniker": "ConCursoAcelSiete\\Program.cs",
+              "ToolTip": "C:\\Users\\nemir\\OneDrive\\Documentos\\cursoRoberto\\ConCursoAcelSiete\\ConCursoAcelSiete\\Program.cs",
+              "RelativeToolTip": "ConCursoAcelSiete\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-24T14:41:27.644Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

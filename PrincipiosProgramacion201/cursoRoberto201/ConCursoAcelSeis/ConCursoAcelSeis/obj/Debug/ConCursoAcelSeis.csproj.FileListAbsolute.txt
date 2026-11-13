@@ -1,0 +1,14 @@
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.csproj.AssemblyReference.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.csproj.CoreCompileInputs.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelSeis\ConCursoAcelSeis\bin\Debug\ConCursoAcelSeis.exe.config
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelSeis\ConCursoAcelSeis\bin\Debug\ConCursoAcelSeis.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelSeis\ConCursoAcelSeis\bin\Debug\ConCursoAcelSeis.pdb
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.pdb
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ConCursoAcelSeis\ConCursoAcelSeis\bin\Debug\ConCursoAcelSeis.exe.config
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ConCursoAcelSeis\ConCursoAcelSeis\bin\Debug\ConCursoAcelSeis.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ConCursoAcelSeis\ConCursoAcelSeis\bin\Debug\ConCursoAcelSeis.pdb
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ConCursoAcelSeis\ConCursoAcelSeis\obj\Debug\ConCursoAcelSeis.pdb

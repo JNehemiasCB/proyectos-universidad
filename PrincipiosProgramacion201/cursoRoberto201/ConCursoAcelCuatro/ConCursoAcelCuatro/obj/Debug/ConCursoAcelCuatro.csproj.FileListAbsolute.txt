@@ -1,0 +1,7 @@
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCuatro\ConCursoAcelCuatro\bin\Debug\ConCursoAcelCuatro.exe.config
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCuatro\ConCursoAcelCuatro\bin\Debug\ConCursoAcelCuatro.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCuatro\ConCursoAcelCuatro\bin\Debug\ConCursoAcelCuatro.pdb
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCuatro\ConCursoAcelCuatro\obj\Debug\ConCursoAcelCuatro.csproj.AssemblyReference.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCuatro\ConCursoAcelCuatro\obj\Debug\ConCursoAcelCuatro.csproj.CoreCompileInputs.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCuatro\ConCursoAcelCuatro\obj\Debug\ConCursoAcelCuatro.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCuatro\ConCursoAcelCuatro\obj\Debug\ConCursoAcelCuatro.pdb

@@ -1,0 +1,7 @@
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\efec,tarjeta\bin\Debug\efec,tarjeta.exe.config
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\efec,tarjeta\bin\Debug\efec,tarjeta.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\efec,tarjeta\bin\Debug\efec,tarjeta.pdb
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\efec,tarjeta\obj\Debug\efec,tarjeta.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\efec,tarjeta\obj\Debug\efec,tarjeta.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\efec,tarjeta\obj\Debug\efec,tarjeta.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\efec,tarjeta\obj\Debug\efec,tarjeta.pdb

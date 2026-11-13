@@ -1,0 +1,7 @@
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCinco\ConCursoAcelCinco\bin\Debug\ConCursoAcelCinco.exe.config
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCinco\ConCursoAcelCinco\bin\Debug\ConCursoAcelCinco.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCinco\ConCursoAcelCinco\bin\Debug\ConCursoAcelCinco.pdb
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCinco\ConCursoAcelCinco\obj\Debug\ConCursoAcelCinco.csproj.AssemblyReference.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCinco\ConCursoAcelCinco\obj\Debug\ConCursoAcelCinco.csproj.CoreCompileInputs.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCinco\ConCursoAcelCinco\obj\Debug\ConCursoAcelCinco.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConCursoAcelCinco\ConCursoAcelCinco\obj\Debug\ConCursoAcelCinco.pdb

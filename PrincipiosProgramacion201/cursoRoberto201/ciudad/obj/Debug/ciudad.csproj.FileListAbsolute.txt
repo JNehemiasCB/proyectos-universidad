@@ -1,0 +1,7 @@
+C:\Users\nemir\source\repos\ciudad\bin\Debug\ciudad.exe.config
+C:\Users\nemir\source\repos\ciudad\bin\Debug\ciudad.exe
+C:\Users\nemir\source\repos\ciudad\bin\Debug\ciudad.pdb
+C:\Users\nemir\source\repos\ciudad\obj\Debug\ciudad.csproj.AssemblyReference.cache
+C:\Users\nemir\source\repos\ciudad\obj\Debug\ciudad.csproj.CoreCompileInputs.cache
+C:\Users\nemir\source\repos\ciudad\obj\Debug\ciudad.exe
+C:\Users\nemir\source\repos\ciudad\obj\Debug\ciudad.pdb

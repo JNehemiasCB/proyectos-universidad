@@ -1,0 +1,7 @@
+C:\Users\nemir\OneDrive\Documentos\principios de programacion\positivo-negativo\bin\Debug\positivo-negativo.exe.config
+C:\Users\nemir\OneDrive\Documentos\principios de programacion\positivo-negativo\bin\Debug\positivo-negativo.exe
+C:\Users\nemir\OneDrive\Documentos\principios de programacion\positivo-negativo\bin\Debug\positivo-negativo.pdb
+C:\Users\nemir\OneDrive\Documentos\principios de programacion\positivo-negativo\obj\Debug\positivo-negativo.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\principios de programacion\positivo-negativo\obj\Debug\positivo-negativo.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\principios de programacion\positivo-negativo\obj\Debug\positivo-negativo.exe
+C:\Users\nemir\OneDrive\Documentos\principios de programacion\positivo-negativo\obj\Debug\positivo-negativo.pdb

@@ -1,0 +1,7 @@
+C:\Users\nemir\source\repos\trabajo en clase 3.2\bin\Debug\trabajo en clase 3.2.exe.config
+C:\Users\nemir\source\repos\trabajo en clase 3.2\bin\Debug\trabajo en clase 3.2.exe
+C:\Users\nemir\source\repos\trabajo en clase 3.2\bin\Debug\trabajo en clase 3.2.pdb
+C:\Users\nemir\source\repos\trabajo en clase 3.2\obj\Debug\trabajo en clase 3.2.csproj.AssemblyReference.cache
+C:\Users\nemir\source\repos\trabajo en clase 3.2\obj\Debug\trabajo en clase 3.2.csproj.CoreCompileInputs.cache
+C:\Users\nemir\source\repos\trabajo en clase 3.2\obj\Debug\trabajo en clase 3.2.exe
+C:\Users\nemir\source\repos\trabajo en clase 3.2\obj\Debug\trabajo en clase 3.2.pdb

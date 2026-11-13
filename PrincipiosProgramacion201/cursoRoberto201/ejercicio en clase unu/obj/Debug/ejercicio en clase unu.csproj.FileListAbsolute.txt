@@ -1,0 +1,7 @@
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicio en clase unu\bin\Debug\ejercicio en clase unu.exe.config
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicio en clase unu\bin\Debug\ejercicio en clase unu.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicio en clase unu\bin\Debug\ejercicio en clase unu.pdb
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicio en clase unu\obj\Debug\ejercicio en clase unu.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicio en clase unu\obj\Debug\ejercicio en clase unu.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicio en clase unu\obj\Debug\ejercicio en clase unu.exe
+C:\Users\nemir\OneDrive\Documentos\cursoRoberto\ejercicio en clase unu\obj\Debug\ejercicio en clase unu.pdb

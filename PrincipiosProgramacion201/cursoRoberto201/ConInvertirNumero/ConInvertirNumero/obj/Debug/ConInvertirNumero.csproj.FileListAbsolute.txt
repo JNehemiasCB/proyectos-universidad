@@ -1,0 +1,7 @@
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConInvertirNumero\ConInvertirNumero\bin\Debug\ConInvertirNumero.exe.config
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConInvertirNumero\ConInvertirNumero\bin\Debug\ConInvertirNumero.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConInvertirNumero\ConInvertirNumero\bin\Debug\ConInvertirNumero.pdb
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConInvertirNumero\ConInvertirNumero\obj\Debug\ConInvertirNumero.csproj.AssemblyReference.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConInvertirNumero\ConInvertirNumero\obj\Debug\ConInvertirNumero.csproj.CoreCompileInputs.cache
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConInvertirNumero\ConInvertirNumero\obj\Debug\ConInvertirNumero.exe
+C:\Users\rrosa\source\repos\PrinProg\PP2024\ConInvertirNumero\ConInvertirNumero\obj\Debug\ConInvertirNumero.pdb

@@ -1,0 +1,7 @@
+C:\Users\nemir\source\repos\ejercicios en clase 2\bin\Debug\ejercicios en clase 2.exe.config
+C:\Users\nemir\source\repos\ejercicios en clase 2\bin\Debug\ejercicios en clase 2.exe
+C:\Users\nemir\source\repos\ejercicios en clase 2\bin\Debug\ejercicios en clase 2.pdb
+C:\Users\nemir\source\repos\ejercicios en clase 2\obj\Debug\ejercicios en clase 2.csproj.AssemblyReference.cache
+C:\Users\nemir\source\repos\ejercicios en clase 2\obj\Debug\ejercicios en clase 2.csproj.CoreCompileInputs.cache
+C:\Users\nemir\source\repos\ejercicios en clase 2\obj\Debug\ejercicios en clase 2.exe
+C:\Users\nemir\source\repos\ejercicios en clase 2\obj\Debug\ejercicios en clase 2.pdb
