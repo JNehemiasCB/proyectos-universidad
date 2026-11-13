@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\cribaDeEratostenes\bin\Debug\cribaDeEratostenes.exe.config
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\cribaDeEratostenes\bin\Debug\cribaDeEratostenes.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\cribaDeEratostenes\bin\Debug\cribaDeEratostenes.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\cribaDeEratostenes\obj\Debug\cribaDeEratostenes.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\cribaDeEratostenes\obj\Debug\cribaDeEratostenes.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\cribaDeEratostenes\obj\Debug\cribaDeEratostenes.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\cribaDeEratostenes\obj\Debug\cribaDeEratostenes.pdb

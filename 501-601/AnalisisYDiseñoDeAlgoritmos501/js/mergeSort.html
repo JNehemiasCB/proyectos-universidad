@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Merge Sort</title>
+</head>
+<body>
+   <button id="btnRandom" onclick="nRandom()">Generar arreglo aleatorio</button>
+   <div id="contenedor"></div>
+   <br>
+
+   <button onclick="ordenar()">Ordenamiento por merge sort</button>
+
+   <script>
+
+      // --- VARIABLE GLOBAL ---
+      let arr = [];
+
+      function nRandom(){
+         // Generar arreglo de 10 números aleatorios entre 1 y 100
+         arr = [];
+         for (let i = 0; i < 10; i++) {
+            arr.push( Math.floor(Math.random() * 100) + 1 );
+         }
+
+         // Mostrarlo en pantalla
+         document.getElementById("contenedor").innerHTML = 
+            "<h3>Arreglo generado:</h3>" + arr.join(", ");
+      }
+
+      // ----------------------------
+      //        MERGE SORT
+      // ----------------------------
+
+function mergeSort(arr) {
+
+    if (arr.length <= 1) return arr;
+
+    const mid = Math.floor(arr.length / 2);
+    
+    let left = [];
+    let right = [];
+    
+    for (let i = 0; i < mid; i++) {
+        left.push(arr[i]);
+    }
+
+    for (let i = mid; i < arr.length; i++) {
+        right.push(arr[i]);
+    }
+
+    return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+         let result = [];
+         let i = 0, j = 0;
+
+         while (i < left.length && j < right.length) {
+            if (left[i] <= right[j]) {
+               result.push(left[i]);
+               i++;
+            } else {
+               result.push(right[j]);
+               j++;
+            }
+         }
+
+         return result.concat(left.slice(i)).concat(right.slice(j));
+      }
+
+      // -----------------------------------
+      //        BOTÓN ORDENAR CON MERGE
+      // -----------------------------------
+      function ordenar(){
+         if(arr.length === 0){
+            alert("Primero genera un arreglo.");
+            return;
+         }
+
+         let arrOrdenado = mergeSort(arr);
+
+         document.getElementById("contenedor").innerHTML = 
+            "<h3>Arreglo ordenado:</h3>" + arrOrdenado.join(", ");
+      }
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+
+      li{
+        margin-bottom: 8px;
+      }
+
+     li button{
+      margin-left: 32px;
+     }
+
+    </style>
+  </head>
+  <body>
+
+    <h1>  Mi lista de compras</h1>
+  <div>
+    <label for="item"> Introduce un nuevo item</label>
+    <input type="text" id="item">
+    <button> Agregar item</button>
+  </div>
+   <!-- lista no ordenada que albergará los items -->
+  <ul></ul>
+
+  <script>
+//  variables para almacenar las referencias a  
+// los elementos html:  input, button y ul 
+const list = document.querySelector('ul');
+const input = document.querySelector('input');
+const button = document.querySelector('button');
+
+// Colocar el foco al cuadro de texto
+  input.focus();
+
+// Agregar un listener de evento click al 
+// botón "Agregar Item" en la función o callBack
+// que lo manejará
+// la función recuperará el valor introducido y
+// lo almacenará en una variable
+// despues se limpia el valor introducido del elemento
+
+button.addEventListener('click', () => {
+     let txtItem = input.value;
+     input.value='';
+
+  // dentro de la misma función se crean tres eleentos: 
+  // un li, un span y un button.
+      const listItem = document.createElement('li');
+      const spanItem = document.createElement('span')
+      const btnItem= document.createElement('button');
+
+  // Se agrega el texto introducido al span
+  // Se agrega el span al li
+  // Se agrega el texto de titulo del botón
+  // se agrega el botón al li
+  // se agrega el li a la lista
+  // Se agrega un listener de vento click al botón agregado al li
+  // la función manejadora de este últio evento elimina o remueve 
+  // el li de la lsita
+
+     spanItem.textContent= txtItem;
+     listItem.appendChild(spanItem);
+     btnItem.textContent='Eliminar';
+     listItem.appendChild(btnItem);
+
+     list.appendChild(listItem);
+     
+     btnItem.addEventListener('click', () => {
+       list.removeChild(listItem);;
+     });
+     input.focus();
+})
+
+  </script>
+  </body>
+</html>

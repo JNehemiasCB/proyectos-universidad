@@ -1,0 +1,163 @@
+using System;
+
+namespace JuegoDeLaVidaConway
+{
+    class Program
+    {
+        // Constantes para configurar el tamaño de la cuadrícula
+        const int FILAS = 15;
+        const int COLUMNAS = 30;
+        const int GENERACIONES = 20;
+        const int TIEMPO_ESPERA_MS = 500; // Milisegundos entre generaciones
+
+        static void Main(string[] args)
+        {
+            // Inicializar la cuadrícula con un patrón inicial (ejemplo: planeador)
+            bool[,] mundo = InicializarMundo();
+
+            Console.WriteLine("=== Juego de la Vida de Conway ===\n");
+            Console.WriteLine("Presiona cualquier tecla para comenzar...");
+            Console.ReadKey();
+            Console.Clear();
+
+            // Simular varias generaciones
+            for (int gen = 0; gen < GENERACIONES; gen++)
+            {
+                MostrarMundo(mundo, gen);
+                mundo = CalcularSiguienteGeneracion(mundo);
+                System.Threading.Thread.Sleep(TIEMPO_ESPERA_MS);
+                Console.Clear();
+            }
+
+            Console.WriteLine("Simulación finalizada. Presiona una tecla para salir.");
+            Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Inicializa la cuadrícula con un patrón predeterminado (un "planeador").
+        /// Puedes modificar este método para probar otros patrones o entrada manual.
+        /// </summary>
+        /// <returns>Una cuadrícula inicial (mundo) representada como un arreglo bidimensional de booleanos.</returns>
+        static bool[,] InicializarMundo()
+        {
+            bool[,] mundo = new bool[FILAS, COLUMNAS];
+
+            // Patrón: Planeador (Glider) - uno de los más famosos
+            int centroFila = FILAS / 2;
+            int centroCol = COLUMNAS / 2;
+
+            mundo[centroFila, centroCol + 1] = true;
+            mundo[centroFila + 1, centroCol + 2] = true;
+            mundo[centroFila + 2, centroCol] = true;
+            mundo[centroFila + 2, centroCol + 1] = true;
+            mundo[centroFila + 2, centroCol + 2] = true;
+
+            return mundo;
+        }
+
+        /// <summary>
+        /// Muestra el estado actual del mundo en la consola.
+        /// Las células vivas se representan con '█' y las muertas con espacio.
+        /// </summary>
+        /// <param name="mundo">La cuadrícula actual del juego.</param>
+        /// <param name="generacion">Número de la generación actual.</param>
+        static void MostrarMundo(bool[,] mundo, int generacion)
+        {
+            Console.WriteLine($"Generación: {generacion}\n");
+            for (int i = 0; i < FILAS; i++)
+            {
+                for (int j = 0; j < COLUMNAS; j++)
+                {
+                    Console.Write(mundo[i, j] ? "█" : " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        /// <summary>
+        /// Calcula la siguiente generación del mundo según las reglas del Juego de la Vida.
+        /// </summary>
+        /// <param name="mundoActual">El estado actual del mundo.</param>
+        /// <returns>Un nuevo mundo que representa la siguiente generación.</returns>
+        static bool[,] CalcularSiguienteGeneracion(bool[,] mundoActual)
+        {
+            bool[,] nuevoMundo = new bool[FILAS, COLUMNAS];
+
+            // Recorrer cada celda del mundo
+            for (int i = 0; i < FILAS; i++)
+            {
+                for (int j = 0; j < COLUMNAS; j++)
+                {
+                    int vecinosVivos = ContarVecinosVivos(mundoActual, i, j);
+
+                    if (mundoActual[i, j])
+                    {
+                        // Célula viva
+                        if (vecinosVivos < 2 || vecinosVivos > 3)
+                        {
+                            nuevoMundo[i, j] = false; // Muere por soledad o sobrepoblación
+                        }
+                        else
+                        {
+                            nuevoMundo[i, j] = true; // Sobrevive
+                        }
+                    }
+                    else
+                    {
+                        // Célula muerta
+                        if (vecinosVivos == 3)
+                        {
+                            nuevoMundo[i, j] = true; // Nace nueva célula
+                        }
+                        else
+                        {
+                            nuevoMundo[i, j] = false; // Permanece muerta
+                        }
+                    }
+                }
+            }
+
+            return nuevoMundo;
+        }
+
+        /// <summary>
+        /// Cuenta cuántos vecinos vivos tiene una celda dada, considerando los 8 vecinos adyacentes.
+        /// Usa aritmética modular para tratar los bordes como si fueran un toro (opcional).
+        /// En este caso, NO se usa toroide: los bordes se tratan como muertos.
+        /// </summary>
+        /// <param name="mundo">La cuadrícula actual.</param>
+        /// <param name="fila">Fila de la celda a evaluar.</param>
+        /// <param name="columna">Columna de la celda a evaluar.</param>
+        /// <returns>Número de vecinos vivos (0 a 8).</returns>
+        static int ContarVecinosVivos(bool[,] mundo, int fila, int columna)
+        {
+            int contador = 0;
+
+            // Recorrer las 8 celdas vecinas
+            for (int i = -1; i <= 1; i++)
+            {
+                for (int j = -1; j <= 1; j++)
+                {
+                    // Saltar la celda central (la propia)
+                    if (i == 0 && j == 0)
+                        continue;
+
+                    int vecinoFila = fila + i;
+                    int vecinoColumna = columna + j;
+
+                    // Verificar que esté dentro de los límites
+                    if (vecinoFila >= 0 && vecinoFila < FILAS &&
+                        vecinoColumna >= 0 && vecinoColumna < COLUMNAS)
+                    {
+                        if (mundo[vecinoFila, vecinoColumna])
+                        {
+                            contador++;
+                        }
+                    }
+                }
+            }
+
+            return contador;
+        }
+    }
+}

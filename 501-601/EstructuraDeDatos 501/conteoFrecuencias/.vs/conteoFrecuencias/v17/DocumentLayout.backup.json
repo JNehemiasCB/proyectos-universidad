@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nehem\\OneDrive\\Documentos\\EstructuraDeDatos 501\\conteoFrecuencias\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1134312A-84C0-4D4F-83DD-783A5C5385AC}|conteoFrecuencias.csproj|c:\\users\\nehem\\onedrive\\documentos\\estructuradedatos 501\\conteofrecuencias\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1134312A-84C0-4D4F-83DD-783A5C5385AC}|conteoFrecuencias.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\EstructuraDeDatos 501\\conteoFrecuencias\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\EstructuraDeDatos 501\\conteoFrecuencias\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T17:39:20.297Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

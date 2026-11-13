@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 16 Ejercicio e14 de JS. Adaptado de Dynamic client-side scripting -MDN ttps://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <title>Backtics</title>
+  <style>
+    input, label, p{
+      font-size: 1.5em;
+      margin: 10px;
+    }
+  </style>
+  </head>
+<body>
+
+  <label>Introduce un número: </label>
+  <input class="numberInput" type="text">
+  <p></p>
+<!-- ================================================ -->
+<script>
+
+const input = document.querySelector('.numberInput');
+const para = document.querySelector('p');
+
+function squared(num) {
+return num * num;
+}
+
+function cubed(num) {
+  return num * num * num;
+}
+
+function factorial(num) {   // 4! = 4 *  3 * 2 * 1
+  let x = num;
+  while (x > 1) {
+    num *= x-1;  // num = num * (x-1)
+    x--;         // x= x-1
+  }
+  return num;
+}
+
+// usamos el evento onchange que ejecutará la función anónima cuando 
+// haya un cambio en el valor del input
+input.onchange = function() {
+  let num = input.value;
+
+  // observar el uso de validaciones para evitar errores
+  if (isNaN(num)) {
+    para.textContent = '¡Necesitas introducir un número!';
+  } else {
+      // imprime en una sola línea
+      
+      // para.textContent = num + ' al cuadrado es: ' + squared(num) + ', ' +
+      //                     num + ' al cubo es : ' + cubed(num) + ', ' +
+      //                     ' factorial de ' + num + ' es: ' + factorial(num) + '.';
+
+      /* Observar como se coloca todo el texto en una sola línea
+      si queremos que se muestre en varias líneas 
+      usaremos innerHTML y backtics para poder usar <br/> y saltos de línea 
+      Los backtics permiten crear textos multilínea e interpolación de variables 
+      Si el teclado no tiene backticks recordar que su codigo es alt+96 
+      */
+    
+      
+          para.innerHTML = ` ${num} al cuadrado es:  ${squared(num)}  <br/> 
+          ${num}  al cubo es:  ${cubed(num)}  <br/> Factorial de ${num} es: ${factorial(num)} `;
+      
+
+      /* También podemos usar \n en lugar de la etiqueta <br> para salto de línea, backtics y  textContent */
+      /*
+        para.textContent = ` ${num} al cuadrado es:  ${squared(num)}\n ${num}  al cubo es:  ${cubed(num)}\n Factorial de ${num} es: ${factorial(num)} `;
+      */
+    }
+}
+</script>
+</body>
+</html>

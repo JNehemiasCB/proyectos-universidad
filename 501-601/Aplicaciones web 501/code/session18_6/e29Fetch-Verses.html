@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 18 Ejercicio 29 de JS. Adaptado de Dynamic client-side scripting -MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+
+    <title>Fetch-verses</title>
+    <style>
+      html, pre {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 400px;
+        margin: 0 auto;
+        background-color: #ccc;
+      }
+
+      pre {
+        line-height: 1.5;
+        letter-spacing: 0.05rem;
+        padding: 1rem;
+        background-color: white;
+      }
+
+      label {
+        width: 200px;
+        margin-right: 33px;
+      }
+
+      select {
+        width: 300px;
+        padding: 5px;
+      }
+      h2, h3{
+        margin: 0;
+        padding: 0
+      }
+    </style>
+  </head>
+  <body>
+    
+    <h1>Iniciando con Fetch </h1>
+
+    <form>
+      <label for="verse-choose">Selecciona un verso</label>
+      <select id="verse-choose" name="verse-choose">
+        <option>Verso 1</option>
+        <option>Verso 2</option>
+        <option>Verso 3</option>
+        <option>Verso 4</option>
+      </select>
+    </form>
+    <p> Tomados del libro:</p>
+    <h2>The Conqueror Worm </h2>
+    <h3>Edgar Allen Poe, 1843</h3>
+    <pre> 
+    </pre>
+
+    <script>
+      const verseChoose = document.querySelector('select');
+      const poemDisplay = document.querySelector('pre');  // <pre> respeta saltos de línea, espacios, etc.
+
+      verseChoose.addEventListener('change', () => {
+        const verse = verseChoose.value;
+        updateDisplay(verse);
+      });
+
+      function updateDisplay(verse) {
+        verse = verse.replace(' ', ''); // eliminar espacio en blanco en la selección
+        verse = verse.toLowerCase();    // convertir a minúsculas 
+        const url = `${verse}.txt`;     // dirección del archivo del verso seleccionado 
+
+        // Lamada a `fetch()`, pasando la URL.
+        fetch(url)
+          // fetch() regresa una promise. 
+          // cuando se recibe la respuesta , se llama a manejador `then()` de la promesa con la respuesta 'response'.
+          .then( response => {
+              // El manejador arroja un mensaje de error si la respuesta no fue exitosa.
+              if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+              }
+              // Si la respuesta fue exitosa, el manejador devuelve la respuesta como texto 
+              return response.text();
+          })
+            // Si 'response' y ¿response.text()'' fueron exitosos otro manejador `then()` se llama con el texto
+            // y lo copiamos como contenido de `poemDisplay` para mostrarlo.
+          .then( text => poemDisplay.textContent = text )
+          // En caso de que haya un error utilizamos catch para manejarlo y mostrar un mensaje en `poemDisplay` .
+          .catch( error => poemDisplay.textContent = `No se pudo recuperar el verso, se produjo un ${error}`);
+      }
+      // Verso por omisión al comenzar
+      updateDisplay('Verso 1');
+      verseChoose.value = 'Verso 1';
+
+    </script>
+  </body>
+</html>

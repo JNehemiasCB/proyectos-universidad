@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 18 Ejercicio 24 de JS. Adaptado de Dynamic client-side scripting -MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <title>Programación asíncrona</title>
+</style>
+</head>
+<body>
+</body>
+
+<script>
+
+/* PROGRAMACIÓN SINCRONA ========================
+En esta programación el navegador recorre el programa línea a línea, en el mismo orden en que nosotros lo escribimos. En cada punto, el navegador espera a que la línea termine su trabajo antes de pasar a la siguiente.
+¿Y si la función síncrona tarda mucho tiempo?
+Con una función de larga duración, mientrás esta se esté ejecutando nuestro programa no responde en absoluto: no se puede escribir nada, ni hacer clic, ni nada más.
+
+*/
+
+/* === PROGRAMACIÓN ASÍNCRONA y PROMISES =================================================================
+La solución fué usar programación asíncrona. Una de las primeras APIs asíncronas utilizaban funciones callback como la API XMLHttpRequest, actualmente se utilizan PROMISES con la API fech(). A continuación vamos a ver como funciona la programación asíncrona
+
+Una promise es una estructura de control para ops asíncronas sin bloquear el hilo principal de ejecución PERO NO CREA UN NUEVO HILO
+Un Promise está en uno de estos estados:a) pending (pendiente): estado inicial, ni cumplido ni rechazado. b) fulfilled (cumplida): lo que significa que la operación se completó con éxito. c) rejected (rechazada): lo que significa que la operación falló.
+
+Una promesa pendiente puede cumplirse con un valor o rechazarse con un motivo (error). Cuando ocurre cualquiera de estas opciones, se llama a los controladores asociados en cola por el método then de una promesa.
+
+Los siguientes ejemplos mostrarán como con el uso de PROMISES se puede seguir ejecutando el programa sin tener que esperar hasta que termine la petición fetch.
+
+Fetch devuelve una promesa y cuando se resuleve la promesa devuelve un objeto Response el cual es un contenedor que contiene:response.status → código HTTP , response.ok → true/false si fue exitoso, response.headers → encabezados.
+para convertir la respuesta en un formato se usa alguno de lo siguientes métodos: response.json(), response.text(), response.blob(), 
+response.arrayBuffer(). El contenido no estará disponible hasta usar uno de ellos.
+
+*/
+
+// 1.- Abrir en el browser  https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json
+// devuelve un json consistente de un array de 11 objetos con propiedades name, price, image y typeobjeto json 
+
+// 2.1-  Abrir con el navegador https://example.org
+
+// 2.2 Copiar el código siguiente en la consola ===
+/*
+  const fetchPromise = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+  console.log(fetchPromise);   // mostrará Promise { "pending"}
+  fetchPromise.then(
+            (response) => {
+            console.log(`Received response: ${response.status}`); // mostrará Received response: 200
+            }
+  );
+  console.log("El programa sigue, no esperó a fetch"); 
+*/
+
+/* 3.- Lo anterior muestra:
+      3.1.- Promise { "pending"}
+      3.2.- "El programa sigue, no esperó a fetch" <== se ejecutó antes de obtener la respuesta
+      3.3.- "Received response: 200" <== el código de respuesta ( 200 significa "EXITO")
+ */
+//===================================================================================================================
+// fetch() no bloquea el hilo principal: Inicia la solicitud HTTP. Devuelve inmediatamente una promesa pendiente.
+// El programa continúa ejecutándose. Cuando el servidor responde, la promesa se resuelve y se ejecutan los .then().
+// Esto es lo que se conoce como programación asíncrona no bloqueante.
+//====================================================================================================================
+
+//======PROMISE CON ANIDAMIENTO=======================
+// Rehaciendo el ejemplo 
+// 1.- Recargar la página https://example.org
+// 2.- Introducir el siguiente código en la consola:
+
+/*  const fetchPromise2 = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+  console.log(fetchPromise2);
+  fetchPromise2.then(
+    (response) => {
+      const jsonPromise = response.json();
+        jsonPromise.then(
+            (data) => {                 // puede ser  data u otro nombre; info, informacion, resultado, etc.
+            console.log(data[3].name);  // mostrará el valor de la propiedad name del objeto con indice 3 : "refried beans"
+             }
+       );
+    }
+  );
+  console.log("El programa sigue, no esperó a fetch"); 
+*/
+
+// 3.- Lo anterior muestra:
+//      3.1.- Promise { <state>:"pending"}
+//      3.2.- "El programa sigue, no esperó a fetch" <== se ejecutó antes de obtener la respuesta
+//      3.3 Muestra el valor de la propiedad name del objeto con indice 3 : "refried beans"
+// Observar que se realizan llamadas a then() anidadas.
+
+
+/* =====PROMISE CHAINING==========================
+Rehaciendo el ejemplo para no anidar llamadas al método then(), en su lugar realizamos un encadenamiento.
+El valor de retorno de cada promesa resuelta se pasa al siguiente .then(), mientrás que el motivo de rechazo se pasa a la siguiente función de manejo de rechaso.
+*/
+
+// 1.- Recargar la página https://example.org
+// 2.- Introducir el siguiente código en la consola:
+
+/*
+const fetchPromise3 = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+console.log(fetchPromise3);
+fetchPromise3
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data[2].price);    //mostrará el valor de la propiedad price del objeto con indice 2 : 2.85
+  });
+console.log("El programa sigue, no esperó a fetch"); 
+*/
+
+// 3.- Lo anterior muestra:
+//      3.1.- Promise { <state>:"pending"}
+//      3.2.- "El programa sigue, no esperó a fetch"" <== se ejecutó antes de obtener la respuesta
+//      3.3 Muestra el valor de la propiedad price del objeto con indice 2 : 2.85
+
+//===========================================
+// ===CON MANEJO DE ERRORES  ( CATCHING ERRORS) =====
+// == Para mostrar el manejo de errores enviaremos una URL mal formada
+
+/*
+const fetchPromise4 = fetch('bad-scheme://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+
+fetchPromise4
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data[0].name);
+  })
+  .catch((error) => {
+    console.error(`Could not get products: ${error}`);
+  });
+  console.log("El programa sigue, no esperó a fetch"); 
+*/
+
+/*== El código anterior nos envía los siguientes mensajes: 
+  "Fetch API cannot load bad-scheme://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json. URL scheme "bad-scheme" is not supported." 
+  "Could not get products: TypeError: Failed to fetch"
+*/
+/*
+ To learn more about Promise, see the Promise reference documentation: 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+*/
+
+/* ==================================== ASYNC and AWAIT ===================================
+"async" permite trabajar con código basado en Promise. Añadiendo "async" al inicio de una función la vuelve una "async function".
+Dentro de una "async function" se puede utilizar "await" antes de la llamada a la función que regresara una Promise, y hace que espere hasta que  la promesa se termine por lo que devuelve un objeto response "fulfilled"(exitoso) o se "rejected" (rechazado).
+
+await espera hasta que se termine o rechase fetch(). Por lo que en vez de regresar una promesa ,regresa un objeto "response" completado o rechazado.Si fue rechazada lanza un mensaje de error.
+En el ejemplo siguiente si la promesa no fué rechazada, esperara hasta que "response.json() parsee el objeto JSON y muestra en consola el valor de una propiedad del mismo y devuelve el objeto recuperado (data)
+*/
+
+/*
+async function fetchProducts() {
+  try {
+    const response = await fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+
+    
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    const data = await response.json();
+    console.log(data[0].name);  // muestra  "baked beans"
+    return data;
+  }
+    
+
+  catch (error) {
+    console.error(`Could not get products: ${error}`);
+  }
+}
+
+// quizas sería más claro denominar promise al valor devuelto por fetchProducts()
+const promise = fetchProducts();
+promise.then((data) => console.log(data[1].name)); // muestra "hot dogs"
+*/
+</script>
+</html>
+
+

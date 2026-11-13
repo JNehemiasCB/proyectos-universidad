@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>proyecto1</title>
+</head>
+<body>
+  valor 1: <input type="text" id="txtValor1">
+ valor 2: <input type="text" id="txtValor2">
+<button id="btnAceptar" onclick="mensaje()">aceptar</button>
+<div id="resultado"></div>
+   <script>
+      function mensaje()
+      {
+         v1 = document.getElementById("txtValor1")
+         v2 = document.getElementById("txtValor2")
+
+         var valor1 = parseInt(v1.value)
+         var valor2 = parseInt(v2.value)
+
+         divResultado = document.getElementById("resultado")
+         divResultado.innerHTML = valor1 + valor2;
+      }
+   </script>
+</body>
+</html>

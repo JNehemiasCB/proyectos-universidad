@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sumaMatrices\bin\Debug\sumaMatrices.exe.config
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sumaMatrices\bin\Debug\sumaMatrices.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sumaMatrices\bin\Debug\sumaMatrices.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sumaMatrices\obj\Debug\sumaMatrices.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sumaMatrices\obj\Debug\sumaMatrices.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sumaMatrices\obj\Debug\sumaMatrices.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sumaMatrices\obj\Debug\sumaMatrices.pdb

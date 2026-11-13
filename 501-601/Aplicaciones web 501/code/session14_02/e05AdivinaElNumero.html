@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content =" Página del curso de plicaciones web, sesión 14 Ejercicio 5 Adivina el número. Adaptado de Dynamic client-side scripting -MDN
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+   <link rel="stylesheet" href="../css/e05AdivinaElNumero.css">
+   <script src="../js/e05AdivinaElNumero.js" defer> </script>
+   <title>E05 Adivina el número </title>
+</head>
+<body>
+   <!-- EJEMPLO 05 ADIVINA EL NÚMERO -->
+<!-- Creación de un juego sencillo del tipo "adivina el número".
+ El sistema generará un número aleatorio entre 1 y 100
+ El jugador intentará a adivinar el número en máximo 8 intentos. Después de cada intento, el sistema debería decirle al jugador si ha acertado o no, y si está equivocado, debería decirle si se ha quedado corto o se ha pasado. 
+ El sistema irá mostrando los números que ya se probaron anteriormente. 
+ El juego terminará una vez que el jugador acierte o cuando se acaben los intentos. Cuando el juego termina, se le debe dar al jugador la opción de volver a jugar.
+ -->
+   <h1>Adivina el número</h1>
+
+    <p>Se ha seleccionado un número en forma aleatoria entre 1 y 100. Intenta adivinarlo. Tienes hasta 8 intentos para ello. En cada intento te diremos si el número que introduciste fué menor o mayor.</p>
+    
+   <!--  Número introducido por el usuario y botón de enviar -->
+    <div class="form">
+      <label for="guessField">¿Cuál crees que es?: </label>
+      <input type="number" min="1" max="100" required id="guessField" class="guessField">
+      <input type="submit" value="Enviar" class="guessSubmit">
+    </div>
+    
+    <!-- Párrafos de resultados -->
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
+</body>
+</html>

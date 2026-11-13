@@ -1,0 +1,172 @@
+
+/*   =================================PARTE I ==================================== */
+/*   BORDERS */
+
+ .box{
+  width: 800px;
+   height: 600px;
+
+   border: 2px solid red;
+   border-style: dashed;
+   border-top-width: 10px;
+   border-bottom-width: 10px;
+   border-right-width: 5px;
+   border-left-color: aqua;
+
+   /* border: 2px solid black; */
+   /* border-radius:20px; */
+}
+
+/*  =======================Parte I -cont. ================================= */
+/* BACKGROUNDS */
+
+
+.box{
+   /* color al fondo */
+   /* background-color: aqua;  */
+
+  /* Imagen pequeña de fondo -ver como se repite automáticamente */
+  /* background-image: url(/assets/images/usuario-42x42.png);  */
+
+  /* repetir en línea horizontal */
+  /* background-repeat: repeat-x; */
+
+/* repetir en línea vertical */
+   /* background-repeat:repeat-y; */
+
+/*  NO repetir */
+/* background-repeat:no-repeat; */
+
+/* Imagen de fondo más grande que el contenedor */
+/* descomentar y dejarla hasta el fin del bloque */
+
+/* background-image:url(/assets/images/bird-1920x1311.jpg) ; */
+
+/* si está más pequeña que el contenedor la ajusta y se repite */
+/* background-size: 200px; */
+
+/* ajuste sin distorcionar*/
+ /* background-size: contain; */
+
+/* ajuste al contenedor distorcionando*/
+/* background-size: cover; */
+
+/* colocar desde la izquirda */
+/* background-position-x: 200px;  */
+
+
+/* colocar desde arriba */
+/* background-position-y: 500px;  */
+
+/* coloacr desde arriba y desde la izquierda */
+/* background-position: top 100px left 100px; */
+
+}
+
+/* ====================parte I cont.================================ */
+.box{
+
+/* width: 800px;
+height:600px;
+border: 2px solid black;
+background-color: lightblue; */
+
+/* MULTILES IMAGENES DE FONDO */
+/* usuario encima de logo */
+/* background-image: url(../assets/images/usuario-42x42.png), url(/assets/images/logo-936x960.png); */
+
+/* usuario grande logo pequeño  */
+/* background-size: 400px 400px, 100px 100px; */
+
+/* ======================= Parte I cont. ================== */
+/* logo encima de usuario */
+/* background-image: url(../assets/images/logo-936x960.png), url(/assets/images/usuario-42x42.png); */
+
+/* logo grande usuario pequeño  */
+/* background-size: 300px 300px, 100px 100px; */
+
+ }
+
+/*     ================================= PARTE II =========================== */
+
+/* OVERFLOW EN CAJAS DE TAMAÑO FIJO*/
+
+.box{
+   /* border: 2px solid blue;
+   font-size: 32px;
+   width: 300px;
+   height: 200px; */
+
+
+/* overflow:hidden; */
+/* overflow:scroll;  */
+
+} 
+
+/*   ====== PARTE III ===UNIDADES ABSOLUTAS Y RELATIVAS ======= */
+/* px dimensión fija  absoluta (aunque son relativos al DPI), em con respecto al padre , rem con respecto al root , vh relativo al ancho de la ventana gráfica, vh relativa a la altura de la ventana gráfica o view port (parte visible de la pantalla, % con respecto a su contenedor- el elemento padre. */
+/*  px, rem y em se usan gralmente para fuentes y %, vw, vh para rellenos, margenes y anchos o alturas. Por omisión el tamaño de font de un navegador es de 16px */
+
+
+/* .box{
+  background-color: lightpink;
+  border:2px solid blue;
+  margin: 5px;
+  height: 200px;
+} */
+
+
+/* .wrapper{
+   font-size: 3em;
+} */
+
+/* 
+.px{
+   width: 200px;
+}  */
+
+/* 
+.vw{
+   width: 33vw;
+}  */
+
+/* 
+.em{
+   width: 10em;
+} */
+
+/* 
+.porcentaje{
+   width: 40%;
+}  */
+
+
+/*  ===PARTE IV ====  EMS y REMS===== */
+
+/* 
+html{
+   font-size: 16px;
+
+}
+
+.ems1{
+   font-size: 1em;
+} 
+
+
+.ems2{
+   font-size: 2em;
+} 
+
+
+
+.ems3{
+   font-size: 3em;
+} 
+
+
+
+.rems1_5{
+   font-size: 1.5rem;
+} */
+

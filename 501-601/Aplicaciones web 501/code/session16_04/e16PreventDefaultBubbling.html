@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 16 Ejercicio e16 de JS. Adaptado de Dynamic client-side scripting -MDN ttps://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <title>E16 Prevent default Bubbling Capture</title>
+    <style>
+      div {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  <!-- ======== PREVENT DEFAULT================ -->
+  <!--  Detiene la acción por defecto del evento -->
+<!--         
+    <form >
+      <div>
+        <label for="fname">Nombre: </label>
+        <input  id="fname" name = "nombre" type="text">
+      </div>
+      <div>
+        <label for="lname">Apellidos: </label>
+        <input id="lname" name = "apellidos" type="text">
+      </div>
+      <div>
+        <input id="submit" type="submit">
+      </div>
+    </form>
+    <p></p>
+   
+     <script>
+      const form = document.querySelector('form');
+      const fname = document.getElementById('fname');
+      const lname = document.getElementById('lname');
+      const para = document.querySelector('p'); 
+
+      /* === event object e === */
+      form.addEventListener('submit', e => {
+        if (fname.value === '' || lname.value === '') {
+        
+        // Por defecto un botón envía el formulario y recarga la página
+        // sin la línea siguiente el mensaje no permanece 
+         e.preventDefault();  
+        // si descomentamos la línea anterior se modifica 
+        // el comportamiento por defecto
+
+        para.textContent = '¡Necesitas introducir ambos datos!';
+        }
+      });
+  
+    </script> 
+    -->
+<!-- ============================================================= -->
+<!-- ==========  PROPIEDADES EXTRAS  objeto event =================-->
+ 
+  <!-- <label for="textBox">Presiona una tecla: </label>
+  <input id="textBox" type="text" />
+  <div id="output"></div>
+
+  <script>
+    const textBox = document.querySelector("#textBox");
+    const output = document.querySelector("#output");
+    textBox.addEventListener('keydown', (e) => output.textContent = `Presionaste la tecla: "${e.key}".`);
+  </script>  -->
+
+<!-- =========================================================== -->
+<!-- ========== EVENT BUBBLING =========== --> 
+ 
+  <div id="container">
+    <button>Click me!</button>
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate ducimus, libero ea quis exercitationem doloribus corrupti fuga ratione vel voluptatem atque impedit quasi veritatis repudiandae illum adipisci necessitatibus alias! Impedit!</p>
+  </div>
+  <p class="output"></p>
+  
+
+<script> 
+
+/* bubbling de hijo a -> padre  */
+/* Click en el botón (hijo) o en el párrafo pero el listener lo tiene el padre 
+    Por ello dice que se dió click en el DIV , !!PUES FINALMENTE SE DIO EN EL DIV¡¡
+*/
+
+    //const container = document.querySelector('#container');
+    //const button = document.querySelector('button'); 
+    //const output = document.querySelector('.output');
+
+   //function handleClick(e) {
+   //output.textContent += `You clicked on a ${e.currentTarget.tagName} element\n`;
+   //}
+  
+   //container.addEventListener('click', handleClick);
+
+
+/* bubbling  nieto -> padre -> abuelo */
+/* Listener al abuelo pero click en el nieto */
+
+  // document.body.addEventListener('click', handleClick); 
+  //button.addEventListener('click', handleClick);
+  
+  
+/* ================ CAPTURE ======================================
+/* ==EVENT Capture: true; ==> indice por cual empezar y después los otros*/
+// OJO Primero debemos comentar el listener del container de arriba para no duplicar
+
+  // button.addEventListener('click', handleClick );
+  // container.addEventListener('click', handleClick);
+  //document.body.addEventListener('click', handleClick);
+
+//  document.body.addEventListener('click', handleClick,{capture: true} );
+  // con la línea anterior se ejecuta primero el handler del body a
+  // aunque hayamos dado click en el botón
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Crear elementos con JS</title>
+</head>
+<body>
+   <h1>Crear elementos con JS</h1>
+   <input type="text" placeholder="original">
+   <button>clonar</button>
+
+   <div id="contenedor"></div>
+
+   <script>
+      // Seleccionar elementos
+      const boton = document.querySelector("button");
+      const inputOriginal = document.querySelector("input");
+      const contenedor = document.getElementById("contenedor");
+
+      // Escuchar el clic del botón
+      boton.addEventListener("click", () => {
+         // Crear un nuevo input
+         const nuevoInput = document.createElement("input");
+         nuevoInput.type = inputOriginal.type; // "text"
+         nuevoInput.placeholder = "input clonado";
+
+         // Opcional: salto de línea para que cada input esté en su propia línea
+         const br = document.createElement("br");
+
+         // Añadir al contenedor
+         contenedor.appendChild(nuevoInput);
+         contenedor.appendChild(br);
+      });
+   </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\bin\Debug\JuegoDeLaVidaConway.exe.config
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\bin\Debug\JuegoDeLaVidaConway.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\bin\Debug\JuegoDeLaVidaConway.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\obj\Debug\JuegoDeLaVidaConway.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\obj\Debug\JuegoDeLaVidaConway.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\obj\Debug\JuegoDeLaVidaConway.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\obj\Debug\JuegoDeLaVidaConway.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\JuegoDeLaVidaConway\obj\Debug\JuegoDeLaVidaConway.exe.config

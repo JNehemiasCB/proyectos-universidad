@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="pagina html realizada en la sesion 4">
+   <meta name="author" content="Jesus Nehemias Contreras Barrera">
+   <link rel="icon" href="../assets/images/favicon.ico">
+   <title>Formularios</title>
+</head>
+<body>
+<form action="/ruta/procesador.js" method="post">
+  <fieldset>
+    <!-- Campo para el nombre completo -->
+    <legend>Nombre Completo</legend>
+
+    <!-- Campo de entrada para el nombre -->
+    <label for="nombre">Nombre</label>
+    <!-- El campo de entrada es tipo texto -->
+    <input type="text" name="text">
+    
+    <div>
+      <!-- Campo de entrada para el apellido -->
+      <label for="apellido">Apellido</label>
+      <!-- El campo de entrada es tipo texto -->
+      <input type="text" name="text">
+    </div>
+  </fieldset>
+
+  <!-- Salto de línea, no se recomienda usar <p> para separar elementos de formulario, mejor usar CSS -->
+  <p></p>
+
+  <!-- Campo de texto de solo lectura (no puede ser modificado) -->
+  <label for="">Texto que no se puede modificar</label>
+  <!-- El atributo 'readonly' hace que el campo sea solo lectura -->
+  <input type="text" value="un texto que no se puede modificar, es de solo lectura" readonly>
+
+  <p></p>
+
+  <!-- Campo de texto deshabilitado (no interactuable) -->
+  <label for="">Texto deshabilitado</label>
+  <!-- El atributo 'disabled' hace que el campo no pueda ser editado ni seleccionado -->
+  <input type="text" value="otro texto que no se puede modificar" disabled>
+
+  <!-- El uso de <p> no es adecuado para separar elementos de formulario, se recomienda usar etiquetas de bloque con CSS -->
+  <p></p>
+
+  <!-- Campo de búsqueda, para permitir la búsqueda de texto -->
+  <label>Palabra a buscar:</label>
+  <input type="search" name="palabraAbuscar" value="">
+
+  <p></p>
+
+  <!-- Campo de entrada para teléfono, permite solo números y caracteres relacionados con el teléfono -->
+  <label>Introduce tu número de teléfono:</label>
+  <input type="tel" name="telefono" value="">
+
+  <p></p>
+
+  <!-- Campo de entrada para correo electrónico -->
+  <label>Introduce tu email:</label>
+  <input type="email" name="email" value="">
+
+  <p></p>
+
+  <!-- Campo de entrada para contraseña -->
+  <label>Introduce tu password:</label>
+  <input type="password" name="password" value="">
+
+  <p></p>
+
+  <!-- Campo de entrada para una URL -->
+  <label>Introduce la URL de tu página:</label>
+  <input type="url" name="urlDir" value="">
+
+  <p></p>
+
+  <!-- Campo de entrada para seleccionar una fecha -->
+  <label>Selecciona una fecha:</label>
+  <input type="date">
+
+  <p></p>
+
+  <!-- Campo de entrada para fecha y hora -->
+  <label>Introduce fecha y hora:</label>
+  <input type="datetime">
+
+  <p></p>
+
+  <!-- Campo de entrada para seleccionar una hora -->
+  <label>Selecciona una hora:</label>
+  <input type="time">
+
+  <p></p>
+
+  <!-- Campo de entrada para seleccionar fecha y hora local -->
+  <label>Selecciona una hora local:</label>
+  <input type="datetime-local">
+
+  <p></p>
+
+  <!-- Campo de entrada para seleccionar un color -->
+  <label>Selecciona un color:</label>
+  <input type="color">
+
+  <p></p>
+
+  <!-- Campo de entrada para seleccionar un número -->
+  <label>Selecciona un número:</label>
+  <input type="number">
+
+  <p></p>
+
+  <!-- Campo de entrada para seleccionar un rango numérico -->
+  <label>Selecciona un rango:</label>
+  <input type="range">
+
+  <p></p>
+
+  <!-- Campo de entrada para un número mínimo de 18 -->
+  <label>Introduce un número mayor a 17:</label>
+  <input type="number" min="18" value="18">
+
+  <p></p>
+
+  <!-- Campo de entrada para seleccionar un rango entre 10 y 100 -->
+  <label>Selecciona entre 10-100:</label>
+  <input type="range" name="rango" min="10" max="100" step="10" value="50">
+  <p></p>
+
+  <!-- Radio buttons
+   El name tiene que ser el mismo para todos
+   El atributo CHECKED es para que aparezca un o seleccionado por omision
+   El value se envia junto con el name al enviar el formulario
+  -->
+   <p>¿cual es tu genero?</p>
+   <input type="radio" name="genero" value="masculino" checked>
+   <label>Masculino</label>
+   <input type="radio" name="genero" value="femenino">
+   <label>Femenino</label>
+
+   <!-- CHECK BUTTONS son similares a los radio buttons pero aqui en lugar de un circulo es un a cuadrito y ademas difieren en que aqui si se puede seleccionar mas de uno -->
+    <p>Selecciona que dias tienes clases de app webs</p>
+    <input type="checkbox" name="classday" value="lunes">
+    <label>lunes</label>
+    <input type="checkbox" name="classday" value="martes" checked>
+    <label>martes</label>
+    <input type="checkbox" name="classday" value="miercoles">
+    <label>miercoles</label>
+    <input type="checkbox" name="classday" value="jueves" checked>
+    <label>jueves</label>
+    <input type="checkbox" name="classday" value="viernes">
+    <label>viernes</label>
+    <p></p>
+
+    <!-- SELECT OPTION: muestra un menu de opciones. permite agrupar por medio del elemento <optgroup>-->
+    <label>Selecciona tu mascota preferida</label>
+      <select name="mascota">
+         <option value="perro">Perro</option>
+         <option value="gato">Gato</option>   
+         <option value="pez">Pez</option>
+         <option value="cotorro">Cotorro</option>
+         <option value="delfin">Delfin</option>
+         <option value="pezdorado">Pezdorado</option>
+      </select>
+      <p></p>
+
+      <label>Selecciona tu mascota preferida</label>
+      <select name="mascota">
+         <optgroup label="mamiferos">
+          <option value="perro">Perro</option>
+          <option value="gato">Gato</option> 
+         </optgroup>
+         <optgroup label="peces">
+          <option value="pez">Pez</option>
+          <option value="pezdorado">Pezdorado</option>
+         </optgroup>
+         <optgroup label="avez">
+          <option value="cotorro">Cotorro</option>
+          <option value="canario">Canario</option>
+         </optgroup>
+      </select>
+      <p></p>
+       <!-- input type="file" permite seleccionar un archivo del equipo y "cargarlo" hacia el servidor -->
+         <input type="file" name="archivo">
+         <p></p>
+         <textarea name="comentarios" rows="8" cols="40"></textarea>
+         <p></p>
+
+         <!-- BOTONES
+         tipos de botones:
+         input type="button" ==> necesita js para realizar una accion
+         input type="submit" ==> este envia el formulario pero no se recarga 
+         etiqueta <button type="submit"> ==> envia el formulario y se recarga, puede contener texto, imagenes o html interno
+         etiqueta <button type="button"> ==> este requiere de js pero puede tener texto, imagen o html interno
+         etiqueta <button type="reset"> ==> resetea los campos del formmulario
+         -->
+
+         <label>input tipo boton</label>
+         <input type="button">
+         <p></p>
+         <label> input tipo submit</label>
+         <input type="submit">
+         <p></p>
+         <button type="button">boton tipo boton xDDD</button>
+         <p></p>
+         <button type="submit">boton tipo submit</button>
+         <p></p>
+         <button type="reset">boton tipo reset</button>
+</form>
+</body>
+</html>

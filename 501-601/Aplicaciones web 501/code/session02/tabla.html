@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="pagina html realizada en la sesion 2">
+   <meta name="author" content="Jesus Nehemias Contreras Barrera">
+   <link rel="icon" href="../assets/images/favicon.ico">
+   <title>Tablas</title>
+</head>
+<body>
+   <!-- Elementos de bloque
+Son los que ocupan todo el ancho disponible y generan un salto de líne antes y despúes
+Estructurales y semánticos
+<html>, <head>, <body>, <header>,<footer>
+<main>, <section>, <article>, <aside>, <nav>, 
+De organización y agrupación
+<div>, <p>, <hr>, <pre>, <blockquote>, <figure>, <figcaption>, <pre>,<adrees>
+Tablas
+<table>, <caption>, <thead>, <tr>, <th>, <tbody>, <td>, <tfoot>
+<tr>, <td> se consideran elementos de tabla, pero tienen un comportamiento mas “en línea que de bloque”)
+Media
+i<img>, <picture>, <figure>, <audio>, <video>
+Formularios
+<form>, <fieldset>, <legend>, <button>, <input>, <label>, <select>, <textarea>, 
+Listas
+<ul> (lista desordenada)
+<ol> (lista ordenada)
+<li> (elemento de lista)
+<dl> (lista de definiciones)
+<dt> (término de definición)
+<dd> (descripción de definición)
+
+Los elementos de bloque son los que, por defecto, ocupan todo el ancho disponible y empiezan en una nueva línea.
+
+Algunos Elementos de línea
+No provocan salto de línea y solo ocupan el ancho necesario del contenido):
+
+<a>, <abbr>, <b>, <br> , <cite>, <code>, <em>, <i>, <q>, <s>, <span>, <strong>, <sub>, <sup>, <time>, <u> -->
+
+   <!-- <h1 title="Ejemplo de tabla">Ejemplo de una tabla en html</h1>
+   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae fugiat sint ipsa, quae quo ea atque, doloribus amet nobis dolorum voluptatibus hic necessitatibus exercitationem pariatur rerum maiores dolorem. Atque, fuga.</p> -->
+
+   <style>
+      caption{background-color: yellow;}
+      th{background-color: aquamarine;}
+      td{background-color: lime;}
+      tfoot tr td{background-color: gray; color: white;}
+   </style>
+
+   <table>
+      <caption>Horario</caption>
+      <thead>
+         <tr>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>8:00-10:30</td>
+            <td>mate</td>
+            <td>quimica</td>
+            <td rowspan="4">compl</td>
+         </tr>
+         <tr>
+            <td>10:30-11:00</td>
+            <td>recreo</td>
+            <td>recreo</td>
+         </tr>
+         <tr>
+         <td>11:00-13:30</td>
+            <td>app web</td>
+            <td>redes</td>
+         </tr>
+         <tr>
+         <td>13:30-15:30</td>
+            <td>taller 1</td>
+            <td>taller 2</td>
+         </tr>
+      </tbody>
+      <tfoot>
+         <tr>
+            <td colspan="2">pie de tabla en 1 y 2</td>
+             <td colspan="2">col 3 y 4</td>
+         </tr>
+      </tfoot>
+   </table>
+</body>
+</html>

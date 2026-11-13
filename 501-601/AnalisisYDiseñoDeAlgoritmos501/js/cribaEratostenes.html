@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Números Primos en un Rango</title>
+</head>
+<body>
+   valor1: <input type="text" id="txtValor1" value="1">
+   valor2: <input type="text" id="txtValor2" value="30">
+   <button id="btnAceptar" onclick="criba()">Aceptar</button>
+   <div id="resultado" style="border: solid 2px; height: 300px; width: 400px; overflow-y: auto; padding: 10px;"></div>
+
+   <script>
+      function esPrimo(num) {
+         if (num < 2) return false;
+         if (num === 2) return true;
+         if (num % 2 === 0) return false;
+         for (let i = 3; i <= Math.sqrt(num); i += 2) {
+            if (num % i === 0) return false;
+         }
+         return true;
+      }
+
+      function criba() {
+         var v1 = parseInt(document.getElementById("txtValor1").value);
+         var v2 = parseInt(document.getElementById("txtValor2").value);
+         var divR = document.getElementById("resultado");
+
+         // Validación básica
+         if (isNaN(v1) || isNaN(v2)) {
+            divR.innerHTML = "Por favor, ingresa dos números válidos.";
+            return;
+         }
+
+         // Asegurarse de que v1 sea menor o igual que v2
+         if (v1 > v2) {
+            [v1, v2] = [v2, v1]; // Intercambiar valores
+         }
+
+         var primos = [];
+         for (let i = v1; i <= v2; i++) {
+            if (esPrimo(i)) {
+               primos.push(i);
+            }
+         }
+
+         if (primos.length === 0) {
+            divR.innerHTML = "No hay números primos en ese rango.";
+         } else {
+            divR.innerHTML = "<strong>Números primos encontrados:</strong><br>" + primos.join(", ");
+         }
+      }
+   </script>
+   
+</body>
+</html>

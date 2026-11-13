@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 17 Ejercicio e21 de JS. Adaptado de Dynamic client-side scripting -MDN ttps://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <title>OO JS class</title>
+  </head>
+  <body>
+    <div class="output"></div>
+  </body>
+
+<script>
+const output = document.querySelector('.output');
+let biografia;
+
+/* == ORIENTACIÓN A OBJETOS con PROTOTYPE  ===============  */
+
+// == PARTE I CREACIÓN DE UN prototipo PERSONA 
+// === En el constructor las propiedades y en el prototype los métodos
+
+// 1.- Definiendo solamente las propiedades dentro del constructor
+
+    function Persona(nombres, apellidos, edad, genero, intereses) {
+        this.nombreCompleto = {
+            'nombres': nombres,
+            'apellidos' : apellidos
+        };
+        this.edad = edad;
+        this.genero = genero;
+        this.intereses = intereses;
+    }
+
+
+// 2.- Definiendo los  métodos en el prototype 
+// 2.1.- Definiendo el método bio() en el prototipo
+
+    Persona.prototype.biografia = function() {
+    // construye la parte que será igual sin omportar género 
+    
+        let string = this.nombreCompleto.nombres + ' ' + this.nombreCompleto.apellidos + ' tiene ' + this.edad + ' años de edad. ';
+     
+    // Personaliza con "a él le gusta" o "a ella le gusta" según género.
+    // define la variable que contendrá lalpersonalización
+        
+        let pronoun;
+
+    // verifica el valor de genero y coloca el valor apropiado 
+
+        if(this.genero === 'masculino' || this.genero === 'Masculino' || this.genero === 'm' || this.genero === 'M') {
+            pronoun = 'A él le gusta ';
+            } else if(this.genero === 'femenino' || this.genero === 'Femenino' || this.genero === 'f' || this.genero === 'F') {
+            pronoun = 'A ella le gusta ';
+            } else {
+            pronoun = 'Ellos prefieren ';
+        }
+
+    // junta las dos partes
+        string += pronoun;
+
+    // estructura la segunda parte según número de intereses 1, 2 o 3 
+        if(this.intereses.length === 1) {
+        string += this.intereses[0] + '.';
+        } else if(this.intereses.length === 2) {
+        string += this.intereses[0] + ' y ' + this.intereses[1] + '.';
+        } else {
+        // Si hay más de dos intereses , se realiza un loop 
+        // para irlos agregando separados por una coma.
+
+            for(var i = 0; i < this.intereses.length; i++) {
+                if(i === this.intereses.length - 1) {
+                string += 'y ' + this.intereses[i] + '.';
+                } else {
+                string += this.intereses[i] + ', ';
+                }
+            }
+        }
+    
+       return string;
+    };
+
+
+// 2.2.- Definiendo el método saludo() en el prototipo
+        Persona.prototype.saludo = function() {
+            alert('¡Hola! me llamo ' + this.nombreCompleto.nombres );
+        };
+
+// 2.3.- Definiendo el método despedida() en el prototipo
+        Persona.prototype.despedida = function() {
+        alert(this.nombreCompleto.nombres + ' ha salido del edificio. ¡Bye por ahora!');
+        };
+
+// ======PARTE II =========================
+// 1.- Crear un objeto y mostrarlo en pantalla
+     let persona1 = new Persona('Juan', 'Pérez', 32, 'masculino', ['tocar musica', 'practicar karate', 'practicar la natación']);
+    
+    let para = document.createElement('p');
+    para.textContent= persona1.biografia();
+    output.appendChild(para);
+
+//===PARTE III VISUALIZAR EN CONSOLA==============   
+// Visualizar el objeto
+    /*  
+        persona1.valueOf()
+        persona1.
+    */
+
+    /* Mostrar los métodos del prototipo */
+    /*
+    Persona.prototype       // muestra los metodos que contiene
+    persona1.__proto__       // <== con doble subrayado
+        Muestra:  
+            constructor Persona(nombres, apellidos, edad, genero, intereses)
+            Prototype: Object
+    */
+    
+    
+    // ==== PARTE IV =crear una nueva instancia de objeto  con los mismos datos (clonar?)
+    /*
+        let persona2 = Object.create(persona1);
+        persona2.saludo();
+
+        let para2 = document.createElement('p');
+        para2.textContent= persona2.biografia();
+        output.appendChild(para2);
+    */
+    
+    /*Se puede comprobar introduciendo en la consola: */
+        //  persona2.__proto__
+
+// ======= PARTE V Orientación a Objetos  con PROTOTYPE  ===
+// Definiendo nuevos prototipos usando la HERENCIA
+// 5.- Creación de un prototipo profesor con una propiedad más: materia, que solamente tendrá Profesor y los demás los heredará de Persona
+
+//  5.1 Para heredar las propiedades del prototipo Profesor() se utilizará call() 
+// call() permite llamar a una función definida en otro lugar
+
+/*
+    function Profesor(nombres, apellidos, edad, genero, intereses, materia) {
+        Persona.call(this, nombres, apellidos, edad, genero, intereses);
+        this.materia = materia; // para indicar la propiedad que tendrá Profesor pero no Persona
+    }
+*/
+
+// 5.3 Para heredar los métodos del prototipo Profesor
+/*
+    Profesor.prototype = Object.create(Persona.prototype);
+    Profesor.prototype.constructor = Profesor;
+*/
+
+// 5.4 Creación de un método en Profesor() que sobreescribe uno existente en Persona()
+
+/*
+    Profesor.prototype.saludo = function() {
+        let saludo;
+        let prefijo;
+
+        if (this.genero === 'masculino' || this.genero === 'Masculino' || this.genero === 'm' || this.  genero === 'M') {
+            prefijo = 'el profesor';
+        } else if (this.genero === 'femenino' || this.genero === 'Femenino' || this.genero === 'f' || this.genero === 'F') {
+            prefijo = 'la profesora ';
+        } else {
+            prefijo = 'el profesor ';
+    }
+    // En vez de usar alert() para mostrar la cadena la regresamos
+    return ('¡ Hola !. Soy ' + prefijo + ' ' + this.nombreCompleto.nombres + ' ' + this.nombreCompleto.apellidos +', y enseño ' + this.materia + '.')
+    };
+*/
+
+// 5.5 =====Creación de un objeto y  visualización en pantalla =====
+/*
+    let profesor1 = new Profesor('José María', 'Hernández', 25, 'masculino', ['tocar musica', 'practicar karate', 'practicar la natación'], "Programación");
+
+    let para2 = document.createElement('p');
+    para2.textContent= profesor1.biografia();
+    output.appendChild(para2);
+
+    let para3 = document.createElement('p');
+    para3.textContent= profesor1.saludo();
+    output.appendChild(para3);
+*/
+
+// ==================================================
+// 6 Creación de un prototipo Estudiante() 
+// 6.1 Heredando propiedades y métodos
+/*
+    function Estudiante(nombres, apellidos, edad, genero, intereses) {
+          Persona.call(this, nombres, apellidos, edad, genero, intereses);
+        }
+
+      Estudiante.prototype = Object.create(Persona.prototype);
+      Estudiante.prototype.constructor = Estudiante;
+*/
+// 6.2 Sobreescribiendo saludo()
+
+/*
+      Estudiante.prototype.saludo = function() {
+        return('Me llamo ' + this.nombreCompleto.nombres + ' para servir a ustedes' );
+      };
+*/
+
+//  6.3 ==== Creando objetos estudiante yvisualización en pantalla =====
+
+/*
+      let estudiante1 = new Estudiante('Armando', 'Fiestas', 33, 'masculino', ['rock pesado', 'bailar', 'nadar', 'Programar computadoras']);
+
+    let para4 = document.createElement('p');
+    para4.textContent= estudiante1.biografia();
+    output.appendChild(para4);
+
+    let para5 = document.createElement('p');
+    para5.textContent= estudiante1.saludo();
+    output.appendChild(para5);
+*/
+
+//============  ECMAScript 2015 CLASS =====================
+//============== ORIENTACIÓN A OBJETOS =====================
+//== Reescribiendo la clase Persona()
+/*
+class Persona{
+        constructor(nombres, apellidos, edad, genero, intereses) {
+        this.nombreCompleto = {
+            'nombres': nombres,
+            'apellidos' : apellidos
+        };
+
+        this.edad = edad;
+        this.genero = genero;
+        this.intereses = intereses;
+        }
+
+        biografia = function() {
+            alert (this.nombreCompleto.nombres+ ' ' + this.nombreCompleto.apellidos + ', edad: ' + this.edad + ' años' + ', genero: ' + this.genero + ',  intereses: ' + this.intereses);
+        }
+
+        saludo = function() {
+            alert('¡Hola! me llamo ' + this.nombreCompleto.nombres + '.');
+        };
+
+        despedida = function() {
+            alert(this.nombreCompleto.nombres + ' ha salido del edificio. ¡Bye por ahora!');
+        };
+    }
+*/
+
+// ===== Creando objetos de la clase Persona()  =============
+
+/*
+    let hanSolo = new Persona('Han', 'Solo', 25, 'masculino', ['contrabandear']);
+    hanSolo.saludo();
+    hanSolo.biografia();
+    hanSolo.despedida();
+
+    let leia = new Persona('Leia', 'Organa', 19, 'femenino', ['Gobernar']);
+    leia.saludo();
+    leia.biografia();
+    leia.despedida();
+*/
+
+// Heredando con sintaxis de class ============================
+/*
+    class Profesor extends Persona {
+        constructor(nombres, apellidos, edad, genero, intereses, materias, grado) {
+            super(nombres, apellidos, edad, genero, intereses);
+
+        // materias y grado son específicos de profesor
+            this.materias = materias;
+            this.grado = grado;
+        }
+    }
+*/
+// Prueba creando objetos de tipo Profesor
+/*
+    let chiflado = new Profesor('Profesor', 'Chiflado', 40, 'masculino', ['Hacer reir'], 'Bromas y chistes', 3);
+    chiflado.saludo();
+    chiflado.biografia();
+    chiflado.despedida();
+
+    let snape = new Profesor('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+    snape.saludo();
+    snape.biografia();
+    snape.despedida(); 
+*/
+
+// Uso de Getters y Setters ===(forzoso usar guión bajo)===
+/*
+class Profesor extends Persona {
+     constructor(nombres, apellidos, edad, genero, intereses, materias, grado) {
+        super(nombres, apellidos, edad, genero, intereses);
+        
+    // materias y grado son específicos de profesor
+    this.materias = materias;
+    this.grado = grado;
+    }
+
+    get materias() {
+        return this._materias;
+    }
+
+    set materias(nuevoValor) {
+        this._materias = nuevoValor;
+    }
+
+    materiasGrado = function(){
+        alert( 'Imparto: '+  this.materias+ '  en el '+ this.grado + ' grado.')
+    }
+}
+*/
+// Ejemplos
+/*
+    let snape = new Profesor('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+    snape.saludo();
+    snape.biografia();
+    snape.despedida(); 
+
+// cambiar valor de materias
+    snape.materias= 'Hechisos'; // establece materias a 'Hechisos'
+
+// Mostrar el nuevo valor
+    snape.materiasGrado();
+*/
+</script>
+
+</html>

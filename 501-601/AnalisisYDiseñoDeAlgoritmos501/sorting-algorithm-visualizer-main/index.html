@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Sort!</title>
+    <link rel="icon" href="/images/algorithm-icon.svg" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="info-container">
+        <h1 class="title">Sorting Visualizer</h1>
+        <div class="personal-info">
+          <span class="signature">Designed & Coded by Zihan in California</span>
+          <a href="https://github.com/zhao-zihan/sorting-algorithm-visualizer"
+            ><img
+              class="github-icon"
+              src="images/github-fill.svg"
+              alt="Zihan's github icon"
+          /></a>
+        </div>
+      </div>
+      <div class="algos-container">
+        <select class="algos" id="algos-selections">
+          <option class="algo default" value="default">
+            -- Select Here --
+          </option>
+          <option class="algo bubble" value="bubble">Bubble Sort</option>
+          <option class="algo selection" value="selection">
+            Selection Sort
+          </option>
+          <option class="algo insertion" value="insertion">
+            Insertion Sort
+          </option>
+          <option class="algo merge" value="merge">Merge Sort</option>
+          <option class="algo quick" value="quick">Quick Sort</option>
+          <option class="algo heap" value="heap">Heap Sort</option>
+        </select>
+      </div>
+
+      <div class="slider-container">
+        <div class="slider-sub-container speed-container">
+          <span class="slider-text speed-text">Sorting Speed</span>
+          <div class="wrapper">
+            <input
+              type="range"
+              id="speed-slider"
+              class="slider"
+              min="1"
+              max="5"
+              value="3"
+              step="1"
+            />
+            <span class="speed-value">5</span>
+          </div>
+        </div>
+        <div class="slider-sub-container size-container">
+          <span class="slider-text size-text">Array Size</span>
+          <div class="wrapper">
+            <input
+              type="range"
+              id="size-slider"
+              class="slider"
+              min="10"
+              max="99"
+              value="50"
+              step="1"
+            />
+            <span class="size-value">100</span>
+          </div>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button class="new-btn">
+          New Arrays
+          <img class="cycle-icon" src="images/cycle.svg" alt="Cycle icon" />
+        </button>
+        <button class="sort-btn">Let's Sort!</button>
+        <button class="stop-btn">
+          <img class="stop-icon" src="images/stop.svg" alt="Stop sign">
+        </button>
+      </div>
+    </nav>
+    <main class="visualizer-container">
+      <div class="complexity-colors">
+        <div class="complexity">
+          <div class="time-complexity">
+            <h2 class="complexity-title">TIME COMPLEXITY</h2>
+            <div class="time-worst">
+              Worst Case:
+              <span class="time-worst-text"></span>
+            </div>
+            <div class="time-average">
+              Average Case:
+              <span class="time-average-text"></span>
+            </div>
+            <div class="time-best">
+              Best Case:
+              <span class="time-best-text"></span>
+            </div>
+          </div>
+          <div class="space-complexity">
+            <h2 class="complexity-title">SPACE COMPLEXITY</h2>
+            <div class="space-worst">
+              Worst Case: <span class="space-worst-text"></span>
+            </div>
+          </div>
+        </div>
+        <div class="colors-explained">
+          <h2 class="colors-title">
+            <span class="colors-letter letter-c">c</span>
+            <span class="colors-letter letter-o--1">o</span>
+            <span class="colors-letter letter-l">l</span>
+            <span class="colors-letter letter-o--2">o</span>
+            <span class="colors-letter letter-r">r</span>
+            <span class="colors-letter letter-s">s</span>
+            Explained
+          </h2>
+          <div class="explanation bubble-colors hidden">
+            <ul class="colors-list">
+              <li>
+                <div class="color-box color-red"></div>
+                traversing pointer
+              </li>
+              <li>
+                <div class="color-box color-violet"></div>
+                swap required
+              </li>
+              <li>
+                <div class="color-box color-green"></div>
+                swap completed
+              </li>
+              <li>
+                <div class="color-box color-blue"></div>
+                node sorted
+              </li>
+            </ul>
+          </div>
+          <div class="explanation selection-colors hidden">
+            <ul class="colors-list">
+              <li>
+                <div class="color-box color-yellow"></div>
+                min value position
+              </li>
+              <li>
+                <div class="color-box color-red"></div>
+                traversing pointer
+              </li>
+              <li>
+                <div class="color-box color-cyan"></div>
+                current min value
+              </li>
+              <li>
+                <div class="color-box color-violet"></div>
+                swap required
+              </li>
+              <li>
+                <div class="color-box color-green"></div>
+                swap completed
+              </li>
+              <li>
+                <div class="color-box color-blue"></div>
+                node sorted
+              </li>
+            </ul>
+          </div>
+          <div class="explanation insertion-colors hidden">
+            <ul class="colors-list">
+              <li>
+                <div class="color-box color-red"></div>
+                insertion value
+              </li>
+              <li>
+                <div class="color-box color-yellow"></div>
+                correct insertion position
+              </li>
+              <li>
+                <div class="color-box color-blue"></div>
+                node sorted
+              </li>
+            </ul>
+          </div>
+          <div class="explanation merge-colors hidden">
+            <ul class="colors-list">
+              <li>
+                <div class="color-box color-yellow"></div>
+                partition point
+              </li>
+              <li>
+                <div class="color-box color-red"></div>
+                nodes being merged
+              </li>
+              <li>
+                <div class="color-box color-blue"></div>
+                merge completed (sorted)
+              </li>
+            </ul>
+          </div>
+          <div class="explanation quick-colors hidden">
+            <ul class="colors-list">
+              <li>
+                <div class="color-box color-yellow"></div>
+                pivot
+              </li>
+              <li>
+                <div class="color-box color-cyan"></div>
+                left pointer
+              </li>
+              <li>
+                <div class="color-box color-red"></div>
+                right pointer
+              </li>
+              <li>
+                <div class="color-box color-violet"></div>
+                swap required
+              </li>
+              <li>
+                <div class="color-box color-green"></div>
+                swap completed
+              </li>
+              <li>
+                <div class="color-box color-pink"></div>
+                correct position for pivot
+              </li>
+              <li>
+                <div class="color-box color-blue"></div>
+                node sorted
+              </li>
+            </ul>
+          </div>
+          <div class="explanation heap-colors hidden">
+            <ul class="colors-list">
+              <li>
+                <div class="color-box color-yellow"></div>
+                parent node
+              </li>
+              <li>
+                <div class="color-box color-cyan"></div>
+                left child
+              </li>
+              <li>
+                <div class="color-box color-red"></div>
+                right child
+              </li>
+              <li>
+                <div class="color-box color-violet"></div>
+                swap required
+              </li>
+              <li>
+                <div class="color-box color-green"></div>
+                swap completed
+              </li>
+              <li>
+                <div class="color-box color-blue"></div>
+                node sorted
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="arrays-container"></div>
+      <div class="code-trace">
+        <h2 class="trace-title">code trace</h2>
+        <div class="tracer bubble-trace hidden">
+          <p class="bubble-for-loop">for each unsorted element i</p>
+          <p class="bubble-if-comparison">
+            &nbsp;&nbsp;&nbsp;&nbsp;if i > rightNeighbor
+          </p>
+          <p class="bubble-swap">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap(i,
+            rightNeighbor)
+          </p>
+        </div>
+        <div class="tracer selection-trace hidden">
+          <p class="selection-set-position">
+            set i = current position for min value
+          </p>
+          <p class="selection-for-loop">
+            &nbsp;&nbsp;&nbsp;&nbsp;for each unsorted element j
+          </p>
+          <p class="selection-if-comparison">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if j < minimum
+          </p>
+          <p class="selection-set-minimum">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mark
+            j as new minimum
+          </p>
+          <p class="selection-swap">swap(i, j), i++</p>
+        </div>
+        <div class="tracer insertion-trace hidden">
+          <p class="insertion-for-loop-unsorted">for each unsorted element i</p>
+          <p class="insertion-for-loop-sorted">
+            &nbsp;&nbsp;&nbsp;&nbsp;for j = previous sorted element
+          </p>
+          <p class="insertion-if-comparison">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if i > j
+          </p>
+          <p class="insertion-move">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;move
+            j one step to the right
+          </p>
+          <p class="insertion-insert">insert i</p>
+        </div>
+        <div class="tracer merge-trace hidden">
+          <p class="merge-partition">
+            split elements into partitions by mid point
+          </p>
+          <p class="merge-merge">recursively merge adjacent partitions</p>
+          <p class="merge-for-loop">
+            &nbsp;&nbsp;&nbsp;&nbsp;for leftPartitionElement and
+            rightPartitionElement
+          </p>
+          <p class="merge-if-comparison">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+            (leftPartitionElement <= rightPartitionElement)
+          </p>
+          <p class="merge-merge-left">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;merge
+            leftPartitionElement
+          </p>
+          <p class="merge-merge-right">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else: merge
+            rightPartitionElement
+          </p>
+          <p class="merge-copy-back">
+            copy merged elements back to original array
+          </p>
+        </div>
+        <div class="tracer quick-trace hidden">
+          <p class="quick-for-loop">for each unsorted partition</p>
+          <p class="quick-set-pivot">&nbsp;&nbsp;&nbsp;&nbsp;set first element as pivot</p>
+          <p class="quick-while-loop">
+            &nbsp;&nbsp;&nbsp;&nbsp;while (leftPointer < rightPointer)
+          </p>
+          <p class="quick-left-pointer">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (leftElement <= pivot) </br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;leftPointer++
+          </p>
+          <p class="quick-right-pointer">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (rightElement > pivot) </br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightPointer--;
+          </p>
+          <p class="quick-swap-pointer">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap(leftElement, rightElement)
+          </p>
+          <p class="quick-swap-pivot">
+            &nbsp;&nbsp;&nbsp;&nbsp;swap(pivot, rightElement)
+          </p>
+        </div>
+        <div class="tracer heap-trace hidden">
+          <p class="heap-heapify-for-loop">for each none-leaf element</p>
+          <p class="heap-max-heap">
+            &nbsp;&nbsp;&nbsp;&nbsp;heapify recursively to create max heap
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;heapify(arraySize, element)
+          </p>
+          <p class="heap-largest-for-loop">
+            &nbsp;&nbsp;&nbsp;&nbsp;for each element in max heap
+          </p>
+          <p class="heap-swap-largest">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap(firstElement, tailElement)
+          </p>
+          <p class="heap-heapify-largest">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heapify(arraySize, 0)
+          </p>
+          <p></p>
+
+          <p class="heap-heapify">heapify(arraySize, parentNode)</p>
+          <p class="heap-check-left">
+            &nbsp;&nbsp;&nbsp;&nbsp;if (leftChild > parentNode) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;largestNode = leftChild
+          </p>
+          <p class="heap-check-right">
+            &nbsp;&nbsp;&nbsp;&nbsp;if (rightChild > parentNode) <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;largestNode = rightChild
+          </p>
+          <p class="heap-swap-parent">
+            &nbsp;&nbsp;&nbsp;&nbsp;swap(parentNode, largestNode)
+          </p>
+          <p class="heap-heapify-recursively">
+            &nbsp;&nbsp;&nbsp;&nbsp;heapify(arraySize, largestNode)
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/bubble.js"></script>
+    <script src="scripts/selection.js"></script>
+    <script src="scripts/insertion.js"></script>
+    <script src="scripts/merge.js"></script>
+    <script src="scripts/quick.js"></script>
+    <script src="scripts/heap.js"></script>
+  </body>
+</html>

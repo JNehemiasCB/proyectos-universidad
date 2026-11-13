@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="pagina html realizada en la sesion 4">
+   <meta name="author" content="Jesus Nehemias Contreras Barrera">
+   <link rel="icon" href="../assets/images/favicon.ico">
+   <title>Enlaces</title>
+</head>
+<body>
+   <h2><a href="top"></a>inicio</h2>
+   <a href="https://jornada.com.mx" target="_self">periodico la jornada</a>
+   <a href="https://google.com">google</a>
+   <a href="http://localhost:5500/session03/media.html">session 03</a>
+<br>
+
+<p> El elemento <code> &lt;a></code> también se puede usar con otros protocolos como por ejemplo el protocolo mailto para <a href="mailto: rpgaleana@msn.com"> enviar un correo al administrador</a> 
+   </p> 
+<!--   RUTAS RELATIVAS: No incluyen el protocolo ni el dominio y en el caso de fragmentos de URL solo incluyen un signo # como marcador --> 
+   
+<!-- Ejemplos de rutas relativas a la carpeta actual: 
+<a href="about.html">Acerca de</a>  <== el archivo “about.html" está en la misma carpeta del archivo actual 
+  
+<a href="./about.html">Acerca de</a>  <== el archivo "about.html" está en la raíz del proyecto actual. 
+  
+<a href="../index.html">Home</a> <== el archivo index.html esta en una carpeta "arriba" del archivo actual 
+<a href="news/index.html">Noticias</a> el archivo index.html esta dentro de una subcarpeta "news" en la carpeta del archivo actual. 
+  
+Si ponemos en el <head>  <base href=http://localhost:8080/>; ahora todas las rutas son relativas a esta raíz o base. 
+  -->
+<!-- También se puede usar el elemento <a>  para descargar imagenes --> 
+   
+<p> Descarga la imagen de una <a href="/assets/images/bee-300x200.jpg" download >abeja</a> con el mismo nombre de archivo 
+   </p> 
+   <p> Descarga la imagen de una  <a href="/assets/images/bee-300x200.jpg" download="abejita.jpg" >abeja</a> con otro nombre de archivo 
+   </p> 
+   <!-- 
+Los marcadores, anclas o anchors permiten ir a una parte específica de una página. 
+Se utiliza el símbolo # 
+1)              colocar un id a la sección : <h1 id="cap1">Capítulo 1</h1> 
+2)              En la navegación colocar el link respetivo: <a href="#cap1">Capítulo 1</a> 
+Para regresar arriba generalmente se usan: id=”top” y <a href="#top">arriba</a></p> 
+Por lo tanto ahora sería: 
+1)              MARCADO 
+                  <h1 id="top">Hola mundo </h1> 
+<h1 id="cap1">Capítulo 1</h1>  id de sección 
+<h1 id="cap2">Capítulo 2</h1> 
+2)              ENLACES DE REFERENCIA 
+<p><a href="#top">arriba</a></p>  enlace para subir desde la misma página hasta id=”top” 
+<a href="/#cap1">Capítulo 1</a> 
+<a href="/#cap2">Capítulo 2</a> 
+  
+Si se hace referencia a un doc de una página distinta hay que indicar la ruta correcta : 
+<a href=”/news/ultimas/#top">Hola mundo con prepros .</h1> 
+<a href="/news/ultimas/#cap1">Capítulo 1</a> 
+<a href="/news/ultimas/#cap2">Capítulo 2</a> 
+ --> 
+
+ <h2>titulo del documento</h2>
+ <p>ir al <a href="#cap2">capitulo 2</a></p>
+<h4 id="cap1">capitulo 1</h4>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, modi aspernatur aut vel distinctio veritatis molestias necessitatibus a unde corporis eaque ipsum alias magni quidem iste veniam eveniet impedit maxime!</p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam culpa perspiciatis cupiditate veniam soluta minima quis sed, alias cum rem iste obcaecati, totam ipsa similique unde quo tenetur quasi commodi!</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloribus id animi fuga, inventore incidunt officiis, quod alias sunt necessitatibus aut tempore quia illum ullam, sint et reprehenderit illo mollitia?</p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt rem, recusandae assumenda ea modi numquam laboriosam exercitationem sint non facere culpa ex fuga inventore voluptatum saepe aspernatur corrupti. Amet, modi.</p>
+
+<p>ir a <a href="#cap1">capitulo 1</a></p>
+<h4 id="cap2">capitulo 2</h4>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, modi aspernatur aut vel distinctio veritatis molestias necessitatibus a unde corporis eaque ipsum alias magni quidem iste veniam eveniet impedit maxime!</p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam culpa perspiciatis cupiditate veniam soluta minima quis sed, alias cum rem iste obcaecati, totam ipsa similique unde quo tenetur quasi commodi!</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea doloribus id animi fuga, inventore incidunt officiis, quod alias sunt necessitatibus aut tempore quia illum ullam, sint et reprehenderit illo mollitia?</p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt rem, recusandae assumenda ea modi numquam laboriosam exercitationem sint non facere culpa ex fuga inventore voluptatum saepe aspernatur corrupti. Amet, modi.</p>
+<a href="#top">inicio</a>
+</body>
+</html>

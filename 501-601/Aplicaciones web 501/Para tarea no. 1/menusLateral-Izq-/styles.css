@@ -1,0 +1,144 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color:chocolate;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.logo img {
+    height: 50px;
+    margin:0 35px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.derecha{
+    margin-left: auto;
+}
+
+.dropdown-content {
+    display: none;           
+    position: absolute;
+    background-color: chocolate;
+    min-width: 160px;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+} 
+
+.derecha .dropdown-content {
+    left: auto;
+    right: -20px;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content li a {
+    display: block;
+    color: black;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: chocolate;
+}
+
+.dropdown-content li a:hover {
+    background-color: grey;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+} 
+
+ .account img {
+    height: 42px;
+    width: 42px;
+} 
+
+
+/* Sidebar Styles */
+.sidebar {
+    width: 180px; 
+    background-color: #2c3e50;
+    overflow-y: auto; 
+    flex-shrink: 0; 
+}
+
+.sidebar-header {
+    color: #ecf0f1;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.sidebar-menu li a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ecf0f1;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #435f7b;
+    color: #ffffff;
+}
+
+.sidebar-dropdown .sidebar-dropdown-content {
+    display: none;
+    background-color: #688aad;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-dropdown:hover .sidebar-dropdown-content {
+    display: block;
+}
+
+.sidebar-dropdown-content li a {
+    padding: 12px 20px 12px 40px;
+    font-size: 16px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f4f9;
+    overflow-y: auto;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+}

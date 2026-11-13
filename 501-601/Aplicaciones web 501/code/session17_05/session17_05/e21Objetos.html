@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 17 Ejercicio e19 de JS." >
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+
+    <title>Object-oriented JS</title>
+  </head>
+
+  <body>
+    <p></p>
+
+  </body>
+
+  <script>
+  /* ================OBJETOS =========================
+  Un objeto es una colección de datos y funciones relacionados encapsulados entre llaves y a los cuales se denominan propiedades y métodos cuando están dentro de objetos
+  */
+  // ======== OBJETOS LITERALES (Definidos manualmente)===============
+  // Construcción, declaración o definición del objeto Persona
+  //  sintáxis:  nombreObjeto{ nombre_Propiedad: valor_Propiedad, ...}
+
+let persona = {             
+  nombre : {               //propiedad compuesta (objeto dentro de objeto)
+    dePila: 'Beatriz',     // las propiedades tipo String van entre comillas simples o dobles
+    apellido: 'Marín'
+  },
+  edad: 58,               // las propiedades tipo Numbre no van entre comillas
+  intereses: ['música', 'gimnacia'],
+  biografia: function () {
+    // this se refiere al objeto donde se encuentra = objeto actual
+    alert(this.nombre.dePila + ' ' + this.nombre.apellido + ' tiene ' + this.edad + ' años. Le gusta la ' + this.intereses[0] + ' y la ' + this.intereses[1] + '.');
+  },
+  saludo: function() {
+    alert('¡Hola ! , mi nombre es '+ this.nombre[0] + '. ');
+    
+  }
+};
+
+/* Notación de punto para acceder a las propiedades de un objeto*/
+// Probar desde consola 
+      // persona.nombre.dePila;
+      // persona.nombre.apellido;
+      // persona.edad;
+      // persona.intereses[1];
+      // persona.biografia();
+      // persona.saludo();
+
+/* Notación de corchetes para acceder a las propiedades
+// Probar desde consola */
+    // persona['edad'];
+    // persona['nombre']['dePila'];
+
+/* Actualizar miembros y probar desde consola
+    persona.nombre.dePila = "Ricardo";
+    persona['nombre']['apellido'] = 'Peña';
+    persona.edad = 65;
+    persona.genero='masculino';
+    
+ */
+
+ /* Crear nuevo miembro (puede ser propiedad o método)*/
+ 
+    // persona['colorOjos'] = 'café claro';
+    // persona.profesion = 'Ingeniero';
+    // persona.despedida = function() { alert("¡Adiós a todos!"); }
+
+    // let estatura= '1.68 m' ;
+    // persona['estatura']= estatura;
+
+/* Probar desde consola */
+  // persona.colorOjos;
+  // persona.profesion;
+  // persona.despedida();
+  // persona.estatura;
+
+ </script>
+</html>

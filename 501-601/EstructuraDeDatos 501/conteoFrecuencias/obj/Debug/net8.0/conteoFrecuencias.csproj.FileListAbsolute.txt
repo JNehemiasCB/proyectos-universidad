@@ -1,0 +1,14 @@
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\bin\Debug\net8.0\conteoFrecuencias.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\bin\Debug\net8.0\conteoFrecuencias.deps.json
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\bin\Debug\net8.0\conteoFrecuencias.runtimeconfig.json
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\bin\Debug\net8.0\conteoFrecuencias.dll
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\bin\Debug\net8.0\conteoFrecuencias.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\conteoFrecuencias.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\conteoFrecuencias.AssemblyInfoInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\conteoFrecuencias.AssemblyInfo.cs
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\conteoFrecuencias.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\conteoFrecuencias.dll
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\refint\conteoFrecuencias.dll
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\conteoFrecuencias.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\conteoFrecuencias.genruntimeconfig.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\conteoFrecuencias\obj\Debug\net8.0\ref\conteoFrecuencias.dll

@@ -1,0 +1,16 @@
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\bin\Debug\net8.0-windows\WFVisorIMGWikipedia.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\bin\Debug\net8.0-windows\WFVisorIMGWikipedia.deps.json
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\bin\Debug\net8.0-windows\WFVisorIMGWikipedia.runtimeconfig.json
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\bin\Debug\net8.0-windows\WFVisorIMGWikipedia.dll
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\bin\Debug\net8.0-windows\WFVisorIMGWikipedia.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.FrmVisor.resources
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.csproj.GenerateResource.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.AssemblyInfoInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.AssemblyInfo.cs
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.dll
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\refint\WFVisorIMGWikipedia.dll
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\WFVisorIMGWikipedia.genruntimeconfig.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\WFVisorIMGWikipedia\obj\Debug\net8.0-windows\ref\WFVisorIMGWikipedia.dll

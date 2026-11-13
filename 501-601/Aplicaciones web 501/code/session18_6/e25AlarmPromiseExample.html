@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 18 Ejercicio 25 de JS. Adaptado de Dynamic client-side scripting -MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <title>Alarm with Promise </title>
+</head>
+<body>
+    <label> Name:</label>
+    <input id="name" type="text"></br></br>
+    <label> Delay:</label>
+    <input id="delay" type="number"></br></br>
+    <button id="set-alarm">Set alarm</button></br></br>
+    <div id="output"></div>
+</body>
+<script>
+
+// ===== PROMESA  (PROMISE) ==============================
+// Una promesa es un contenedor que guarda el resultado de algo que está en proceso.
+// Puede completarse con éxito o fallar.
+// Es una forma moderna de manejar operaciones asíncronas, como: solicitudes a servidores (fetch)
+// temporizadores (setTimeout), lectura de archivos, acceso a bases de datos, animaciones, operaciones pesadas que tardan
+// Tiene 3 estados : pending, fulfilled o rejected.
+
+//=========EJEMPLO DE ALARMA , SIN USAR promise=========== */
+/* sintáxis de la función setTimeout():
+        setTimeout(){ callbackFunction, delayMilisegs}
+*/
+
+
+    // const output = document.querySelector('#output');
+    // const button = document.querySelector('#set-alarm');
+
+    // function setAlarm() {
+    //     setTimeout(() => {
+    //         output.textContent = 'Despierta!';
+    //     }, 1000);
+    // }
+
+    // button.addEventListener('click', setAlarm);
+
+
+/* ==== ALARMA personalizada usando Promise ======
+El constructor de una promesa new Promise(funcion) toma una función como argumento.
+En el ejemplo siguiente alarm() regresará una Promise
+*/
+
+
+    // const name = document.querySelector('#name');
+    // const delay = document.querySelector('#delay');
+    // const button = document.querySelector('#set-alarm');
+    // const output = document.querySelector('#output');
+
+    // function alarm(person, delay) {
+    //     return new Promise(
+    //         (resolve, reject) => {
+    //             if (delay < 0) {
+    //             throw new Error('El retardo de la alarma no puede ser negativo');
+    //             }
+    //             setTimeout(() => {
+    //             resolve(`¡ Despierta !, ${person}!`);
+    //             }, delay);
+    //         }
+    //     );
+    // }
+
+    // button.addEventListener('click', () => {
+    //     alarm(name.value, delay.value*1000)
+    //         .then((message) => output.textContent = message)
+    //         .catch((error) => output.textContent = `No se pudo establecer la alarma: ${error}`);
+    //     }
+    // );
+
+
+/* ===USANDO ASYNC Y AWAIT CON alarm() ===================
+Debido a que alarm() regresa una Promise, podemos realizar
+todo lo que se puede hacer con una Promise
+*/
+
+    const name = document.querySelector('#name');
+    const delay = document.querySelector('#delay');
+    const button = document.querySelector('#set-alarm');
+    const output = document.querySelector('#output');
+
+    function alarm(person, delay) {
+        // Promise solo puede construirse con New en funciones que no las soportan por omisión
+        // Su sintáxis es: new Promise(executor),
+        // donde xecutor son dos funciones una para el objeto resolve y otra para el objeto reject
+
+        return new Promise((resolve, reject) => {
+            if (delay < 0) {
+            throw new Error('El retardo de la alarma no puede ser negativo');
+            }
+        setTimeout(() => {
+            resolve(`Despierta, ${person}!`);
+            }, delay);
+        });
+    }
+
+    button.addEventListener('click', async () => {
+        try {
+        const message = await alarm(name.value, delay.value*1000);
+        output.textContent = message;
+        }
+        catch (error) {
+        output.textContent = `No se pudo establecer la alarma: ${error}`;
+        }
+    });
+
+
+</script>
+
+</html>

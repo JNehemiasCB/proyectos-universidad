@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sumaVectores", "sumaVectores.csproj", "{2D733434-7712-4BCE-9CFA-2FD3484BA1DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D733434-7712-4BCE-9CFA-2FD3484BA1DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D733434-7712-4BCE-9CFA-2FD3484BA1DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D733434-7712-4BCE-9CFA-2FD3484BA1DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D733434-7712-4BCE-9CFA-2FD3484BA1DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAA6F33B-A28F-42CA-B073-F79EF0839B2E}
+	EndGlobalSection
+EndGlobal

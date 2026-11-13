@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Primo</title>
+</head>
+<body>
+   valor1: <input type="text" id="txtValor1">
+   <button id="btnAceptar" onclick="Primo()">Aceptar</button>
+   <div id="resultado" style="border: solid 2px; height: 300px; width: 400px; padding: 10px;"></div>
+
+   <script>
+      function Primo() {
+         var numeroInput = document.getElementById("txtValor1");
+         var num = parseInt(numeroInput.value);
+         var divR = document.getElementById("resultado");
+
+         // Validar que sea un número
+         if (isNaN(num)) {
+            divR.innerHTML = "Por favor, ingresa un número válido.";
+            return;
+         }
+
+         // Números menores que 2 no son primos
+         if (num < 2) {
+            divR.innerHTML = "El número " + num + " no es primo.";
+            return;
+         }
+
+         // Caso especial: 2 es primo
+         if (num === 2) {
+            divR.innerHTML = "El número " + num + " sí es primo.";
+            return;
+         }
+
+         // Verificar divisores desde 2 hasta num - 1
+         for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+               divR.innerHTML = "El número " + num + " no es primo.";
+               return; // Salir apenas encuentra un divisor
+            }
+         }
+
+         // Si terminó el bucle sin encontrar divisores, es primo
+         divR.innerHTML = "El número " + num + " sí es primo.";
+      }
+   </script>
+</body>
+</html>

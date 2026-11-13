@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: 62.5%;
+}
+
+body {
+  font-family: "Play", sans-serif;
+  background: #343a40;
+}
+
+span {
+  display: inline-block;
+}
+
+.nav-bar {
+  color: #ff6b6b;
+  background-color: #7950f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+
+.title {
+  font-family: "Silkscreen", sans-serif;
+  font-size: 2.5rem;
+}
+
+.personal-info {
+  display: flex;
+  justify-items: center;
+  gap: 0.5rem;
+}
+
+.signature {
+  letter-spacing: 1px;
+}
+
+.github-icon {
+  height: 20px;
+}
+
+.algos {
+  font-family: inherit;
+  background-color: #ff6b6b;
+  width: 12rem;
+  height: 3rem;
+  border-radius: 8px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.algos:hover {
+  background-color: #e74242;
+}
+
+.slider-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+}
+
+.slider {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.slider-text {
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 2rem;
+  max-height: 5.5rem;
+}
+
+.action-buttons button {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+}
+
+.new-btn {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.new-btn:hover {
+  background-color: rgb(201, 197, 197);
+}
+
+.cycle-icon {
+  height: 18px;
+}
+
+.sort-btn {
+  font-family: inherit;
+  background-color: #82c91e;
+}
+
+.sort-btn:hover {
+  background-color: #65ab03;
+}
+
+.stop-btn {
+  background-color: inherit;
+  padding: 0 !important;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  transition: 0.2s all;
+}
+
+.stop-btn:active {
+  transform: scale(0.98);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stop-icon {
+  height: 50px;
+}
+
+.visualizer-container {
+  display: grid;
+  grid-template-columns: 17% 60% 23%;
+}
+
+.complexity-colors {
+  padding: 0 3rem;
+}
+
+.complexity {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.complexity-title {
+  color: #e7f5ff;
+}
+
+.time-complexity {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.time-complexity div {
+  font-size: 1.4rem;
+}
+
+.time-worst {
+  color: #d3f9d8;
+}
+
+.time-average {
+  color: #8ce99a;
+}
+
+.time-best {
+  color: #51cf66;
+}
+
+.space-complexity {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.space-complexity div {
+  font-size: 1.4rem;
+}
+
+.space-worst {
+  color: #63e6be;
+}
+
+.colors-title {
+  text-transform: uppercase;
+  color: #e7f5ff;
+  margin-bottom: 1rem;
+}
+
+.colors-letter {
+  margin-left: -5px;
+}
+
+.letter-c {
+  color: #ffd43b;
+}
+
+.letter-o--1 {
+  color: #15aabf;
+}
+
+.letter-l {
+  color: #ff6b6b;
+}
+
+.letter-o--2 {
+  color: #da77f2;
+}
+
+.letter-r {
+  color: #69db7c;
+}
+
+.letter-s {
+  color: #228be6;
+}
+
+.colors-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #d3f9d8;
+}
+
+.colors-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-box {
+  height: 15px;
+  width: 15px;
+}
+
+.color-red {
+  background-color: #ff6b6b;
+}
+
+.color-yellow {
+  background-color: #ffd43b;
+}
+
+.color-violet {
+  background-color: #da77f2;
+}
+
+.color-green {
+  background-color: #69db7c;
+}
+
+.color-cyan {
+  background-color: #15aabf;
+}
+
+.color-pink {
+  background-color: #faa2c1;
+}
+
+.color-blue {
+  background-color: #228be6;
+}
+
+.code-trace {
+  margin-top: 3rem;
+  padding: 0 0 0 3rem;
+}
+
+.trace-title {
+  text-transform: uppercase;
+  color: #e7f5ff;
+  margin-bottom: 1rem;
+}
+
+.tracer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #d0bfff;
+  width: 90%;
+  padding: 1rem 0;
+  border-radius: 8px;
+}
+
+.tracer p {
+  padding: 0.2rem 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.arrays-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80vh;
+  gap: 4px;
+}

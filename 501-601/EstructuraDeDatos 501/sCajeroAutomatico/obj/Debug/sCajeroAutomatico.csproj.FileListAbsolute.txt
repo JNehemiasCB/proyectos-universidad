@@ -1,0 +1,8 @@
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\bin\Debug\sCajeroAutomatico.exe.config
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\bin\Debug\sCajeroAutomatico.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\bin\Debug\sCajeroAutomatico.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\obj\Debug\sCajeroAutomatico.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\obj\Debug\sCajeroAutomatico.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\obj\Debug\sCajeroAutomatico.exe
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\obj\Debug\sCajeroAutomatico.pdb
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\sCajeroAutomatico\obj\Debug\sCajeroAutomatico.exe.config

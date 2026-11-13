@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 16 Ejercicio e15 de JS. Adaptado de Dynamic client-side scripting -MDN ttps://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <title>EVENTOS</title>
+    <style>
+      button {
+        margin: 10px
+      };
+    </style>
+  </head>
+  <body>
+    <button>Change color</button>
+
+
+<!-- ===========  EVENTOS ================================== -->
+<!-- Referencia https://developer.mozilla.org/es/docs/Web/Events -->
+
+  <script>
+      const btn = document.querySelector('button');
+
+      function random(number) {
+        return Math.floor(Math.random() * (number+1));
+      }
+
+//================================================
+/* 
+Parte 1 EVENTO CLIC y usando una  función nombrada como even handler. 
+El codigo de  backtic es alt+96 
+*/
+
+  function changeBackground() {
+     const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+     document.body.style.backgroundColor = rndCol;
+   }
+
+   //btn.addEventListener('click', changeBackground);
+
+ // == Parte 2 EVENTO DOBLE CLICK y la misma función nombrada
+  
+  //btn.addEventListener('dblclick', changeBackground);
+
+
+// == EVENTO CLICK usando una ARROW FUNCTION como manejador de evento
+
+      // btn.addEventListener('click', () => {
+      //   const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+      //   document.body.style.backgroundColor = rndCol;
+      // });
+
+
+// =====evento doble click  Y ARROW FUNCTION ============= 
+ /*
+      btn.addEventListener('dblclick', () => {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+      });
+*/
+
+// =====evento  al obtener el foco o al dejarlo  (con el teclado)======
+
+       //btn.addEventListener('focus', changeBackground);
+       //btn.addEventListener('blur', changeBackground);
+
+
+// ===== al poner el mouse encima o a  salir
+
+     //btn.addEventListener('mouseover', changeBackground);
+     //btn.addEventListener('mouseout', changeBackground);
+
+
+// == REMOVER "listeners" ======================================
+    // btn.removeEventListener('mouseover', changeBackground);
+
+//================================================================
+//== MULTIPLES manejadores PARA UN MISMO EVENTO
+/*
+    btn.addEventListener('click', changeBackground);
+    btn.addEventListener('click', displayMessage);
+
+    let clickNum=1;
+    function displayMessage() {
+    const body = document.querySelector('body');
+    const msg = document.createElement('p');
+    msg.textContent = "Clicks realizados : " + clickNum++;
+    msg.style.color = 'white';
+    body.appendChild(msg);
+    }
+*/
+
+//=============================================================
+// === EVENTOS COMO PROPIEDAD  ======
+// == No permite más de uno debido a que las subsecuentes 
+// sobreescriben la anterior
+
+/*
+    btn.onclick = changeBackground;
+    //btn.onclick = displayMessage;
+    btn.onmouseover= changeBackground;
+    btn.onmouseout = changeBackground;
+*/
+
+//==============================================================
+//== EVEN OBJECTS e, ev, evt, event=====
+
+/*
+  function changeBackground(e) {      //== el objeto target = e es el botón
+     const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+     document.body.style.backgroundColor = rndCol;
+     
+     e.target.style.color = rndCol;
+      console.log (e);
+  }
+
+  btn.addEventListener('click', changeBackground);
+*/
+
+//=================================================================
+// EVENTO COMO ATRIBUTO DE UN ELEMENTO HTML <== NO SE RECOMIENDA
+// Para esta sección modificar el html (en la parte superior)
+  // <button onclick="changeBackground()"> Change color</button> 
+   
+   </script>
+  </body>
+</html>

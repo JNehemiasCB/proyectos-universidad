@@ -1,0 +1,8 @@
+C:\Users\nehem\source\repos\sumaVectores\bin\Debug\sumaVectores.exe.config
+C:\Users\nehem\source\repos\sumaVectores\bin\Debug\sumaVectores.exe
+C:\Users\nehem\source\repos\sumaVectores\bin\Debug\sumaVectores.pdb
+C:\Users\nehem\source\repos\sumaVectores\obj\Debug\sumaVectores.csproj.AssemblyReference.cache
+C:\Users\nehem\source\repos\sumaVectores\obj\Debug\sumaVectores.csproj.CoreCompileInputs.cache
+C:\Users\nehem\source\repos\sumaVectores\obj\Debug\sumaVectores.exe
+C:\Users\nehem\source\repos\sumaVectores\obj\Debug\sumaVectores.pdb
+C:\Users\nehem\source\repos\sumaVectores\obj\Debug\sumaVectores.exe.config

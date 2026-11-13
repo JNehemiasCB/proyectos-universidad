@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 18 Ejercicio 28 de JS. Adaptado de Dynamic client-side scripting -MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <title>Promise Vader</title>
+
+    <link rel="stylesheet" href="">
+    </head>
+
+  <body>
+    <h1>Promise-Vader</h1>
+
+    <p>Darth Vader image by <a href="https://www.flickr.com/photos/digital_stability/">Shawn Taylor</a>, published under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a> license.</p>
+  </body>
+
+  <script>
+
+  function imgLoad(url) {
+    // Create new promise with the Promise() constructor;
+    // This has as its argument a function with two parameters: resolve and reject
+    return new Promise(function(resolve, reject) {
+
+      // Crea un objeto de tipo petición http con el método Get 
+      // y la url que se le pasó. 
+      var request = new XMLHttpRequest();
+      request.open('GET', url);
+      // Define una respuesta de tipo blob y envía la petición
+      request.responseType = 'blob';
+      request.send();
+
+      // When the request loads, check whether it was successful
+      request.onload = function() {
+        if (request.status === 200) {
+        // If successful, resolve the promise by passing back 
+        // within the resolve() method the request.response
+          resolve(request.response);
+        } else {
+        // If it fails, reject the promise with a error message
+          reject(Error('Image didn\'t load successfully; error code:' + request.statusText));
+        }
+      };
+
+      // Also deal with the case when the entire request fails to begin with
+      // This is probably a network error, so reject the promise with an appropriate message
+      request.onerror = function() {
+          reject(Error('There was a network error.'));
+      };
+
+    });
+  }
+
+  // Get a reference to the body element, and create a new image Element
+  let body = document.querySelector('body');
+  let myImage = document.createElement('img');
+
+  // Call the function with the URL we want to load, but then chain the
+  // promise then() method on to the end of it. This contains two callbacks
+  imgLoad('../assets/images/LittleVader.jpg').then(function(response) {
+
+      // The first runs when the promise resolves with the 
+      // request.response specified within the resolve() method
+      myImage.src= URL.createObjectURL(response);
+      body.appendChild(myImage);
+
+      // The second runs when the promise
+      // is rejected, and logs the Error specified with the reject() method.
+    }, function(Error) {
+      console.log(Error);
+  });
+
+  </script>
+</html>

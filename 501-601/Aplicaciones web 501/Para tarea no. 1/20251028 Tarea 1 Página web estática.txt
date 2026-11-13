@@ -1,0 +1,23 @@
+T1- Página web estática
+Ricardo Peña Galeana
+•
+28 Otubre 2025
+Fecha límite: dom. 23 nov 2025, 11:59 p.m.
+Estimados alumnos:
+
+En esta sección suban su tarea no. 1 , que consiste en la creación de una página web "estática" del tema que quieran, con al menos las siguientes características generales:
+
+1.- Utilizar exclusivamente HTML y CSS, el css se aplicará a los elementos del documento html desde un archivo externo.
+
+2.- Tener al menos tres documentos html (una página principal y dos secundarias) y utilizar iconos, imágenes, logos y menús. Opcionalmente pueden agregar audio y/o video.
+
+3.- La página principal debe contar con un menú con opciones que dirijan a las dos páginas secundarias y desde las dos páginas secundarias poder dirigirse a la página principal.
+
+4.- Cada documento html debe contener el mismo encabezado y pié de página, donde se muestre claramente su autoría individual, es decir debe contener los siguientes elementos exclusivos para cada uno de ustedes: icono, logo, "título de la página" , nombre completo y correo electrónico.
+
+Suban todo en un archivo comprimido que lleve por nombre : "T1+su nombre completo +generación de ingreso+ área de la carrera" por ejemplo: "T1 Peña Galeana Ricardo 2022 redes.rar" . La fecha máxima de recepción será el 23 de noviembre de 2025.
+
+
+Que estén bien y cuidense mucho.
+Atte.
+Ing. Ricardo Peña Galeana

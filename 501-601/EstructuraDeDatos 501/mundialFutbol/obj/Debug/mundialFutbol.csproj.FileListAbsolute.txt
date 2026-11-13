@@ -1,0 +1,5 @@
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\mundialFutbol\obj\Debug\mundialFutbol.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\mundialFutbol\obj\Debug\mundialFutbol.Form1.resources
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\mundialFutbol\obj\Debug\mundialFutbol.Properties.Resources.resources
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\mundialFutbol\obj\Debug\mundialFutbol.csproj.GenerateResource.cache
+C:\Users\nehem\OneDrive\Documentos\EstructuraDeDatos 501\mundialFutbol\obj\Debug\mundialFutbol.csproj.CoreCompileInputs.cache

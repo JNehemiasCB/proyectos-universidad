@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cribaDeEratostenes", "cribaDeEratostenes.csproj", "{C79A6E0B-24B0-442D-9B73-F301D9A27151}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C79A6E0B-24B0-442D-9B73-F301D9A27151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79A6E0B-24B0-442D-9B73-F301D9A27151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79A6E0B-24B0-442D-9B73-F301D9A27151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79A6E0B-24B0-442D-9B73-F301D9A27151}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9456FD37-EA22-4E93-928C-14D3CD087AFA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+C:\Users\ferna\source\repos\Sumadematrices\bin\Debug\Sumadematrices.exe.config
+C:\Users\ferna\source\repos\Sumadematrices\bin\Debug\Sumadematrices.exe
+C:\Users\ferna\source\repos\Sumadematrices\bin\Debug\Sumadematrices.pdb
+C:\Users\ferna\source\repos\Sumadematrices\obj\Debug\Sumadematrices.csproj.AssemblyReference.cache
+C:\Users\ferna\source\repos\Sumadematrices\obj\Debug\Sumadematrices.csproj.CoreCompileInputs.cache
+C:\Users\ferna\source\repos\Sumadematrices\obj\Debug\Sumadematrices.exe
+C:\Users\ferna\source\repos\Sumadematrices\obj\Debug\Sumadematrices.pdb
+C:\Users\ferna\source\repos\Sumadematrices\obj\Debug\Sumadematrices.exe.config
+C:\Users\nehem\Downloads\Sumadematrices\bin\Debug\Sumadematrices.exe.config
+C:\Users\nehem\Downloads\Sumadematrices\bin\Debug\Sumadematrices.exe
+C:\Users\nehem\Downloads\Sumadematrices\bin\Debug\Sumadematrices.pdb
+C:\Users\nehem\Downloads\Sumadematrices\obj\Debug\Sumadematrices.csproj.AssemblyReference.cache
+C:\Users\nehem\Downloads\Sumadematrices\obj\Debug\Sumadematrices.exe.config
+C:\Users\nehem\Downloads\Sumadematrices\obj\Debug\Sumadematrices.csproj.CoreCompileInputs.cache
+C:\Users\nehem\Downloads\Sumadematrices\obj\Debug\Sumadematrices.exe
+C:\Users\nehem\Downloads\Sumadematrices\obj\Debug\Sumadematrices.pdb

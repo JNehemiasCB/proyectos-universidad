@@ -1,0 +1,8 @@
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\bin\Debug\Matriz2.exe.config
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\bin\Debug\Matriz2.exe
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\bin\Debug\Matriz2.pdb
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\obj\Debug\Matriz2.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\obj\Debug\Matriz2.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\obj\Debug\Matriz2.exe
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\obj\Debug\Matriz2.pdb
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\Matriz2\obj\Debug\Matriz2.exe.config

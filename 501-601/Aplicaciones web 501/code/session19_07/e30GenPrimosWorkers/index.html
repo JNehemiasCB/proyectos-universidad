@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content =" Página del curso de plicaciones web, sesión 19 Ejercicio 30 de JS. Adaptado de Dynamic client-side scripting -MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+  <meta name="author" content =" Ricardo Peña Galeana">
+  <link rel="icon" href="../assets/images/favicon.ico">
+    <title>Números primos sin y con workers</title>
+    <!--   USANDO WORKERS -->
+    <!-- para el ejemplo con workers decomentar la siguiente línea y comentar todo el script "Ejemplo sin usar workers" del final del body  -->
+     <!-- <script src="./mainWithWorker.js" defer></script>  -->
+    
+    <style>
+        textarea {
+          display: block;
+          margin: 1rem 0;
+        }
+    </style>
+  </head>
+  
+  <body>
+    <h1></h1>
+    <p> Incrementa el valor de números primos a generar agregando un cero a la vez, <br>
+    llegará un momento en que no se puede ver lo que escribes hasta que se desocupa.</p>
+
+    <label for="quota">Número de primos a generar:</label>
+    <input type="text" id="quota" name="quota" value="100000" />
+
+    <button id="generate">Generar primos</button>
+    <button id="reload">Reiniciar</button>
+      <p>Intenta escribir en el siguiente cuadro inmediatamente despues de presionar " Generar primos ".</p>
+    <textarea id="user-input" rows="5" cols="80">
+
+</textarea>
+
+    <div id="output"></div>
+<script>
+  // ==== EJEMPLO  SIN USAR WORKERS =======================================
+  // Inmediatamente despues de la ejecisión tratar de escribir en el textarea
+ 
+  
+  const titulo = document.querySelector('h1')
+  titulo.textContent = "Ejemplo sin usar workers"
+
+  
+  function generatePrimes(quota) {
+
+  function isPrime(n) {
+    for (let c = 2; c <= Math.sqrt(n); ++c) {
+      if (n % c === 0) {
+          return false;
+       }
+    }
+    return true;
+  }
+
+  const primes = [];
+  const maximum = 1000000;
+
+  while (primes.length < quota) {
+    const candidate = Math.floor(Math.random() * (maximum + 1));
+    if (isPrime(candidate)) {
+      primes.push(candidate);
+    }
+  }
+
+  return primes;
+}
+
+
+document.querySelector('#generate').addEventListener('click', () => {
+  const quota = document.querySelector('#quota').value;
+  const primes = generatePrimes(quota);
+  document.querySelector('#output').innerHTML= `Finalizó la generación de ${quota} números primos! </br> Presiona "reiniciar" para volver a ejecutar.`;
+});
+
+document.querySelector('#reload').addEventListener('click', () => {
+    document.location.reload();
+    document.querySelector('#user-input').value = '';
+    
+});
+
+
+  </script>
+</body>
+</html>
+

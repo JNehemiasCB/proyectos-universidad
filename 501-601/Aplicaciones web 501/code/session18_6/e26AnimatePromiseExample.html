@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 18 Ejercicio 26 de JS. Adaptado de Dynamic client-side scripting -MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+
+    <title>Promise en animaciones</title>
+    <style>
+		body {
+		  background: #6c373f;
+		  display: flex;
+		  justify-content: center;
+		}
+		#alice-container {
+		  width: 90vh;
+		  display: grid;
+		  place-items: center;
+		  grid-template-areas:
+			"a1 . ."
+			". a2 ."
+			". . a3";
+		}
+		#alice1 {
+		  grid-area: a1;
+		}
+		#alice2 {
+		  grid-area: a2;
+		}
+		#alice3 {
+		  grid-area: a3;
+		}			
+	</style>
+	
+  </head>
+
+  <body>
+
+	<div id="alice-container">
+      <img id="alice1"  src="../assets/images/alice.svg" role="img" alt="silueta de personaje de pelo largo en vestido y botas cortas">
+      <img id="alice2"  src="../assets/images/alice.svg" role="img" alt="silueta de personaje de pelo largo en vestido y botas cortas">
+      <img id="alice3"  src="../assets/images/alice.svg" role="img" alt="silueta de personaje de pelo largo en vestido y botas cortas">
+    </div>
+
+  </body>
+
+  <script>
+	const alice1 = document.querySelector("#alice1");
+	const alice2 = document.querySelector("#alice2");
+	const alice3 = document.querySelector("#alice3");
+
+	/* Element.animate() creates a new Animation, applies it to the element, then plays the animation.
+	 Syntax
+		animate(keyframes, options)
+			keyframes: Un array u objects
+			options: duration (in milliseconds), or an Object containing one or more timing properties 
+	 */
+	
+
+// Keyframes:
+	const aliceVoltereta = [
+	  // inicio de rotación de la imagen y su escala
+	  { transform: 'rotate(0) scale(1)' },   
+	  // fin de rotación de la imagen y su escala (0=desaparece)
+	  { transform: 'rotate(360deg) scale(0)' }
+	];
+
+// options:
+const aliceTiming = {
+	  duration: 2000,   // 2000 milisegundos de duración
+	  iterations: 1,    // número de iteraciones
+	  //fill: 'backwards'  // al terminar regresa a su posición y tam.original
+	  fill: 'forwards' // no regresa al original
+	}
+
+/* animate() regresa un objeto "Animation". Este objeto tiene una propiedad "finished" la cual es una "Promise" que se "cumple" (fulfilled) cuando la animación ha terminado. Se utiliza esta promesa  para saber cuando iniciar la siguiente animación.
+*/
+	alice1.animate(aliceVoltereta, aliceTiming).finished
+	  .then(() => alice2.animate(aliceVoltereta, aliceTiming).finished)
+	  .then(() => alice3.animate(aliceVoltereta, aliceTiming).finished)
+	  .catch(error => console.error(`Error de animación de Alices: ${error}`));
+
+  </script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de aplicaciones web en su sesión 13 parte 1: e00introJS">
+   <meta name="author" content ="Jesus Nehemias Contreras Barrera">
+  <link rel="icon" href="../code/assets/images/favicon.ico">
+   <!--  Forma 1 de colocar JavaScript: en el <head> -->
+   
+      <!-- <script>
+         alert(" El script está en el head")
+  
+         document.addEventListener("DOMContentLoaded", function() {
+            function createParagraph() {
+               let para = document.createElement('p');
+               para.textContent = '¡ Hiciste click en el botón !!';
+               document.body.appendChild(para);
+            }
+
+            const buttons = document.querySelectorAll('button');
+
+            for(let i = 0; i < buttons.length ; i++) {
+               buttons[i].addEventListener('click', createParagraph);
+            }
+         });
+      </script>  -->
+
+   <!--  forma 4: colocando el script en un archivo adjunto con y sin "defer"-->
+      <!-- <script  src="/e00IntroJS.js"></script> -->
+      <!-- <script src="e00IntroJS.js" defer></script> -->
+
+<title>IntroJS01</title>
+</head>
+<body>
+
+   <div>
+      <h1>Mi primer acercamiento a JavaScript</h1>
+      <h2 class="myClass"></h2>
+
+      <!-- Para el ejemplo de la Forma 1 el script en el head -->
+       <!-- <button>Haz click aquí</button> -->
+
+     
+
+   </div>
+   <!-- Para la forma 2: el script al final del body  -->
+
+      <!-- <p>Ricardo Peña Galeana</p> -->
+      <!-- <script>
+         alert(" El script está en la parte final del body")
+         const paragraph = document.querySelector('p');
+         paragraph.addEventListener('click', updateName);
+
+         function updateName() {
+         const name = prompt('Introduzca otro nombre para cambiarlo;');
+         paragraph.textContent = `Usuario: ${name}`;
+         }
+    </script> -->
+
+
+<!-- ======FORMAS DE INSERTAR ELEMENTOS HTML A UN DOCUMENTO ===========-->
+ 
+   <!-- <div id="contenedor1">Contenedor 1</div>
+   <div id="contenedor2">Contenedor 2</div>
+   <div id="contenedor3">Contenedor 3</div>
+   <div id="contenedor4">Contenedor 4</div>
+   <div id="contenedor5">Contenedor 5</div>
+   <ul id="lista6">
+      <li>Uno</li>
+      <li>Dos</li>
+   </ul>
+   <div id="contenedor7"> Contenedor 7<p>Viejo</p> </div>
+   <ul id="lista8"></ul>   
+   <div id="contenedor9">Hola Contenedor 9</div> -->
+
+
+   <script src="e00IntroJS.js"></script>
+</body>
+<!-- Forma 3 el script está en la parte final del documento -->
+
+<!-- <script>
+   alert(" El script está despues del body")
+
+   let button1 = document.createElement('button');
+   button1.textContent = 'Haz click aquí';
+   document.body.appendChild(button1);
+   console.log(button1);
+
+   button1.onclick = function() {
+   let name = prompt('¿ Cuál es tu nombre ?');
+   console.log(name);
+   let para = document.createElement('p');
+   console.log(para);
+
+   para.textContent = 'Hola ' + name + ', ¡encantado de conocerte!';
+   console.log(para.innerHTML);
+   console.log(para.innerText);
+   console.log(para.textContent);
+
+   document.body.appendChild(para);
+   
+
+   alert('Hola ' + name + ', ¡encantado de conocerte!');
+   }
+</script> -->
+
+</html>

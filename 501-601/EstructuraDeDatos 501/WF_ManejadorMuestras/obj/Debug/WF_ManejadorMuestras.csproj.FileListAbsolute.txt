@@ -1,0 +1,11 @@
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.csproj.AssemblyReference.cache
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.Form1.resources
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.Properties.Resources.resources
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.csproj.GenerateResource.cache
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.csproj.CoreCompileInputs.cache
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\bin\Debug\WF_ManejadorMuestras.exe.config
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\bin\Debug\WF_ManejadorMuestras.exe
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\bin\Debug\WF_ManejadorMuestras.pdb
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.exe
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.pdb
+C:\Users\JAAS\source\repos\WF_ManejadorMuestras\obj\Debug\WF_ManejadorMuestras.exe.config

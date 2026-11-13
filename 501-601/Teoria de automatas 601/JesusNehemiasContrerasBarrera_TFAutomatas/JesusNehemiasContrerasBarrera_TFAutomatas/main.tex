@@ -1,0 +1,833 @@
+\documentclass[12pt]{article}
+
+% ----------------- PAQUETES -----------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning, arrows.meta}
+
+\renewcommand{\refname}{Bibliografía}
+
+% ----------------- DOCUMENTO -----------------
+\begin{document}
+
+% ============== PORTADA ==============
+\begin{titlepage}
+\centering
+
+% Logo opcional: descomenta la siguiente línea y sube tu logo (logo.png) a Overleaf
+% \includegraphics[width=0.25\textwidth]{logo.png}\\[1cm]
+
+{\scshape\large Licenciatura en Ciencias y Tecnologías de la Información\par}
+{\scshape Facultad de Ciencias y Tecnologías de la Información\par}
+\vspace{2cm}
+
+{\rule{\textwidth}{0.5pt}}\\[0.4cm]
+{\huge\bfseries Reporte Final: Autómatas Finitos\par}
+{\large Diseño de AFD, AFN y conversión por construcción de subconjuntos\par}
+{\rule{\textwidth}{0.5pt}}\\[2cm]
+
+{\large\bfseries Asignatura:} {\large Teoría de Autómatas}\\[1cm]
+
+{\large\bfseries Alumno:}\\[0.2cm]
+{\large Jesús Nehemías Contreras Barrera}\\
+{\large Grupo: 601}\\[1cm]
+
+{\large\bfseries Docente:}\\[0.2cm]
+{\large Dr.\ Raúl Juárez Morales}\\
+
+\vfill
+{\large \today}
+
+\end{titlepage}
+
+% ============== RESUMEN ==============
+\clearpage
+\section*{Resumen}
+\addcontentsline{toc}{section}{Resumen}
+
+Este trabajo presenta el diseño, la representación formal y la verificación de catorce autómatas finitos que resuelven once ejercicios del libro de Hopcroft, Motwani y Ullman. Para cada autómata se ofrece una descripción del lenguaje que reconoce, su definición formal como quíntupla $M=(Q,\Sigma,\delta,q_0,F)$, su diagrama de transición y su tabla de transiciones. Se trabajan dos familias de máquinas: autómatas finitos deterministas (AFD) y autómatas finitos no deterministas (AFN). Cuando un autómata se obtiene a partir de otro por el método de construcción de subconjuntos, se incluye además una tabla de equivalencia que relaciona cada estado $q_i$ con el subconjunto de estados originales que representa. El objetivo es mostrar, con un criterio uniforme y reproducible, cómo se modela un lenguaje regular mediante una máquina de estados finitos.
+
+% ============== ÍNDICE ==============
+\clearpage
+\tableofcontents
+
+% ============== INTRODUCCIÓN ==============
+\clearpage
+\section{Introducción}
+
+Los autómatas finitos son el modelo de cómputo más sencillo de la teoría de la computación: máquinas con una cantidad finita de memoria, capaces de leer una cadena de símbolos de izquierda a derecha y decidir si la aceptan o la rechazan. A pesar de su simplicidad, describen exactamente a los \emph{lenguajes regulares}, una familia que aparece por todas partes en la práctica: búsquedas con expresiones regulares, análisis léxico de compiladores, validación de formatos o protocolos de comunicación.
+
+En este reporte se resuelven once ejercicios de los capítulos 2.2 y 2.3 del texto de referencia. Cada ejercicio pide construir un autómata que reconozca un lenguaje descrito en palabras, o bien transformar un autómata no determinista en uno determinista equivalente. La idea central que recorre todo el trabajo es que un autómata no es más que una respuesta a la pregunta: \emph{¿qué necesito recordar mientras leo la cadena para decidir al final si la acepto?} Cada estado del autómata representa exactamente uno de esos ``recuerdos'' posibles.
+
+Para mantener la lectura ordenada, todos los estados se nombran de forma uniforme como $q_0, q_1, q_2, \dots, q_n$, donde $q_0$ es siempre el estado inicial. Cuando un estado encierra un significado concreto (por ejemplo, ``los últimos cuatro símbolos leídos fueron $0011$'' o ``el subconjunto $\{p,q,r\}$''), ese significado se aclara en una tabla de equivalencia junto al ejercicio correspondiente.
+
+% ============== MARCO TEÓRICO ==============
+\clearpage
+\section{Marco Teórico}
+
+\subsection{Alfabeto, cadena y lenguaje}
+
+Un \textbf{alfabeto} $\Sigma$ es un conjunto finito y no vacío de símbolos; en casi todos los ejercicios usaremos $\Sigma=\{0,1\}$. Una \textbf{cadena} es una sucesión finita de símbolos del alfabeto, por ejemplo $0110$. La cadena sin símbolos se llama \textbf{cadena vacía} y se denota $\varepsilon$. Un \textbf{lenguaje} sobre $\Sigma$ es simplemente un conjunto de cadenas; un autómata sirve para describir, de manera finita, un lenguaje que puede tener infinitas cadenas.
+
+\subsection{Autómata finito determinista (AFD)}
+
+Un AFD es una quíntupla
+\[
+M=(Q,\Sigma,\delta,q_0,F),
+\]
+donde $Q$ es el conjunto finito de estados, $\Sigma$ es el alfabeto, $q_0\in Q$ es el estado inicial, $F\subseteq Q$ es el conjunto de estados de aceptación y $\delta:Q\times\Sigma\to Q$ es la función de transición. La palabra \emph{determinista} significa que para cada estado y cada símbolo hay \emph{exactamente una} transición: leyendo la misma cadena desde el estado inicial siempre se llega al mismo estado. La cadena se acepta si, al terminar de leerla, la máquina queda en un estado de $F$.
+
+Una analogía útil: un AFD es como seguir un instructivo en el que, en cada paso y según el símbolo que toca, hay una única casilla a la que avanzar. No hay decisiones que tomar ni caminos alternativos.
+
+\subsection{Autómata finito no determinista (AFN)}
+
+Un AFN tiene la misma estructura, pero su función de transición es
+\[
+\delta:Q\times\Sigma\to \mathcal{P}(Q),
+\]
+es decir, devuelve un \emph{conjunto} de estados (posiblemente vacío). Desde un estado, un símbolo puede llevar a varios estados a la vez, a uno solo o a ninguno. Conviene imaginarlo como una máquina que puede ``clonarse'' y explorar varios caminos en paralelo; la cadena se acepta si \emph{al menos uno} de esos caminos termina en un estado de aceptación. El no determinismo no añade poder de cómputo, pero a menudo permite diseñar la máquina de forma mucho más natural.
+
+\subsection{Construcción de subconjuntos (de AFN a AFD)}
+
+Todo AFN se puede convertir en un AFD que reconoce el mismo lenguaje mediante la \textbf{construcción de subconjuntos}. La idea es elegante: como el AFN puede estar ``en varios estados a la vez'', cada estado del nuevo AFD representa un \emph{conjunto} de estados del AFN. Se parte del conjunto que contiene al estado inicial y, para cada símbolo, se calcula el conjunto de todos los estados alcanzables; cada conjunto nuevo que aparece se vuelve un estado del AFD. Un estado del AFD es de aceptación si el conjunto que representa contiene al menos un estado de aceptación del AFN.
+
+En este reporte, los AFD obtenidos por este método se nombran $q_0,q_1,\dots$ por claridad, y una tabla de equivalencia indica a qué subconjunto del AFN corresponde cada uno.
+
+\subsection{Cómo leer cada ejercicio}
+
+Para cada autómata se presenta, en este orden: una breve descripción del lenguaje, la definición formal $M=(Q,\Sigma,\delta,q_0,F)$, el diagrama de transición y la tabla de transiciones. Cuando los diagramas resultan densos por la cantidad de estados, la tabla es la referencia rigurosa y completa.
+
+
+% ============== DESARROLLO ==============
+\clearpage
+\section{Desarrollo}
+
+En todas las tablas de transición se usa el símbolo $\rightarrow$ para señalar el estado inicial y un asterisco ($*$) para los estados de aceptación.
+
+% ---------- 2.2.4 ----------
+\subsection{Ejercicio 2.2.4}
+
+Se piden autómatas finitos deterministas sobre $\Sigma=\{0,1\}$ para tres lenguajes.
+
+\subsubsection{Inciso (a): cadenas que terminan en \texttt{00}}
+
+El autómata necesita recordar cuántos ceros consecutivos lleva al final: ninguno ($q_0$), uno ($q_1$) o dos o más ($q_2$). Cualquier $1$ rompe la racha y regresa a $q_0$. Se acepta en $q_2$.
+
+\[
+M=(\{q_0,q_1,q_2\},\{0,1\},\delta,q_0,\{q_2\})
+\]
+
+\begin{center}
+\begin{tikzpicture}[->, auto, node distance=3cm, on grid,
+  every state/.style={draw, minimum size=0.9cm, font=\small}]
+  \node[state, initial] (q0) {$q_0$};
+  \node[state, right=of q0] (q1) {$q_1$};
+  \node[state, accepting, right=of q1] (q2) {$q_2$};
+  \path
+    (q0) edge [loop above] node {1} (q0)
+    (q0) edge [bend left=22] node {0} (q1)
+    (q1) edge [bend left=22] node {1} (q0)
+    (q1) edge node {0} (q2)
+    (q2) edge [loop above] node {0} (q2)
+    (q2) edge [bend right=55] node {1} (q0);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $q_1$ & $q_0$\\
+$q_1$ & $q_2$ & $q_0$\\
+$*\,q_2$ & $q_2$ & $q_0$\\
+\end{tabular}
+\end{center}
+
+\subsubsection{Inciso (b): cadenas con tres ceros consecutivos}
+
+Los estados cuentan la racha de ceros: $q_0$ (ninguno), $q_1$ (uno), $q_2$ (dos) y $q_3$ (tres o más). Una vez visto $000$, la cadena ya cumple y $q_3$ es absorbente. Un $1$ antes de llegar a $q_3$ reinicia la cuenta.
+
+\[
+M=(\{q_0,q_1,q_2,q_3\},\{0,1\},\delta,q_0,\{q_3\})
+\]
+
+\begin{center}
+\begin{tikzpicture}[->, auto, node distance=2.8cm, on grid,
+  every state/.style={draw, minimum size=0.9cm, font=\small}]
+  \node[state, initial] (q0) {$q_0$};
+  \node[state, right=of q0] (q1) {$q_1$};
+  \node[state, right=of q1] (q2) {$q_2$};
+  \node[state, accepting, right=of q2] (q3) {$q_3$};
+  \path (q0) edge [loop above] node {1} (q0)
+        (q0) edge node {0} (q1)
+        (q1) edge node {0} (q2)
+        (q2) edge node {0} (q3)
+        (q1) edge [bend left=33] node[above] {1} (q0)
+        (q2) edge [bend right=45] node[below] {1} (q0)
+        (q3) edge [loop above] node {0,1} (q3);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $q_1$ & $q_0$\\
+$q_1$ & $q_2$ & $q_0$\\
+$q_2$ & $q_3$ & $q_0$\\
+$*\,q_3$ & $q_3$ & $q_3$\\
+\end{tabular}
+\end{center}
+
+\subsubsection{Inciso (c): cadenas que contienen \texttt{011} como subcadena}
+
+Los estados registran el progreso hacia el patrón $011$: nada visto ($q_0$), visto $0$ ($q_1$), visto $01$ ($q_2$) y patrón completo ($q_3$, absorbente). El truco está en que tras un $0$ otro $0$ mantiene ``visto $0$''.
+
+\[
+M=(\{q_0,q_1,q_2,q_3\},\{0,1\},\delta,q_0,\{q_3\})
+\]
+
+\begin{center}
+\begin{tikzpicture}[->, auto, node distance=2.8cm, on grid,
+  every state/.style={draw, minimum size=0.9cm, font=\small}]
+  \node[state, initial] (q0) {$q_0$};
+  \node[state, right=of q0] (q1) {$q_1$};
+  \node[state, right=of q1] (q2) {$q_2$};
+  \node[state, accepting, right=of q2] (q3) {$q_3$};
+  \path (q0) edge [loop above] node {1} (q0)
+        (q0) edge node {0} (q1)
+        (q1) edge [loop above] node {0} (q1)
+        (q1) edge node {1} (q2)
+        (q2) edge node {1} (q3)
+        (q2) edge [bend left=33] node[above] {0} (q1)
+        (q3) edge [loop above] node {0,1} (q3);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $q_1$ & $q_0$\\
+$q_1$ & $q_1$ & $q_2$\\
+$q_2$ & $q_1$ & $q_3$\\
+$*\,q_3$ & $q_3$ & $q_3$\\
+\end{tabular}
+\end{center}
+
+
+% ---------- 2.2.5 ----------
+\subsection{Ejercicio 2.2.5}
+
+\subsubsection{Inciso (a): cada bloque de cinco símbolos consecutivos contiene al menos dos ceros}
+
+La idea es recordar siempre los \textbf{últimos cuatro símbolos} leídos. Al leer un quinto símbolo se forma una ventana de cinco; si esa ventana tiene un cero o ninguno, la cadena se rechaza y se cae al estado trampa $q_d$. Como hay $2^4=16$ patrones de cuatro bits y el patrón $1111$ ya garantiza un mal bloque, quedan 15 estados vivos más la trampa. La memoria inicial se toma como $0000$.
+
+\[
+M=(\{q_1,\dots,q_{15},q_d\},\{0,1\},\delta,q_1,\{q_1,\dots,q_{15}\})
+\]
+
+\paragraph{Tabla de equivalencia (estado $\leftrightarrow$ últimos 4 símbolos).}
+\begin{center}
+\begin{tabular}{cc@{\hspace{1.2cm}}cc}
+Estado & Últimos 4 & Estado & Últimos 4\\ \hline
+$q_1$ & $0000$ & $q_9$ & $1000$\\
+$q_2$ & $0001$ & $q_{10}$ & $1001$\\
+$q_3$ & $0010$ & $q_{11}$ & $1010$\\
+$q_4$ & $0011$ & $q_{12}$ & $1011$\\
+$q_5$ & $0100$ & $q_{13}$ & $1100$\\
+$q_6$ & $0101$ & $q_{14}$ & $1101$\\
+$q_7$ & $0110$ & $q_{15}$ & $1110$\\
+$q_8$ & $0111$ & $q_d$ & trampa ($1111$)\\
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{c|cc@{\hspace{1.2cm}}c|cc}
+$\delta$ & $0$ & $1$ & $\delta$ & $0$ & $1$\\ \hline
+$\rightarrow *\,q_1$ & $q_1$ & $q_2$    & $*\,q_9$    & $q_1$    & $q_2$\\
+$*\,q_2$ & $q_3$ & $q_4$    & $*\,q_{10}$ & $q_3$    & $q_4$\\
+$*\,q_3$ & $q_5$ & $q_6$    & $*\,q_{11}$ & $q_5$    & $q_6$\\
+$*\,q_4$ & $q_7$ & $q_8$    & $*\,q_{12}$ & $q_7$    & $q_d$\\
+$*\,q_5$ & $q_9$ & $q_{10}$ & $*\,q_{13}$ & $q_9$    & $q_{10}$\\
+$*\,q_6$ & $q_{11}$ & $q_{12}$ & $*\,q_{14}$ & $q_{11}$ & $q_d$\\
+$*\,q_7$ & $q_{13}$ & $q_{14}$ & $*\,q_{15}$ & $q_{13}$ & $q_d$\\
+$*\,q_8$ & $q_{15}$ & $q_d$ & $q_d$ & $q_d$ & $q_d$\\
+\end{tabular}
+\end{center}
+
+\subsubsection{Inciso (c): empieza con \texttt{01} o termina con \texttt{01} (o ambas)}
+
+Un solo AFD lleva dos ``ramas'' a la vez. Desde $q_0$ se decide si la cadena empezó con $01$ (rama que lleva al estado absorbente de aceptación $q_2$) y, en paralelo, se vigila la terminación. Los estados $q_3,q_4,q_5$ describen ``no empezó con $01$'' según el último símbolo: $q_3$ (terminó en $1$), $q_4$ (terminó en $0$) y $q_5$ (termina justo en $01$).
+
+\[
+M=(\{q_0,q_1,q_2,q_3,q_4,q_5\},\{0,1\},\delta,q_0,\{q_2,q_5\})
+\]
+
+\begin{center}
+\begin{tikzpicture}[->, on grid, node distance=2.8cm and 3.2cm,
+  every state/.style={draw, minimum size=0.9cm, font=\small, inner sep=1pt}]
+  
+  \node[state, initial] (q0) at (0,0) {$q_0$};
+  \node[state] (q1) at (3,0) {$q_1$};
+  \node[state, accepting] (q2) at (6,0) {$q_2$};
+  \node[state] (q3) at (1.5,-3) {$q_3$};
+  \node[state] (q4) at (4.5,-3) {$q_4$};
+  \node[state, accepting] (q5) at (7.5,-3) {$q_5$};
+  
+  \path
+    % Transiciones hacia adelante
+    (q0) edge node[above] {0} (q1)
+    (q0) edge node[below left] {1} (q3)
+    (q1) edge node[above] {1} (q2)
+    (q1) edge node[above right, pos=0.6] {0} (q4)
+    (q3) edge node[above] {0} (q4)
+    
+    % Ciclos entre q4 y q5
+    (q4) edge [bend left=15] node[above] {1} (q5)
+    (q5) edge [bend left=15] node[below] {0} (q4)
+    
+    % Retorno largo (curva por debajo para evitar cruzar q4)
+    (q5) edge [bend left=50] node[below, pos=0.5] {1} (q3)
+    
+    % Bucles
+    (q2) edge [loop right] node {0,1} (q2)
+    (q3) edge [loop left] node {1} (q3)
+    (q4) edge [loop below] node {0} (q4);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $q_1$ & $q_3$\\
+$q_1$ & $q_4$ & $q_2$\\
+$*\,q_2$ & $q_2$ & $q_2$\\
+$q_3$ & $q_4$ & $q_3$\\
+$q_4$ & $q_4$ & $q_5$\\
+$*\,q_5$ & $q_4$ & $q_3$\\
+\end{tabular}
+\end{center}
+
+\subsubsection{Inciso (d): número de ceros divisible entre 5 y número de unos divisible entre 3}
+
+Basta llevar dos contadores módulo: el número de ceros módulo 5 y el número de unos módulo 3. Un estado es el par $(i,j)$ con $i\in\{0,\dots,4\}$ y $j\in\{0,1,2\}$, lo que da $5\times 3=15$ estados. Leer un $0$ aumenta $i$ en uno (módulo 5) y leer un $1$ aumenta $j$ en uno (módulo 3). Se acepta solo en $(0,0)$.
+
+\[
+M=(\{q_0,\dots,q_{14}\},\{0,1\},\delta,q_0,\{q_0\})
+\]
+
+\paragraph{Tabla de equivalencia (estado $\leftrightarrow (\#0\bmod 5,\ \#1\bmod 3)$).}
+\begin{center}
+\begin{tabular}{cc@{\hspace{1cm}}cc@{\hspace{1cm}}cc}
+Estado & $(i,j)$ & Estado & $(i,j)$ & Estado & $(i,j)$\\ \hline
+$q_0$ & $(0,0)$ & $q_5$ & $(1,2)$ & $q_{10}$ & $(3,1)$\\
+$q_1$ & $(0,1)$ & $q_6$ & $(2,0)$ & $q_{11}$ & $(3,2)$\\
+$q_2$ & $(0,2)$ & $q_7$ & $(2,1)$ & $q_{12}$ & $(4,0)$\\
+$q_3$ & $(1,0)$ & $q_8$ & $(2,2)$ & $q_{13}$ & $(4,1)$\\
+$q_4$ & $(1,1)$ & $q_9$ & $(3,0)$ & $q_{14}$ & $(4,2)$\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\resizebox{!}{0.68\textheight}{%
+\begin{tikzpicture}[->, auto, on grid,
+  every state/.style={draw, minimum size=0.9cm, font=\footnotesize, inner sep=1pt}]
+  \node[state, initial above, accepting] (q0) at (0,0) {$q_0$};
+  \node[state] (q1) at (4,0) {$q_1$};
+  \node[state] (q2) at (8,0) {$q_2$};
+  \node[state] (q3) at (0,-3) {$q_3$};
+  \node[state] (q4) at (4,-3) {$q_4$};
+  \node[state] (q5) at (8,-3) {$q_5$};
+  \node[state] (q6) at (0,-6) {$q_6$};
+  \node[state] (q7) at (4,-6) {$q_7$};
+  \node[state] (q8) at (8,-6) {$q_8$};
+  \node[state] (q9) at (0,-9) {$q_9$};
+  \node[state] (q10) at (4,-9) {$q_{10}$};
+  \node[state] (q11) at (8,-9) {$q_{11}$};
+  \node[state] (q12) at (0,-12) {$q_{12}$};
+  \node[state] (q13) at (4,-12) {$q_{13}$};
+  \node[state] (q14) at (8,-12) {$q_{14}$};
+  \path
+    (q0) edge node {1} (q1)
+    (q1) edge node {1} (q2)
+    (q2) edge [bend right=30] node[above] {1} (q0)
+    (q3) edge node {1} (q4)
+    (q4) edge node {1} (q5)
+    (q5) edge [bend left=20] node[pos=0.3] {1} (q3)
+    (q6) edge node {1} (q7)
+    (q7) edge node {1} (q8)
+    (q8) edge [bend left=20] node[pos=0.3] {1} (q6)
+    (q9) edge node {1} (q10)
+    (q10) edge node {1} (q11)
+    (q11) edge [bend left=20] node[pos=0.3] {1} (q9)
+    (q12) edge node {1} (q13)
+    (q13) edge node {1} (q14)
+    (q14) edge [bend left=30] node[below] {1} (q12)
+    (q0) edge node {0} (q3)
+    (q3) edge node {0} (q6)
+    (q6) edge node {0} (q9)
+    (q9) edge node {0} (q12)
+    (q1) edge node {0} (q4)
+    (q4) edge node {0} (q7)
+    (q7) edge node {0} (q10)
+    (q10) edge node {0} (q13)
+    (q2) edge node {0} (q5)
+    (q5) edge node {0} (q8)
+    (q8) edge node {0} (q11)
+    (q11) edge node {0} (q14)
+    (q12) edge [bend left=50] node[left] {0} (q0)
+    (q13) edge [bend left=22] node[pos=0.35] {0} (q1)
+    (q14) edge [bend right=50] node[right] {0} (q2);
+\end{tikzpicture}}
+\end{center}
+
+\begin{center}
+\begin{tabular}{c|cc@{\hspace{1cm}}c|cc@{\hspace{1cm}}c|cc}
+$\delta$ & $0$ & $1$ & $\delta$ & $0$ & $1$ & $\delta$ & $0$ & $1$\\ \hline
+$\rightarrow *\,q_0$ & $q_3$ & $q_1$ & $q_5$ & $q_8$ & $q_3$ & $q_{10}$ & $q_{13}$ & $q_{11}$\\
+$q_1$ & $q_4$ & $q_2$ & $q_6$ & $q_9$ & $q_7$ & $q_{11}$ & $q_{14}$ & $q_9$\\
+$q_2$ & $q_5$ & $q_0$ & $q_7$ & $q_{10}$ & $q_8$ & $q_{12}$ & $q_0$ & $q_{13}$\\
+$q_3$ & $q_6$ & $q_4$ & $q_8$ & $q_{11}$ & $q_6$ & $q_{13}$ & $q_1$ & $q_{14}$\\
+$q_4$ & $q_7$ & $q_5$ & $q_9$ & $q_{12}$ & $q_{10}$ & $q_{14}$ & $q_2$ & $q_{12}$\\
+\end{tabular}
+\end{center}
+
+
+% ---------- 2.3.1 ----------
+\subsection{Ejercicio 2.3.1}
+
+Se parte del siguiente AFN sobre $\Sigma=\{0,1\}$ (los estados originales $p,q,r,s$ se renombran $q_0,q_1,q_2,q_3$) y se convierte a un AFD equivalente por construcción de subconjuntos.
+
+\[
+M_{\text{AFN}}=(\{q_0,q_1,q_2,q_3\},\{0,1\},\delta,q_0,\{q_3\})
+\]
+
+\begin{center}
+\begin{tikzpicture}[->, on grid, node distance=3cm,
+  every state/.style={draw, minimum size=0.9cm, font=\small, inner sep=1pt}]
+  \node[state, initial] (q0) {$q_0$};
+  \node[state, right=of q0] (q1) {$q_1$};
+  \node[state, right=of q1] (q2) {$q_2$};
+  \node[state, accepting, right=of q2] (q3) {$q_3$};
+  \path
+    (q0) edge [loop above] node {0,1} (q0)
+    (q0) edge node[fill=white, inner sep=2pt] {0} (q1)
+    (q1) edge node[fill=white, inner sep=2pt] {0,1} (q2)
+    (q2) edge node[fill=white, inner sep=2pt] {0} (q3)
+    (q3) edge [loop above] node {0,1} (q3);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Tabla de transiciones del AFN.}
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $\{q_0,q_1\}$ & $\{q_0\}$\\
+$q_1$ & $\{q_2\}$ & $\{q_2\}$\\
+$q_2$ & $\{q_3\}$ & $\emptyset$\\
+$*\,q_3$ & $\{q_3\}$ & $\{q_3\}$\\
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\paragraph{AFD por construcción de subconjuntos.} Partiendo de $\{q_0\}$ y calculando los subconjuntos alcanzables, obtenemos exactamente ocho subconjuntos válidos que fungirán como los estados de nuestro nuevo AFD. Los estados de aceptación serán todos aquellos que contengan el estado de aceptación original ($q_3$).
+
+\[
+M_{\text{AFD}}=(Q',\{0,1\},\delta',\{q_0\},F')
+\]
+
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[->, auto, on grid,
+  every state/.style={draw, minimum size=1.2cm, font=\small, inner sep=2pt}]
+  
+  \node[state, initial] (q0) at (0,0) {$\{q_0\}$};
+  \node[state] (q1) at (3.5,0) {$\{q_0,q_1\}$};
+  \node[state] (q2) at (7.5,0) {$\{q_0,q_1,q_2\}$};
+  \node[state] (q3) at (11.5,0) {$\{q_0,q_2\}$};
+  
+  \node[state, accepting] (q4) at (1.75,-4.5) {$\{q_0,q_1,q_2,q_3\}$};
+  \node[state, accepting] (q5) at (6,-4.5) {$\{q_0,q_1,q_3\}$};
+  \node[state, accepting] (q6) at (10,-4.5) {$\{q_0,q_2,q_3\}$};
+  \node[state, accepting] (q7) at (14,-4.5) {$\{q_0,q_3\}$};
+  
+  \path
+    (q0) edge [loop below] node {1} (q0)
+    (q0) edge node {0} (q1)
+    (q1) edge node {0} (q2)
+    (q1) edge [bend left=25] node[pos=0.3] {1} (q3)
+    (q2) edge node[swap, pos=0.2] {0} (q4)
+    (q2) edge node {1} (q3)
+    (q3) edge node[swap, pos=0.2] {0} (q5)
+    (q3) edge [bend right=38] node[swap, pos=0.5] {1} (q0)
+    
+    (q4) edge [loop left] node {0} (q4)
+    (q4) edge [bend right=26] node[swap, pos=0.5] {1} (q6)
+    (q5) edge node {0} (q4)
+    (q5) edge [bend left=20]  node[swap, pos=0.5] {1} (q6)
+    (q6) edge [bend left=10] node {0} (q5)
+    (q6) edge node {1} (q7)
+    (q7) edge [bend left=35] node[pos=0.5] {0} (q5)
+    (q7) edge [loop right] node {1} (q7);
+\end{tikzpicture}}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent\textbf{Tabla de transiciones del AFD.}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c|cc}
+$\delta'$ & $0$ & $1$\\ \hline
+$\rightarrow \{q_0\}$ & $\{q_0,q_1\}$ & $\{q_0\}$\\
+$\{q_0,q_1\}$ & $\{q_0,q_1,q_2\}$ & $\{q_0,q_2\}$\\
+$\{q_0,q_1,q_2\}$ & $\{q_0,q_1,q_2,q_3\}$ & $\{q_0,q_2\}$\\
+$\{q_0,q_2\}$ & $\{q_0,q_1,q_3\}$ & $\{q_0\}$\\
+$*\,\{q_0,q_1,q_2,q_3\}$ & $\{q_0,q_1,q_2,q_3\}$ & $\{q_0,q_2,q_3\}$\\
+$*\,\{q_0,q_1,q_3\}$ & $\{q_0,q_1,q_2,q_3\}$ & $\{q_0,q_2,q_3\}$\\
+$*\,\{q_0,q_2,q_3\}$ & $\{q_0,q_1,q_3\}$ & $\{q_0,q_3\}$\\
+$*\,\{q_0,q_3\}$ & $\{q_0,q_1,q_3\}$ & $\{q_0,q_3\}$\\
+\end{tabular}
+\end{center}
+
+
+% ---------- 2.3.2 ----------
+\subsection{Ejercicio 2.3.2}
+
+Se parte del siguiente AFN sobre $\Sigma=\{0,1\}$ (los estados originales $p,q,r,s$ se renombran $q_0,q_1,q_2,q_3$) y se convierte a un AFD equivalente por construcción de subconjuntos.
+
+\[
+M_{\text{AFN}}=(\{q_0,q_1,q_2,q_3\},\{0,1\},\delta,q_0,\{q_1,q_3\})
+\]
+
+\begin{center}
+\begin{tikzpicture}[->, on grid, node distance=3cm,
+  every state/.style={draw, minimum size=0.9cm, font=\small, inner sep=1pt}]
+  \node[state, initial] (q0) at (0,0) {$q_0$};
+  \node[state, accepting] (q1) at (3,0) {$q_1$};
+  \node[state] (q2) at (6,0) {$q_2$};
+  \node[state, accepting] (q3) at (1.5,-3) {$q_3$};
+  \path
+    (q0) edge node {0} (q1)
+    (q0) edge [bend left=-50] node[left,pos=0.5] {0} (q3)
+    (q0) edge [bend left=20] node[above] {1} (q1)
+    (q1) edge [loop above] node {1} (q1)
+    (q1) edge node {0,1} (q2)
+    (q2) edge node[pos=0.5] {0} (q3)
+    (q2) edge [bend left=30] node[below] {1} (q0)
+    (q3) edge node[below,pos=0.6] {1} (q0);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Tabla de transiciones del AFN.}
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $\{q_1,q_3\}$ & $\{q_1\}$\\
+$*\,q_1$ & $\{q_2\}$ & $\{q_1,q_2\}$\\
+$q_2$ & $\{q_3\}$ & $\{q_0\}$\\
+$*\,q_3$ & $\emptyset$ & $\{q_0\}$\\
+\end{tabular}
+\end{center}
+
+\paragraph{AFD por construcción de subconjuntos.} Partiendo de $\{q_0\}$ aparecen diez subconjuntos (incluido el vacío, que actúa como estado trampa). Se renombran como $q_0,\dots,q_9$.
+
+\[
+M_{\text{AFD}}=(\{q_0,\dots,q_9\},\{0,1\},\delta,q_0,\{q_1,q_2,q_4,q_5,q_6,q_7,q_8\})
+\]
+
+\paragraph{Tabla de equivalencia (estado del AFD $\leftrightarrow$ subconjunto del AFN).}
+\begin{center}
+\begin{tabular}{cl}
+Estado AFD & Subconjunto del AFN\\ \hline
+$q_0$ & $\{q_0\}$\\
+$q_1$ & $\{q_1,q_3\}$ (aceptación)\\
+$q_2$ & $\{q_1\}$ (aceptación)\\
+$q_3$ & $\{q_2\}$\\
+$q_4$ & $\{q_0,q_1,q_2\}$ (aceptación)\\
+$q_5$ & $\{q_1,q_2\}$ (aceptación)\\
+$q_6$ & $\{q_3\}$ (aceptación)\\
+$q_7$ & $\{q_1,q_2,q_3\}$ (aceptación)\\
+$q_8$ & $\{q_2,q_3\}$ (aceptación)\\
+$q_9$ & $\emptyset$ (trampa)\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[->, auto, on grid,
+  every state/.style={draw, minimum size=0.9cm, font=\small, inner sep=1pt}]
+  \node[state, initial] (q0) at (0,0) {$q_0$};
+  \node[state, accepting] (q1) at (3.4,0) {$q_1$};
+  \node[state, accepting] (q2) at (6.8,0) {$q_2$};
+  \node[state] (q3) at (10.2,0) {$q_3$};
+  \node[state, accepting] (q4) at (1.7,-3.4) {$q_4$};
+  \node[state, accepting] (q5) at (5.1,-3.4) {$q_5$};
+  \node[state, accepting] (q6) at (8.5,-3.4) {$q_6$};
+  \node[state, accepting] (q7) at (11.9,-3.4) {$q_7$};
+  \node[state, accepting] (q8) at (5.1,-6.8) {$q_8$};
+  \node[state] (q9) at (8.5,-6.8) {$q_9$};
+  \path
+    (q0) edge node {0} (q1)
+    (q0) edge [bend left=22] node[pos=0.25] {1} (q2)
+    (q1) edge [bend left=30] node[pos=0.25] {0} (q3)
+    (q1) edge node[swap, pos=0.25] {1} (q4)
+    (q2) edge node {0} (q3)
+    (q2) edge node[swap, pos=0.25] {1} (q5)
+    (q3) edge node[pos=0.25] {0} (q6)
+    (q3) edge [bend right=45] node[swap] {1} (q0)
+    (q4) edge [bend right=22] node[swap, pos=0.12] {0} (q7)
+    (q4) edge [loop left] node {1} (q4)
+    (q5) edge node {0} (q8)
+    (q5) edge node[above] {1} (q4)
+    (q6) edge node {0} (q9)
+    (q6) edge node[pos=0.15] {1} (q0)
+    (q7) edge [bend left=90] node[pos=0.25] {0} (q8)
+    (q7) edge [loop right] node {1} (q7)
+    (q8) edge [bend right=14] node[swap, pos=0.3] {0} (q6)
+    (q8) edge [bend left=65] node[pos=0.35] {1} (q0)
+    (q9) edge [loop below] node {0,1} (q9);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Tabla de transiciones del AFD.}
+\begin{center}
+\begin{tabular}{c|cc@{\hspace{1.2cm}}c|cc}
+$\delta$ & $0$ & $1$ & $\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $q_1$ & $q_2$ & $*\,q_5$ & $q_8$ & $q_4$\\
+$*\,q_1$ & $q_3$ & $q_4$ & $*\,q_6$ & $q_9$ & $q_0$\\
+$*\,q_2$ & $q_3$ & $q_5$ & $*\,q_7$ & $q_8$ & $q_7$\\
+$q_3$ & $q_6$ & $q_0$ & $*\,q_8$ & $q_6$ & $q_0$\\
+$*\,q_4$ & $q_7$ & $q_4$ & $q_9$ & $q_9$ & $q_9$\\
+\end{tabular}
+\end{center}
+
+
+% ---------- 2.3.3 ----------
+\subsection{Ejercicio 2.3.3}
+
+Se parte del siguiente AFN sobre $\Sigma=\{0,1\}$ (estados originales $p,q,r,s,t$ renombrados $q_0,q_1,q_2,q_3,q_4$), se convierte a un AFD equivalente y, además, se describe el lenguaje que reconoce.
+
+\[
+M_{\text{AFN}}=(\{q_0,q_1,q_2,q_3,q_4\},\{0,1\},\delta,q_0,\{q_3,q_4\})
+\]
+
+\begin{center}
+\begin{tikzpicture}[->, on grid, node distance=3cm,
+  every state/.style={draw, minimum size=0.9cm, font=\small, inner sep=1pt}]
+  \node[state, initial] (q0) at (0,0) {$q_0$};
+  \node[state] (q1) at (3,0) {$q_1$};
+  \node[state] (q2) at (6,0) {$q_2$};
+  \node[state, accepting] (q3) at (3,-2.8) {$q_3$};
+  \node[state, accepting] (q4) at (6,-2.8) {$q_4$};
+  \path
+    (q0) edge [loop above] node {0,1} (q0)
+    (q0) edge node {0} (q1)
+    (q1) edge node {0} (q2)
+    (q1) edge node[left] {0} (q3)
+    (q1) edge node[pos=0.4] {1} (q4)
+    (q2) edge [loop above] node {0} (q2)
+    (q2) edge node[pos=0.4] {1} (q4)
+    (q2) edge [bend right=30] node[below] {0} (q0);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Tabla de transiciones del AFN.}
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $\{q_0,q_1\}$ & $\{q_0\}$\\
+$q_1$ & $\{q_2,q_3\}$ & $\{q_4\}$\\
+$q_2$ & $\{q_0,q_2\}$ & $\{q_4\}$\\
+$*\,q_3$ & $\emptyset$ & $\emptyset$\\
+$*\,q_4$ & $\emptyset$ & $\emptyset$\\
+\end{tabular}
+\end{center}
+
+\paragraph{AFD por construcción de subconjuntos.} A pesar de que el AFN tiene cinco estados, al calcular los subconjuntos alcanzables desde $\{q_0\}$ solo aparecen cuatro. Se renombran $q_0,\dots,q_3$.
+
+\[
+M_{\text{AFD}}=(\{q_0,q_1,q_2,q_3\},\{0,1\},\delta,q_0,\{q_2,q_3\})
+\]
+
+\paragraph{Tabla de equivalencia (estado del AFD $\leftrightarrow$ subconjunto del AFN).}
+\begin{center}
+\begin{tabular}{cl}
+Estado AFD & Subconjunto del AFN\\ \hline
+$q_0$ & $\{q_0\}$\\
+$q_1$ & $\{q_0,q_1\}$\\
+$q_2$ & $\{q_0,q_1,q_2,q_3\}$ (aceptación)\\
+$q_3$ & $\{q_0,q_4\}$ (aceptación)\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[->, on grid, node distance=3.2cm,
+  every state/.style={draw, minimum size=0.9cm, font=\small, inner sep=1pt}]
+  \node[state, initial] (q0) {$q_0$};
+  \node[state, right=of q0] (q1) {$q_1$};
+  \node[state, accepting, right=of q1] (q2) {$q_2$};
+  \node[state, accepting, right=of q2] (q3) {$q_3$};
+  \path
+    (q0) edge [loop above] node {1} (q0)
+    (q0) edge node {0} (q1)
+    (q1) edge node {0} (q2)
+    (q1) edge [bend left=50] node[above] {1} (q3)
+    (q2) edge [loop above] node {0} (q2)
+    (q2) edge [bend left=18] node[above] {1} (q3)
+    (q3) edge [bend left=50] node[below] {0} (q1)
+    (q3) edge [bend right=60] node[below] {1} (q0);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Tabla de transiciones del AFD.}
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & $0$ & $1$\\ \hline
+$\rightarrow q_0$ & $q_1$ & $q_0$\\
+$q_1$ & $q_2$ & $q_3$\\
+$*\,q_2$ & $q_2$ & $q_3$\\
+$*\,q_3$ & $q_1$ & $q_0$\\
+\end{tabular}
+\end{center}
+
+\paragraph{Descripción del lenguaje.} Observando el AFD se ve que un estado es de aceptación exactamente cuando el \emph{penúltimo} símbolo leído (el segundo contando desde la derecha) fue un $0$. En otras palabras, el lenguaje reconocido es el de todas las cadenas de longitud al menos dos cuyo penúltimo símbolo es $0$; de forma equivalente, las cadenas que terminan en $00$ o en $01$.
+
+
+% ---------- 2.3.4 ----------
+\subsection{Ejercicio 2.3.4}
+
+\subsubsection{Inciso (a): el último dígito ya había aparecido antes}
+
+Sobre el alfabeto $\Sigma=\{0,1,\dots,9\}$, se quiere reconocer las cadenas en las que el dígito final ya apareció en alguna posición anterior. La estrategia con un AFN es natural: la máquina pasea por la cadena en $q_0$ y, en cualquier momento, \emph{adivina} que el dígito $d$ que acaba de leer es el que se va a repetir al final, guardándolo en el estado $A_d$. Estando en $A_d$ espera ver de nuevo el dígito $d$ como último símbolo, momento en que salta al estado de aceptación $F$.
+
+Los estados $A_0,\dots,A_9$ se renombran $q_1,\dots,q_{10}$ y el estado final $F$ es $q_{11}$.
+
+\[
+M=(\{q_0,q_1,\dots,q_{11}\},\{0,1,\dots,9\},\delta,q_0,\{q_{11}\})
+\]
+
+\paragraph{Función de transición.} Escribimos $\sigma$ para un dígito cualquiera de $\Sigma$:
+\begin{itemize}
+  \item $\delta(q_0,\sigma)=\{q_0\}\cup\{q_{\sigma+1}\}$ para cada dígito $\sigma$ (sigue leyendo y, a la vez, adivina que $\sigma$ se repetirá).
+  \item Para el estado $q_{d+1}$ (que recuerda el dígito $d$): $\delta(q_{d+1},\sigma)=\{q_{d+1}\}$ si $\sigma\neq d$, y $\delta(q_{d+1},d)=\{q_{d+1},q_{11}\}$.
+  \item $\delta(q_{11},\sigma)=\emptyset$.
+\end{itemize}
+
+\noindent En el diagrama, para no dibujar las diez ramas por separado, se usa la etiqueta $\sigma$ para representar ``cualquier dígito'' y $d$ para ``el dígito recordado por ese estado''. Se muestran dos ramas representativas ($q_1$ recuerda el $0$, $q_{10}$ recuerda el $9$); las demás ($q_2,\dots,q_9$) son idénticas cambiando el dígito recordado.
+
+\begin{center}
+\begin{tikzpicture}[->, on grid, node distance=3cm,
+  every state/.style={draw, minimum size=0.9cm, font=\footnotesize, inner sep=1pt}]
+  \node[state, initial] (q0) at (0,0) {$q_0$};
+  \node[state] (q1) at (4,1.6) {$q_1$};
+  \node[state] (qk) at (4,-1.6) {$q_{10}$};
+  \node[state, accepting] (qf) at (8,0) {$q_{11}$};
+  \node at (4,0) {$\vdots$};
+  \path
+    (q0) edge [loop above] node {$\sigma$ (todo dígito)} (q0)
+    (q0) edge node[above,pos=0.5] {$0$} (q1)
+    (q0) edge node[below,pos=0.5] {$9$} (qk)
+    (q1) edge [loop above] node {$\sigma\neq 0$} (q1)
+    (q1) edge node[above,pos=0.5] {$0$} (qf)
+    (qk) edge [loop below] node {$\sigma\neq 9$} (qk)
+    (qk) edge node[below,pos=0.5] {$9$} (qf);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Tabla de transiciones} (se abrevia: $\sigma$ es cualquier dígito y $d$ es el dígito que recuerda el estado $q_{d+1}$).
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & dígito $=d$ & dígito $\neq d$\\ \hline
+$\rightarrow q_0$ & \multicolumn{2}{c}{$\{q_0\}\cup\{q_{\sigma+1}\}$ al leer $\sigma$}\\ \hline
+$q_{d+1}$ ($d=0,\dots,9$) & $\{q_{d+1},q_{11}\}$ & $\{q_{d+1}\}$\\ \hline
+$*\,q_{11}$ & \multicolumn{2}{c}{$\emptyset$}\\
+\end{tabular}
+\end{center}
+
+\subsubsection{Inciso (b): el último dígito NO había aparecido antes}
+
+De nuevo sobre $\Sigma=\{0,1,\dots,9\}$, ahora la cadena se acepta si su último dígito \emph{no} aparece en ninguna posición anterior. El no determinismo vuelve a ser la clave: al leer el \emph{primer} símbolo, la máquina \emph{adivina} cuál será el dígito final $d$ y pasa al estado $B_d$, con la restricción de que $d$ sea distinto del símbolo recién leído (de lo contrario $d$ ya habría aparecido). Estando en $B_d$ puede leer libremente cualquier dígito distinto de $d$; al leer $d$ apuesta a que es el último símbolo y salta al estado de aceptación, que no tiene transiciones (si llega otro símbolo, ese camino muere). Además, desde el estado inicial cualquier símbolo puede ir directamente a la aceptación, para cubrir las cadenas de un solo dígito.
+
+Los estados $B_0,\dots,B_9$ se renombran $q_1,\dots,q_{10}$ y el estado de aceptación es $q_{11}$.
+
+\[
+M=(\{q_0,q_1,\dots,q_{11}\},\{0,1,\dots,9\},\delta,q_0,\{q_{11}\})
+\]
+
+\paragraph{Función de transición.} Escribimos $\sigma$ para un dígito cualquiera:
+\begin{itemize}
+  \item $\delta(q_0,\sigma)=\{q_{11}\}\cup\{q_{d+1} : d\neq\sigma\}$ (o bien $\sigma$ es el único símbolo, o adivina un final $d$ distinto de $\sigma$).
+  \item Para $q_{d+1}$ (adivinó que el final es $d$): $\delta(q_{d+1},\sigma)=\{q_{d+1}\}$ si $\sigma\neq d$, y $\delta(q_{d+1},d)=\{q_{11}\}$.
+  \item $\delta(q_{11},\sigma)=\emptyset$.
+\end{itemize}
+
+\noindent Igual que en el inciso anterior, el diagrama muestra dos ramas representativas ($q_1$ adivina el $0$ y $q_{10}$ adivina el $9$); las demás son análogas.
+
+\begin{center}
+\begin{tikzpicture}[->, on grid,
+  every state/.style={draw, minimum size=0.9cm, font=\footnotesize, inner sep=1pt}]
+  \node[state, initial] (q0) at (0,0) {$q_0$};
+  \node[state] (q1) at (3.8,2) {$q_1$};
+  \node[state] (qk) at (3.8,-2) {$q_{10}$};
+  \node[state, accepting] (qf) at (7.6,0) {$q_{11}$};
+  \node at (3.8,-0.9) {$\vdots$};
+  \path
+    (q0) edge node[above left, pos=0.5] {$\sigma\neq 0$} (q1)
+    (q0) edge [bend left=22] node[above, pos=0.4] {$\sigma$} (qf)
+    (q0) edge node[below left, pos=0.5] {$\sigma\neq 9$} (qk)
+    (q1) edge [loop above] node {$\sigma\neq 0$} (q1)
+    (q1) edge node[above right, pos=0.5] {$0$} (qf)
+    (qk) edge [loop below] node {$\sigma\neq 9$} (qk)
+    (qk) edge node[below right, pos=0.5] {$9$} (qf);
+\end{tikzpicture}
+\end{center}
+
+\noindent\textbf{Tabla de transiciones} ($\sigma$ es cualquier dígito; $d$ es el dígito que adivina el estado $q_{d+1}$).
+\begin{center}
+\begin{tabular}{c|cc}
+$\delta$ & dígito $=d$ & dígito $\neq d$\\ \hline
+$\rightarrow q_0$ & \multicolumn{2}{c}{$\{q_{11}\}\cup\{q_{d+1} : d\neq\sigma\}$ al leer $\sigma$}\\ \hline
+$q_{d+1}$ ($d=0,\dots,9$) & $\{q_{11}\}$ & $\{q_{d+1}\}$\\ \hline
+$*\,q_{11}$ & \multicolumn{2}{c}{$\emptyset$}\\
+\end{tabular}
+\end{center}
+
+% ============== CONCLUSIONES ==============
+\clearpage
+\section{Conclusiones}
+
+A lo largo de este trabajo se diseñaron catorce autómatas finitos que resuelven once ejercicios, abarcando los dos tipos estudiados en el curso: deterministas y no deterministas. El ejercicio de mantener un criterio uniforme (descripción del lenguaje, definición formal, diagrama y tabla para cada máquina) hizo evidente que diseñar un autómata es, en el fondo, responder con precisión a una sola pregunta: qué información mínima hay que recordar mientras se lee la cadena. Cada estado materializa uno de esos recuerdos, y la función de transición describe cómo se actualiza al leer cada símbolo.
+
+Tres ideas resultaron especialmente útiles de forma recurrente. La primera es el uso de contadores módulo: llevar una cantidad ``módulo $k$'' permite reconocer condiciones de divisibilidad con un número finito de estados, como en el inciso que combina divisibilidad entre $5$ y entre $3$. La segunda es el poder expresivo del no determinismo para ``adivinar'': en los problemas sobre el último dígito de la cadena, un AFN expresa de forma directa una propiedad que a un AFD le costaría muchos más estados describir. La tercera es la construcción de subconjuntos, que conecta ambos mundos: garantiza que toda máquina no determinista tiene una determinista equivalente, y la práctica mostró que el número de estados del AFD resultante puede ser mucho menor que la cota teórica $2^n$ (como en 2.3.3, donde cinco estados no deterministas se redujeron a solo cuatro deterministas).
+
+También quedó clara una consideración práctica: el tamaño del autómata crece con la cantidad de información que debe recordar (los $16$ estados de la ventana de cinco símbolos o los $15$ del doble contador módulo), y por eso cada diagrama se acompaña de su tabla de transiciones, que funciona como referencia completa y rigurosa. En conjunto, los ejercicios refuerzan que los autómatas finitos, pese a su sencillez, son una herramienta expresiva y rigurosa para describir lenguajes regulares.
+
+% ============== BIBLIOGRAFÍA ==============
+\clearpage
+\begin{thebibliography}{9}
+
+\bibitem{hopcroft}
+Hopcroft, J. E., Motwani, R., y Ullman, J. D.
+\textit{Introducción a la teoría de autómatas, lenguajes y computación}.
+3.ª edición. Pearson Educación. (Ejercicios 2.2.4 y 2.2.5, p.\ 45; ejercicios 2.3.1--2.3.4, p.\ 56.)
+
+\bibitem{sipser}
+Sipser, M.
+\textit{Introduction to the Theory of Computation}.
+3rd edition. Cengage Learning, 2012.
+
+\bibitem{kelley}
+Kelley, D.
+\textit{Teoría de Autómatas y Lenguajes Formales}.
+Prentice Hall, 1995.
+
+\end{thebibliography}
+
+\end{document}

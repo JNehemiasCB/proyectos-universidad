@@ -1,0 +1,8 @@
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\bin\Debug\OrdenamientoBurbuja.exe.config
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\bin\Debug\OrdenamientoBurbuja.exe
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\bin\Debug\OrdenamientoBurbuja.pdb
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\obj\Debug\OrdenamientoBurbuja.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\obj\Debug\OrdenamientoBurbuja.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\obj\Debug\OrdenamientoBurbuja.exe
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\obj\Debug\OrdenamientoBurbuja.pdb
+C:\Users\nehem\OneDrive\Documentos\AnalisisYDiseñoDeAlgoritmos\OrdenamientoBurbuja\obj\Debug\OrdenamientoBurbuja.exe.config

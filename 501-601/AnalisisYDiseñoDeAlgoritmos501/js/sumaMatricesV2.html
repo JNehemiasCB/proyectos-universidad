@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de matrices</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <h1>suma de matrices</h1>
+         <div>
+            <label>Ingrese el tamaño de las filas:</label>
+            <input type="number" id="filas" class="form-control w-25" placeholder="3">
+            <label>Ingrese el tamaño de las columnas:</label>
+            <input type="number" id="columnas" class="form-control w-25" placeholder="3">
+         </div>
+            <button onclick="crear()" class="btn btn-success">Crear matrices</button>
+                <h5>Matriz 1</h5>
+                <div id="M1"></div>
+
+                <h5>Matriz 2</h5>
+                <div id="M2"></div>
+
+            <button onclick="sumar()" class="btn btn-danger">Sumar matrices</button>
+                <h5>Resultado</h5>
+                <div id="MR"></div>
+    <script>
+        function crear() {
+            var filas = document.getElementById("filas").value;
+            var columnas = document.getElementById("columnas").value;
+            var divM1 = document.getElementById("M1");
+            var divM2 = document.getElementById("M2");
+            divM1.innerHTML = "";
+            divM2.innerHTML = "";
+            document.getElementById("MR").innerHTML = "";
+
+            for (var i = 0; i < filas; i++) {
+                for (var j = 0; j < columnas; j++) {
+
+                    var input1 = document.createElement("input");
+                    input1.type = "number";
+                    input1.id = "m1_" + i + "_" + j;
+                    input1.value = 3;
+                    divM1.appendChild(input1);
+
+                    var input2 = document.createElement("input");
+                    input2.type = "number";
+                    input2.id = "m2_" + i + "_" + j;
+                    input2.value = 3;
+                    divM2.appendChild(input2);
+                }
+                divM1.appendChild(document.createElement("br"));
+                divM2.appendChild(document.createElement("br"));
+            }
+        }
+
+        function sumar() {
+            var filas = parseInt(document.getElementById("filas").value);
+            var columnas = parseInt(document.getElementById("columnas").value);
+            var divMR = document.getElementById("MR");
+            divMR.innerHTML = "";
+
+            for (var i = 0; i < filas; i++) {
+                for (var j = 0; j < columnas; j++) {
+                    var valorM1 = parseFloat(document.getElementById("m1_" + i + "_" + j).value);
+                    var valorM2 = parseFloat(document.getElementById("m2_" + i + "_" + j).value);
+                    var suma = valorM1 + valorM2;
+
+                    var inputR = document.createElement("input");
+                    inputR.type = "number";
+                    inputR.value = suma;
+                    inputR.readOnly = true;
+                    divMR.appendChild(inputR);
+                }
+                divMR.appendChild(document.createElement("br"));
+            }
+        }
+    </script>
+</body>
+</html>

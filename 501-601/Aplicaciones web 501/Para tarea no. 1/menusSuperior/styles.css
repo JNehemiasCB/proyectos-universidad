@@ -1,0 +1,77 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+    padding: 10px 20px;
+    background-color:chocolate;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 40px;
+    
+    text-decoration: none;
+    color: #333;
+    background-color:chocolate;
+}
+
+nav ul li a:hover {
+    background-color:grey;
+}
+
+.dropdown {
+    position: relative;
+}
+
+
+.derecha{
+    margin-left:auto;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:gray;
+    min-width: 160px;
+    z-index: 100;
+}
+
+.dropdown-content li a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.account img {
+    height: 35px;
+    width: 35px;
+}

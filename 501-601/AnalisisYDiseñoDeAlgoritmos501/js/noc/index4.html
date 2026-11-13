@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ordenar o mayor número</title>
+</head>
+<body>
+   <input type="number" id="txt_1">
+   <input type="number" id="txt_2">
+   <input type="number" id="txt_3">
+   <input type="number" id="txt_4">
+   <input type="number" id="txt_5"><br><br>
+
+   <button onclick="ordenar()">Ordenar</button>
+   <div id="divR"></div>
+
+   <script>
+      function ordenar(){
+         let vectorValores = [];
+
+         // Llenar el vector con los valores numéricos de los inputs
+         for(let i = 1; i <= 5; i++){
+            vectorValores.push(parseInt(document.getElementById("txt_" + i).value));
+         }
+
+         // Ordenamiento burbuja
+         for(let i = 0; i < vectorValores.length - 1; i++){
+            for(let j = 0; j < vectorValores.length - 1 - i; j++){
+               if(vectorValores[j] > vectorValores[j + 1]){
+                  let temp = vectorValores[j];
+                  vectorValores[j] = vectorValores[j + 1];
+                  vectorValores[j + 1] = temp;
+               }
+            }
+         }
+
+         // Mostrar resultado correctamente
+         document.getElementById("divR").innerHTML = "Ordenado: " + vectorValores.join(", ");
+      }
+   </script>
+</body>
+</html>

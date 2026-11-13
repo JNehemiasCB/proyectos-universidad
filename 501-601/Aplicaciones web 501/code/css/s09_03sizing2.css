@@ -1,0 +1,172 @@
+/* DIMENSIONANDO CON PORCENTAJES */
+
+/* .box{
+   border: 2px solid black;
+   width: 50%;
+}  */
+
+/* ancho , relleno y margen en porcentaje */
+/*  
+.box{
+   width: 30%;
+   padding: 5%;
+   margin:5%;
+}  */
+
+/*                 DEFINIENDO TAMAÑOS             */
+/* Caja 1 con ancho y alto fijos   si el contenido no cbe se desborda */
+ 
+/* .box1{
+   border: 2px solid darkblue;
+   width: 150px;
+   height: 150px;
+   margin: 2em; */
+   /* overflow:hidden; 
+} */
+
+/* Caja 2 sin altura definida por tanto se alarga verticalmente segun su contenido */
+/* 
+ .box2{
+   border: 2px solid darkblue;
+   width: 120px;
+   margin: 2em;
+}  */
+
+/*  Caja 3 sin altura ni anchura definida, se ajusta al contenido */
+/* 
+.box3{
+   border: 2px solid darkblue;
+   margin: 2em;
+}  */
+
+/*   ================= tamaños mínimos y máximos ================================== */
+/*  caja  con un mínimo de ltura si el contenido no la llena queda un espacio vacío */
+/* 
+.min-altura{
+   border: 2px solid brown;
+   margin: 1em 2em;
+   min-height: 15vh;
+} */
+
+/* caja con un máximo se ajusta al contenido si no rebasa el máximo */
+/* 
+.max-ancho{
+   border: 2px solid brown;
+   max-width: 40vw;
+   margin: 1em 2em;
+}  */
+
+/*  ===== TAMAÑO DE IMAGENES Y USO DE cover, contain y fill ================*/
+/* Sin usar  cover, contain o fill */
+
+/* Con caja grande contenedora de tamaño fijo 
+Con caja grande la imagen se muestra tal cual dejando espacio vacío*/
+  
+ /* .box4{
+   border: 5px solid blue;
+   width:300px;
+   height: 200px;
+   margin: 30px;
+}  */
+
+
+/* Con caja pequeña contenedora de tamaño fijo desbordando */
+ 
+/* .box5{
+   border: 5px solid red;
+   width:100px;
+   height: 150px;
+   margin: 30px;
+}  */
+
+
+/* con caja grande dejando mucho espacio vacío */
+ 
+/* .box6{
+   border: 5px solid rgb(0, 255, 51);
+   width:500px;
+   height: 600px;
+   margin: 30px;
+}    */
+
+
+/* segunda caja ajustar aún distorcionando     == */
+/* 
+ .ajustar{
+   width: 100%;
+   height: 100%;
+}   */
+
+
+/*  ===dejar activas .box4, .box5 y .box6 al usar cover, contain o fill  ==   */
+/*Para usar cover, contain o fill se requiere dimensionar las imgagenes primero*/
+
+/* 100% todo el contenedor distorcionando */
+
+/* img{
+   width:100%;
+   height:100%;
+}  */
+
+/*  tercera imagen con cover muestra una parte -si es más grande que el contenedor-
+no distorciona */
+
+/* .cover{
+   object-fit: cover;
+}   */
+
+/* contain la reduce o agranda hasta caber sin distorcionar dejando espacios vacios*/
+
+/* .contain{
+   object-fit: contain;
+} */
+
+/* fill LLena la caja aunque la distorcione  */
+
+/* .fill{
+   object-fit: fill;
+}  */
+
+/* =====================   TAMAÑOS MINIMOS Y MAXIMOS CON IMAGENES  =========== */
+/* 
+ .box{
+   border: 5px solid darkblue;
+   height: 200px;
+   width: 250px;
+}
+
+.img-uno{
+   max-width: 50%;
+}
+
+.img-dos{
+   max-height: 50%;
+}
+
+.img-tres{
+   min-width: 100%
+}
+
+.img-cuatro{
+   
+   min-height: 50%;
+}   */
+
+/* === UN POCO DE ESTILO A FORMULARIOS */
+/* 
+fieldset{
+   width:60%;
+}
+ 
+#name, #email{
+   border: 2px solid black;
+   margin: 0.7em 0 0.5em 0.7em;
+   padding: 0.5em;
+   width: 85%;             
+   border-radius: 1em;
+   background-color: lightgray;
+}
+   
+#email{
+   margin-left: 26px;
+}  */

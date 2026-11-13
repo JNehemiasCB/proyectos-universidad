@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 18 Ejercicio 23 de JS. Adaptado de Dynamic client-side scripting -MDN https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+   <meta name="author" content =" Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+
+    <title>JSON recuperación de datos</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    
+    <style>
+
+        h1 {
+          font-family: 'Faster One', cursive;
+          font-size: 3rem;
+          text-align: center;
+        }
+        
+        header p {
+          font-size: 1.3rem;
+          font-weight: bold;
+          text-align: center;
+        }
+       
+        section{
+            display: flex;  /* para alinear los artículos en fila*/
+        } 
+
+        section article {
+          width: 30%;
+          float: left;
+          border: 2px solid black;
+          margin: 0 2px;
+        }
+        
+        section p {
+          margin: 5px;
+        }
+         
+        section ul {
+          margin-top: 0;
+        }
+        
+        h2 {
+          font-size: 1.5rem;
+          letter-spacing: 1px;
+          margin-bottom: 10px;
+          text-align: center;
+          position: relative;
+          top:-20px;
+          left:0;
+          background-color: black;
+          color: white;
+
+        }
+    </style>
+  </head>
+  <body>
+      <header>
+      </header>
+      <section>
+      </section>
+    <script>
+/* === EJEMPLO DE RECUPERACIÓN DE DATOS DESDE LA WEB */
+// Se extraeran los datos de superHeroes de la URL 
+// https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+// visualizar el json en el navegador para ver que tiene las propiedades 
+// squadName, homeTown, formed, secretBase, active  
+// y por cada superheroe un array members con propiedades name, age, secretIdentity que a su vez incluye un array de poderes (power)
+
+    const header = document.querySelector('header');
+    const section = document.querySelector('section');
+
+// Uso de la API de HTTP = XMLHttpReqiest o XHR
+// 1.- Guardar la URL del JSON a recuperar
+        const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+
+// 2.- Crear una instancia de XMLHttpRequest()
+        const request = new XMLHttpRequest();
+
+// 3.- Abrir conexión indicando el método HTTP y la URL 
+        request.open('GET', requestURL);
+
+// 4.- Indicar devolver en formato JSON ya que por defecto devuelve texto plano (string), otros tipos son:
+// "blob"para archivos binarios (imégenes, pdf, etc.)
+// "document" para XML/HTML
+// "arraybuffer"  para binarios crudos y  "text" para texto plano
+
+        request.responseType = 'json';
+
+// 5.- Enviar la petición
+        request.send();
+
+// 6.- Si la respuesta fué exitosa se ejecuta automáticamente el evento onload que obtiene la respuesta ( request.response), por tanto la función anónima los guarda en const superHeroes en formato json, crea y visualiza el header por medio de la función populateHeader() y por último crea y visualiza los datos de cada superheroe po rmedio de la función showHeroes()
+
+        request.onload = function() {
+        const superHeroes = request.response;
+            populateHeader(superHeroes);
+            showHeroes(superHeroes);
+        }
+/* 7.- Función para visualizar el encabezado de los datos: 
+    se crea un elemento <h1>, se asigna a su textContent la propiedad squadName del objeto y se agrega al <header> 
+    Se realiza una operación parecida en un párrafo
+    para indicar la ciudad y fecha de formación del equipo de superheroes
+*/
+        function populateHeader(jsonObj) {
+
+        const myH1 = document.createElement('h1');
+        myH1.textContent = jsonObj['squadName'];
+        header.appendChild(myH1);
+
+        const myPara = document.createElement('p');
+        myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+        header.appendChild(myPara);
+        }
+/* 8.- Función para visualizar los datos de cada superheroe como un artículo en <section> */
+
+        function showHeroes(jsonObj) {
+
+        const heroes = jsonObj['members'];     // se almacena el array en heroes
+
+/* Por cada miembro del scuadron o superheroe
+   8.2 se crea un <article> que contendrá : 
+     un <h2> con el nombre 
+     un <p> con la identidad secreta
+     un <p> con la edad
+     un <p> con el texto  "Superpowers"
+     un <ul> que contendrá un <li> por cada superpoder
+        Por medio del siguiente for
+*/
+      for (var i = 0; i < heroes.length; i++) {
+      // creación de los elementos <article> , <h2>, <p> y <ul>
+          const myArticle = document.createElement('article');
+          const myH2 = document.createElement('h2');
+          const myPara1 = document.createElement('p');
+          const myPara2 = document.createElement('p');
+          const myPara3 = document.createElement('p');
+          const myList = document.createElement('ul');
+
+      // "Llenado de un <h2> y tres <p>"
+          myH2.textContent = heroes[i].name;
+          myPara1.textContent = 'Secret identity: ' + heroes[i].secretIdentity;
+          myPara2.textContent = 'Age: ' + heroes[i].age;
+          myPara3.textContent = 'Superpowers:';
+
+      // Creación y "llenado" de <ul> con sus <li>
+          const superPowers = heroes[i].powers;
+          for (var j = 0; j < superPowers.length; j++) {
+          const listItem = document.createElement('li');
+          listItem.textContent = superPowers[j];
+          myList.appendChild(listItem);
+          }
+
+      // Agregado del <h2> , los <p> y la <ul> con sus <li> al <article> 
+          myArticle.appendChild(myH2);
+          myArticle.appendChild(myPara1);
+          myArticle.appendChild(myPara2);
+          myArticle.appendChild(myPara3);
+          myArticle.appendChild(myList);
+      
+      // Agregado del <article> a <section>
+          section.appendChild(myArticle);
+      }
+  }
+
+  </script>
+  </body>
+</html>

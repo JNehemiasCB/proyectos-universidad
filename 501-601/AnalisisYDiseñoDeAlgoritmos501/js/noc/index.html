@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <input type="text" id="txtLetra" placeholder="ingresa una letra">
+   <button id="btnOk" onclick="vocalOConsonante()">ok</button>
+   <div id="Res"></div>
+
+   <script>
+      function vocalOConsonante(){
+         let letra = document.getElementById("txtLetra").value
+         let divR = document.getElementById("Res")
+
+         let vocales = ["a", "e", "i", "o", "u"]
+
+         for(let i = 0; i <= vocales.length; i++ ){
+            if(letra == vocales[i]){
+               divR.innerHTML = "la letra " + "'" + letra + "'"+ " es vocal";
+               return;
+            }
+         }
+         divR.innerHTML = "la letra " + letra + " es una consonante";
+      }
+   </script>
+</body>
+</html>

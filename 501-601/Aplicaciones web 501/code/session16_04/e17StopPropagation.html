@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content =" Página del curso de plicaciones web, sesión 16 Ejercicio e17 de JS." >
+    <meta name= author content = "Ricardo Peña Galeana">
+   <link rel="icon" href="../assets/images/favicon.ico">
+    <style>
+    #contenedor {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #0077b6;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+    <title>E17 Class List y Stop Propagation</title>
+</head>
+<body>
+    
+  <div id="contenedor">
+    <button id="boton">Haz clic aquí</button>
+  </div>
+
+  <script>
+    // Evento en el contenedor
+	// observar que no se requiere crear una variable contenedora 
+	// de la referencia del elemento y se usan funciones lambda
+	
+    document.getElementById('contenedor').addEventListener('click', ()=> {
+      alert('Hiciste clic en el contenedor');
+    });
+
+    // Evento en el botón
+    document.getElementById('boton').addEventListener('click', (e) => {
+    alert('Hiciste clic en el botón');
+    //e.stopPropagation(); // Evita que el evento se propague al contenedor
+    
+  });
+
+  </script>
+
+</script>
+</body>
+</html>
