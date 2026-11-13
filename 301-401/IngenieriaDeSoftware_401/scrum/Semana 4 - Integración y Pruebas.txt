@@ -1,0 +1,13 @@
+Semana 4 - Integración y Pruebas
+
+14. Optimizar flujo de navegación → Mejorar transiciones entre pantallas.
+
+
+15. Agregar notificaciones → Recordatorios para registrar gastos.
+
+
+16. Pruebas y corrección de errores → Identificar y corregir bugs antes de cerrar el sprint.
+
+
+17. Revisión y retrospectiva → Evaluar el sprint y planear mejoras para el siguiente.
+

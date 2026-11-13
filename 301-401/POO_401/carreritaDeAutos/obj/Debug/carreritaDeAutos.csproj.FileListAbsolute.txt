@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\POO_401\carreritaDeAutos\bin\Debug\carreritaDeAutos.exe.config
+C:\Users\nehem\OneDrive\Documentos\POO_401\carreritaDeAutos\bin\Debug\carreritaDeAutos.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\carreritaDeAutos\bin\Debug\carreritaDeAutos.pdb
+C:\Users\nehem\OneDrive\Documentos\POO_401\carreritaDeAutos\obj\Debug\carreritaDeAutos.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\carreritaDeAutos\obj\Debug\carreritaDeAutos.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\carreritaDeAutos\obj\Debug\carreritaDeAutos.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\carreritaDeAutos\obj\Debug\carreritaDeAutos.pdb

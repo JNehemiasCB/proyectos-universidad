@@ -1,0 +1,5 @@
+Caso de uso: Gestionar Dinero 
+Actores: Usuario
+Tipo: primario
+Descripción:
+El usuario registra sus gastos y ve en que consume y cuanto gasta en determinado tiempo, la aplicación limita el cuanto gastar en determinados productos y te avisa si ya sobrepasaste tu limite, el usuario se beneficia al ver cuanto gasta y en que.

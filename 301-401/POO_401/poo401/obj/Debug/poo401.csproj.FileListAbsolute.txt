@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\POO_401\poo401\bin\Debug\poo401.exe.config
+C:\Users\nehem\OneDrive\Documentos\POO_401\poo401\bin\Debug\poo401.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\poo401\bin\Debug\poo401.pdb
+C:\Users\nehem\OneDrive\Documentos\POO_401\poo401\obj\Debug\poo401.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\poo401\obj\Debug\poo401.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\poo401\obj\Debug\poo401.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\poo401\obj\Debug\poo401.pdb

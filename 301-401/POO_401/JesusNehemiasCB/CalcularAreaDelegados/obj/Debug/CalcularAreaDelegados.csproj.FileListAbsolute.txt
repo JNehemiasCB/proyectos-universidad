@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\POO_401\CalcularAreaDelegados\bin\Debug\CalcularAreaDelegados.exe.config
+C:\Users\nehem\OneDrive\Documentos\POO_401\CalcularAreaDelegados\bin\Debug\CalcularAreaDelegados.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\CalcularAreaDelegados\bin\Debug\CalcularAreaDelegados.pdb
+C:\Users\nehem\OneDrive\Documentos\POO_401\CalcularAreaDelegados\obj\Debug\CalcularAreaDelegados.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\CalcularAreaDelegados\obj\Debug\CalcularAreaDelegados.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\CalcularAreaDelegados\obj\Debug\CalcularAreaDelegados.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\CalcularAreaDelegados\obj\Debug\CalcularAreaDelegados.pdb

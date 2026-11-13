@@ -1,0 +1,75 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{95B1851D-1BA6-42B4-A320-DA60F7C3B016}|AgregarYDeshabilitarUsuario.csproj|C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95B1851D-1BA6-42B4-A320-DA60F7C3B016}|AgregarYDeshabilitarUsuario.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|AgregarYDeshabilitarUsuario||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95B1851D-1BA6-42B4-A320-DA60F7C3B016}|AgregarYDeshabilitarUsuario.csproj|C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{95B1851D-1BA6-42B4-A320-DA60F7C3B016}|AgregarYDeshabilitarUsuario.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95B1851D-1BA6-42B4-A320-DA60F7C3B016}|AgregarYDeshabilitarUsuario.csproj|c:\\users\\nehem\\onedrive\\documentos\\poo_401\\agregarydeshabilitarusuario\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T15:25:38.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AgregarYDeshabilitarUsuario",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\AgregarYDeshabilitarUsuario.csproj",
+              "RelativeDocumentMoniker": "AgregarYDeshabilitarUsuario.csproj",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\AgregarYDeshabilitarUsuario.csproj",
+              "RelativeToolTip": "AgregarYDeshabilitarUsuario.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-01T15:33:25.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\AgregarYDeshabilitarUsuario\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T15:08:34.789Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

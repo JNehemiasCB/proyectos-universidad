@@ -1,0 +1,7 @@
+C:\Users\nemir\OneDrive\Documentos\programacion uno\factorial\bin\Debug\factorial.exe.config
+C:\Users\nemir\OneDrive\Documentos\programacion uno\factorial\bin\Debug\factorial.exe
+C:\Users\nemir\OneDrive\Documentos\programacion uno\factorial\bin\Debug\factorial.pdb
+C:\Users\nemir\OneDrive\Documentos\programacion uno\factorial\obj\Debug\factorial.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\programacion uno\factorial\obj\Debug\factorial.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\programacion uno\factorial\obj\Debug\factorial.exe
+C:\Users\nemir\OneDrive\Documentos\programacion uno\factorial\obj\Debug\factorial.pdb

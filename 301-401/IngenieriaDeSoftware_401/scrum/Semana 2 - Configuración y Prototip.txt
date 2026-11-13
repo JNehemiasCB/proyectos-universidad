@@ -1,0 +1,9 @@
+Semana 2 - Configuración y Prototipo
+
+7. Configurar entorno de desarrollo → Instalar herramientas, configurar repositorio Git, crear proyecto base.
+
+
+8. Planificar la base de datos → Diseñar tablas y relaciones (Ej.: Gastos, Usuarios, Configuración).
+
+
+9. Crear prototipo navegable → Implementar las pantallas con navegación entre ellas.

@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\programacion uno\ArchivoTexto\bin\Debug\ArchivoTexto.exe.config
+C:\Users\nehem\OneDrive\Documentos\programacion uno\ArchivoTexto\bin\Debug\ArchivoTexto.exe
+C:\Users\nehem\OneDrive\Documentos\programacion uno\ArchivoTexto\bin\Debug\ArchivoTexto.pdb
+C:\Users\nehem\OneDrive\Documentos\programacion uno\ArchivoTexto\obj\Debug\ArchivoTexto.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\ArchivoTexto\obj\Debug\ArchivoTexto.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\ArchivoTexto\obj\Debug\ArchivoTexto.exe
+C:\Users\nehem\OneDrive\Documentos\programacion uno\ArchivoTexto\obj\Debug\ArchivoTexto.pdb

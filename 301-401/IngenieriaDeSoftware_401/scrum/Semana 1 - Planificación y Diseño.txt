@@ -1,0 +1,197 @@
+Semana 1 - Planificación y Diseño
+
+******************************************* 1. Definir requisitos funcionales → Lista detallada de lo que hará la app.************************************************
+
+1. Gestión de Gastos
+
+✅ Agregar un gasto con categoría, monto y fecha.
+✅ Editar o eliminar gastos.
+✅ Ver un historial de gastos filtrado por fecha/categoría.
+✅ Ver estadísticas o gráficas de gastos.
+
+2. Mascota Virtual
+
+✅ La mascota cambia su estado según los hábitos de gasto del usuario.
+✅ La mascota da consejos financieros según los gastos registrados.
+✅ La mascota reacciona a la cantidad de dinero gastada.
+
+3. Recordatorios y Notificaciones
+
+✅ Notificaciones diarias para recordar registrar gastos.
+✅ Notificaciones personalizadas si no se ha registrado un gasto en X tiempo.
+
+4. Configuración del Usuario
+
+✅ Cambiar la apariencia de la mascota.
+✅ Ajustar frecuencia de notificaciones.
+✅ Establecer un presupuesto mensual y recibir alertas si se excede.
+
+5. Seguridad y Datos
+
+✅ Guardar datos de gastos localmente.
+✅ Exportar historial de gastos en formato PDF.
+
+
+********************************* 2. Definir requisitos no funcionales → Seguridad, rendimiento, compatibilidad, etc.************************************************
+
+1. Compatibilidad
+
+✅ Debe funcionar en dispositivos Android e iOS.
+✅ Compatible con versiones de Android 9+ y iOS 14+.
+✅ La interfaz debe adaptarse a diferentes tamaños de pantalla.
+
+2. Rendimiento
+
+✅ La app debe abrirse en menos de 3 segundos.
+✅ Guardar un gasto no debe tardar más de 1 segundo.
+✅ El uso de batería debe ser optimizado para no consumir más del 5% en 1 hora de uso continuo.
+✅ La animación de la mascota no debe causar retrasos en la interfaz.
+
+3. Seguridad y Privacidad
+
+✅ Los datos deben almacenarse localmente con cifrado.
+✅ No se deben compartir datos del usuario sin su consentimiento.
+✅ Las credenciales y datos sensibles no deben guardarse en texto plano.
+✅ La app no debe requerir permisos innecesarios (solo almacenamiento y notificaciones).
+
+4. Usabilidad y Experiencia de Usuario
+
+✅ La interfaz debe ser intuitiva y fácil de usar sin necesidad de tutoriales largos.
+✅ Los colores y elementos deben ser accesibles para personas con daltonismo.
+✅ Los botones importantes deben ser accesibles con una sola mano.
+
+5. Mantenibilidad y Escalabilidad
+
+✅ El código debe ser modular para facilitar futuras mejoras.
+✅ La app debe permitir actualizaciones sin perder los datos del usuario.
+
+
+***************************************** 3. Elegir tecnologías → Framework, base de datos, herramientas.***************************************************************
+
+1. Lenguaje y Framework para Desarrollo Móvil
+
+✅ Flutter (Dart) → Recomiendo Flutter porque permite crear apps para Android e iOS con un solo código base y tiene buen rendimiento.
+
+2. Base de Datos
+
+✅ SQLite → Ideal para almacenamiento local, rápido y liviano.
+
+3. Diseño UI/UX
+
+✅ Figma → Para diseñar los prototipos y maquetar la interfaz.
+
+4. Control de Versiones y Gestión del Proyecto
+
+✅ Git + GitHub/GitLab → Para versionar el código y colaborar en equipo.
+
+5. Notificaciones y Recordatorios
+
+✅ Local Notifications Plugin → Para recordatorios sin conexión a internet.
+
+6. Animaciones y Mascota Virtual
+
+✅ Rive o Lottie → Para animaciones ligeras de la mascota.
+
+7. Pruebas y Debugging
+
+✅ Flutter DevTools → Para analizar el rendimiento y corregir errores.
+✅ Postman → para probar peticiones.
+
+8. Seguridad y Cifrado de Datos
+
+✅ Hive + Encrypted Shared Preferences → Para almacenar datos encriptados localmente.
+
+***********************************4. Diseñar la arquitectura → Cómo se organizarán las capas de la app.***********************************************
+
+usaremos el patrón por capas siguiendo la arquitectura MVVM (Model-View-ViewModel)
+
+
+1. Capa de Presentación (UI - View)
+
+Contiene las pantallas y widgets de Flutter.
+
+Se comunica con el ViewModel para obtener datos y responder a eventos.
+
+
+2. Capa de Lógica de Negocio (ViewModel)
+
+Gestiona la lógica de la app.
+
+No tiene acceso directo a la UI ni a la base de datos.
+
+Recibe eventos de la UI y actualiza los datos que deben mostrarse.
+
+
+3. Capa de Datos (Repository & Modelos)
+
+Contiene la base de datos (SQLite).
+
+Se encarga de leer y escribir datos.
+
+Expone métodos como obtenerGastos(), guardarGasto(), etc.
+
+***************************5. Hacer el maquetado UI/UX → Diseñar las pantallas principales (Inicio, Agregar Gasto, Mascota Virtual, Configuración).*****************************
+
+Pantalla de Inicio (Dashboard)
+
+📌 Objetivo: Mostrar un resumen de los gastos y el estado de la mascota.
+🔹 Elementos:
+✅ Saldo actual y gastos del mes.
+✅ Lista de los últimos gastos.
+✅ Gráfica simple con estadísticas.
+✅ Botón flotante "+" para agregar un gasto.
+✅ Mascota en el centro con reacciones según los gastos.
+
+Pantalla de Agregar Gasto
+
+📌 Objetivo: Permitir al usuario registrar un gasto de forma rápida.
+🔹 Elementos:
+✅ Campo para ingresar el monto.
+✅ Selector de categoría (Comida, Transporte, Entretenimiento, etc.).
+✅ Fecha del gasto (por defecto hoy).
+✅ Botón de "Guardar".
+✅ Opción para agregar nota opcional.
+
+Pantalla de la Mascota Virtual
+
+📌 Objetivo: Mostrar la mascota y su estado según los hábitos del usuario.
+🔹 Elementos:
+✅ Animación de la mascota (feliz, normal, triste según los gastos).
+✅ Mensajes o consejos financieros.
+✅ Posible interacción (ej. tocarla y que diga algo).
+
+Pantalla de Configuración
+
+📌 Objetivo: Permitir personalizar la app y ajustar notificaciones.
+🔹 Elementos:
+✅ Opción para cambiar la apariencia de la mascota.
+✅ Activar/desactivar notificaciones de recordatorio.
+✅ Definir un presupuesto mensual.
+✅ Botón de "Exportar gastos" (CSV/PDF).
+
+
+**********************6. Definir historias de usuario → "Como usuario, quiero agregar un gasto rápidamente para controlar mis finanzas".*************************************
+
+Gestión de Gastos
+
+🔹 Como usuario, quiero agregar un gasto rápidamente para llevar un control de mis finanzas.
+🔹 Como usuario, quiero categorizar mis gastos para entender en qué estoy gastando más.
+🔹 Como usuario, quiero ver un historial de gastos para revisar mis compras pasadas.
+🔹 Como usuario, quiero editar o eliminar un gasto en caso de error.
+
+Mascota Virtual
+
+🔹 Como usuario, quiero que la mascota cambie según mis hábitos de gasto para motivarme a ahorrar.
+🔹 Como usuario, quiero que la mascota me dé consejos financieros para mejorar mis finanzas.
+🔹 Como usuario, quiero personalizar la apariencia de la mascota para hacerla más atractiva.
+
+Notificaciones y Recordatorios
+
+🔹 Como usuario, quiero recibir notificaciones para recordar registrar mis gastos.
+🔹 Como usuario, quiero establecer un presupuesto mensual y recibir alertas si lo excedo.
+
+Configuración y Seguridad
+
+🔹 Como usuario, quiero exportar mis gastos en PDF para analizarlos en otro lado.
+🔹 Como usuario, quiero que mis datos estén seguros para que nadie más pueda verlos sin mi permiso.
+

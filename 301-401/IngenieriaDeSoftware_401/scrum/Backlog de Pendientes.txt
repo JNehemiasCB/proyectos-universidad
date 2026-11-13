@@ -1,0 +1,31 @@
+Backlog de Pendientes:
+
+1. Definir requisitos funcionales (¿Qué funciones tendrá la app? Ej.: agregar gastos, reportes, personalización de mascota).
+
+
+2. Definir requisitos no funcionales (Ej.: rendimiento, seguridad, compatibilidad con Android/iOS).
+
+
+3. Elegir tecnologías (Framework multiplataforma: Flutter, React Native, .NET MAUI, etc.).
+
+
+4. Diseñar la arquitectura (Cómo se organizarán los módulos y la base de datos).
+
+
+5. Hacer el maquetado UI/UX (Diseñar pantallas y experiencia de usuario).
+
+
+6. Planificar la base de datos (Estructura y relaciones entre datos).
+
+
+7. Configurar entorno de desarrollo (Instalar herramientas y configurar repositorio Git).
+
+
+8. Crear prototipo navegable (Para probar la experiencia antes del desarrollo).
+
+
+9. Definir las historias de usuario (Ej.: "Como usuario, quiero agregar un gasto rápidamente").
+
+
+10. Dividir tareas en sprints (Organizar qué se hará en estas 4 semanas).
+

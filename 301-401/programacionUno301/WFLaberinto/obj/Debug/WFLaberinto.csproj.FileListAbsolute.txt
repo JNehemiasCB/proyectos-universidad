@@ -1,0 +1,10 @@
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\bin\Debug\WFLaberinto.exe.config
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\bin\Debug\WFLaberinto.exe
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\bin\Debug\WFLaberinto.pdb
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\obj\Debug\WFLaberinto.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\obj\Debug\WFLaberinto.Form1.resources
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\obj\Debug\WFLaberinto.Properties.Resources.resources
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\obj\Debug\WFLaberinto.csproj.GenerateResource.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\obj\Debug\WFLaberinto.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\obj\Debug\WFLaberinto.exe
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFLaberinto\obj\Debug\WFLaberinto.pdb

@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\SistemaVentas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55AC023E-E037-4405-A935-021C7FA979F0}|SistemaVentas.csproj|c:\\users\\nehem\\onedrive\\documentos\\poo_401\\sistemaventas\\views\\clientesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{55AC023E-E037-4405-A935-021C7FA979F0}|SistemaVentas.csproj|solutionrelative:views\\clientesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55AC023E-E037-4405-A935-021C7FA979F0}|SistemaVentas.csproj|c:\\users\\nehem\\onedrive\\documentos\\poo_401\\sistemaventas\\views\\clientesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55AC023E-E037-4405-A935-021C7FA979F0}|SistemaVentas.csproj|solutionrelative:views\\clientesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClientesForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\SistemaVentas\\Views\\ClientesForm.cs",
+              "RelativeDocumentMoniker": "Views\\ClientesForm.cs",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\SistemaVentas\\Views\\ClientesForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Views\\ClientesForm.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T15:55:37.296Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientesForm.cs",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\SistemaVentas\\Views\\ClientesForm.cs",
+              "RelativeDocumentMoniker": "Views\\ClientesForm.cs",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\SistemaVentas\\Views\\ClientesForm.cs",
+              "RelativeToolTip": "Views\\ClientesForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T15:47:42.317Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

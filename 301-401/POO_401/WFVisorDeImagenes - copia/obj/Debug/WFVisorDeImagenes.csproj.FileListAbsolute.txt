@@ -1,0 +1,10 @@
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\bin\Debug\WFVisorDeImagenes.exe.config
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\bin\Debug\WFVisorDeImagenes.exe
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\bin\Debug\WFVisorDeImagenes.pdb
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\obj\Debug\WFVisorDeImagenes.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\obj\Debug\WFVisorDeImagenes.Form1.resources
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\obj\Debug\WFVisorDeImagenes.Properties.Resources.resources
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\obj\Debug\WFVisorDeImagenes.csproj.GenerateResource.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\obj\Debug\WFVisorDeImagenes.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\obj\Debug\WFVisorDeImagenes.exe
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFVisorDeImagenes\obj\Debug\WFVisorDeImagenes.pdb

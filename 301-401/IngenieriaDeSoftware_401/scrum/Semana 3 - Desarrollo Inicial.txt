@@ -1,0 +1,12 @@
+Semana 3 - Desarrollo Inicial
+
+10. Implementar pantalla de inicio → Diseño e interacción.
+
+
+11. Implementar pantalla de agregar gasto → Captura de datos, validaciones básicas.
+
+
+12. Implementar pantalla de la mascota virtual → Diseño e interacción básica.
+
+
+13. Conectar la app con la base de datos → CRUD básico de gastos.

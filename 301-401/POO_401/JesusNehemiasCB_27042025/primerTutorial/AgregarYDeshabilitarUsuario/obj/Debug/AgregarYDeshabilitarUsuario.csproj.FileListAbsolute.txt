@@ -1,0 +1,10 @@
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\bin\Debug\AgregarYDeshabilitarUsuario.exe.config
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\bin\Debug\AgregarYDeshabilitarUsuario.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\bin\Debug\AgregarYDeshabilitarUsuario.pdb
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\obj\Debug\AgregarYDeshabilitarUsuario.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\obj\Debug\AgregarYDeshabilitarUsuario.Form1.resources
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\obj\Debug\AgregarYDeshabilitarUsuario.Properties.Resources.resources
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\obj\Debug\AgregarYDeshabilitarUsuario.csproj.GenerateResource.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\obj\Debug\AgregarYDeshabilitarUsuario.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\obj\Debug\AgregarYDeshabilitarUsuario.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\AgregarYDeshabilitarUsuario\obj\Debug\AgregarYDeshabilitarUsuario.pdb

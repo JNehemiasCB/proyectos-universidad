@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\Semana1_Polimorfismo2\bin\Debug\Semana1_Polimorfismo2.exe.config
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\Semana1_Polimorfismo2\bin\Debug\Semana1_Polimorfismo2.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\Semana1_Polimorfismo2\bin\Debug\Semana1_Polimorfismo2.pdb
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\Semana1_Polimorfismo2\obj\Debug\Semana1_Polimorfismo2.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\Semana1_Polimorfismo2\obj\Debug\Semana1_Polimorfismo2.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\Semana1_Polimorfismo2\obj\Debug\Semana1_Polimorfismo2.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\Semana1_Polimorfismo2\obj\Debug\Semana1_Polimorfismo2.pdb

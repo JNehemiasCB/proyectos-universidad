@@ -1,0 +1,7 @@
+C:\Users\nemir\OneDrive\Documentos\programacion uno\arreglos\arreglos\arreglo_unidimensional\bin\Debug\arreglo_unidimensional.exe.config
+C:\Users\nemir\OneDrive\Documentos\programacion uno\arreglos\arreglos\arreglo_unidimensional\bin\Debug\arreglo_unidimensional.exe
+C:\Users\nemir\OneDrive\Documentos\programacion uno\arreglos\arreglos\arreglo_unidimensional\bin\Debug\arreglo_unidimensional.pdb
+C:\Users\nemir\OneDrive\Documentos\programacion uno\arreglos\arreglos\arreglo_unidimensional\obj\Debug\arreglo_unidimensional.csproj.AssemblyReference.cache
+C:\Users\nemir\OneDrive\Documentos\programacion uno\arreglos\arreglos\arreglo_unidimensional\obj\Debug\arreglo_unidimensional.csproj.CoreCompileInputs.cache
+C:\Users\nemir\OneDrive\Documentos\programacion uno\arreglos\arreglos\arreglo_unidimensional\obj\Debug\arreglo_unidimensional.exe
+C:\Users\nemir\OneDrive\Documentos\programacion uno\arreglos\arreglos\arreglo_unidimensional\obj\Debug\arreglo_unidimensional.pdb

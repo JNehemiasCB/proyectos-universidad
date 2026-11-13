@@ -1,0 +1,5 @@
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFListBox\obj\Debug\WFListBox.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFListBox\obj\Debug\WFListBox.Form1.resources
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFListBox\obj\Debug\WFListBox.Properties.Resources.resources
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFListBox\obj\Debug\WFListBox.csproj.GenerateResource.cache
+C:\Users\nehem\OneDrive\Documentos\programacion uno\WFListBox\obj\Debug\WFListBox.csproj.CoreCompileInputs.cache

@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\POO_401\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDD36F36-3429-4B3E-B18A-46ED450FBC5B}|EjercicioPolomorfismo\\EjercicioPolomorfismo.csproj|c:\\users\\nehem\\onedrive\\documentos\\poo_401\\poo_401\\ejerciciopolomorfismo\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDD36F36-3429-4B3E-B18A-46ED450FBC5B}|EjercicioPolomorfismo\\EjercicioPolomorfismo.csproj|solutionrelative:ejerciciopolomorfismo\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDD36F36-3429-4B3E-B18A-46ED450FBC5B}|EjercicioPolomorfismo\\EjercicioPolomorfismo.csproj|c:\\users\\nehem\\onedrive\\documentos\\poo_401\\poo_401\\ejerciciopolomorfismo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDD36F36-3429-4B3E-B18A-46ED450FBC5B}|EjercicioPolomorfismo\\EjercicioPolomorfismo.csproj|solutionrelative:ejerciciopolomorfismo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{26341fe2-71dd-46fd-bb1b-2e51a92a0d64}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\POO_401\\EjercicioPolomorfismo\\Empleado.cs",
+              "RelativeDocumentMoniker": "EjercicioPolomorfismo\\Empleado.cs",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\POO_401\\EjercicioPolomorfismo\\Empleado.cs",
+              "RelativeToolTip": "EjercicioPolomorfismo\\Empleado.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA5wBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T16:03:56.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\POO_401\\EjercicioPolomorfismo\\Program.cs",
+              "RelativeDocumentMoniker": "EjercicioPolomorfismo\\Program.cs",
+              "ToolTip": "C:\\Users\\nehem\\OneDrive\\Documentos\\POO_401\\POO_401\\EjercicioPolomorfismo\\Program.cs",
+              "RelativeToolTip": "EjercicioPolomorfismo\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T16:02:18.168Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

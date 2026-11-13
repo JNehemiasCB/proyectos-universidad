@@ -1,0 +1,4 @@
+ID Nombre Edad Teléfono
+23424 Ana 40 ???
+11234 Carlos 12 34567678
+77654 Susana 45 23435567

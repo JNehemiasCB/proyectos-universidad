@@ -1,0 +1,2 @@
+rnorm(15,10,5)
+plot(rnorm(15,10,5), col =”red”, “type = “l”)

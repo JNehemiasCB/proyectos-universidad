@@ -1,0 +1,89 @@
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.csproj.AssemblyReference.cache
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema_de_Administración_de_Proyectos.FrmProyectos.resources
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema_de_Administración_de_Proyectos.FrmTareas.resources
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema_de_Administración_de_Proyectos.Properties.Resources.resources
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.csproj.GenerateResource.cache
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.csproj.CoreCompileInputs.cache
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Sistema de Administración de Proyectos.exe.config
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Sistema de Administración de Proyectos.exe
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Sistema de Administración de Proyectos.pdb
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Google.Protobuf.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\MySql.Data.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Buffers.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.IO.Pipelines.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Memory.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\ZstdSharp.dll
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Google.Protobuf.pdb
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Google.Protobuf.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\MySql.Data.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Buffers.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.IO.Pipelines.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Memory.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema .6188BD67.Up2Date
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.exe
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.pdb
+C:\Users\JAAS\source\repos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.exe.config
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Sistema de Administración de Proyectos.exe.config
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Sistema de Administración de Proyectos.exe
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Sistema de Administración de Proyectos.pdb
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Google.Protobuf.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\MySql.Data.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Buffers.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.IO.Pipelines.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Memory.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\ZstdSharp.dll
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Google.Protobuf.pdb
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Google.Protobuf.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\MySql.Data.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Buffers.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.IO.Pipelines.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Memory.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema_de_Administración_de_Proyectos.FrmProyectos.resources
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema_de_Administración_de_Proyectos.FrmTareas.resources
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema_de_Administración_de_Proyectos.Properties.Resources.resources
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.csproj.GenerateResource.cache
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema .6188BD67.Up2Date
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.exe
+C:\Users\nehem\OneDrive\Documentos\Sistema de Administración de Proyectos\obj\Debug\Sistema de Administración de Proyectos.pdb

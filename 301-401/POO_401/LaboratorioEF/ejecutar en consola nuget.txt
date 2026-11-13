@@ -1,0 +1,4 @@
+ejecutar en consola nuget
+//Entity Framework Core necesita que ejecutes los comandos de migración en NuGet para crear la base de datos y las tablas, porque solo así sabe cómo construirlas con base en tu modelo (Estudiante).
+Add-Migration InitialCreate
+Update-Database

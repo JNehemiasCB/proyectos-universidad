@@ -1,0 +1,7 @@
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\EjercicioHerencia\bin\Debug\EjercicioHerencia.exe.config
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\EjercicioHerencia\bin\Debug\EjercicioHerencia.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\EjercicioHerencia\bin\Debug\EjercicioHerencia.pdb
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\EjercicioHerencia\obj\Debug\EjercicioHerencia.csproj.AssemblyReference.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\EjercicioHerencia\obj\Debug\EjercicioHerencia.csproj.CoreCompileInputs.cache
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\EjercicioHerencia\obj\Debug\EjercicioHerencia.exe
+C:\Users\nehem\OneDrive\Documentos\POO_401\POO_401\EjercicioHerencia\obj\Debug\EjercicioHerencia.pdb
